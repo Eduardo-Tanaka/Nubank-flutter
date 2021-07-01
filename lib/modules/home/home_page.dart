@@ -41,6 +41,21 @@ class HomePage extends StatelessWidget {
       FontAwesomeIcons.handHoldingUsd,
       FontAwesomeIcons.questionCircle,
     ];
+    final routes = [
+      "/pix",
+      "/pagar",
+      "/indicar_amigos",
+      "/transferir",
+      "/depositar",
+      "/emprestimo",
+      "/cartao_virtual",
+      "/recarga",
+      "/limite",
+      "/bloquear_cartao",
+      "/cobrar",
+      "/doacao",
+      "/ajuda",
+    ];
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: PreferredSize(
@@ -64,7 +79,12 @@ class HomePage extends StatelessWidget {
                     ),
                     CircleIconButtonWidget(
                       icon: Icons.settings_outlined,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          "/configuracao",
+                        );
+                      },
                     ),
                   ],
                 )
@@ -187,7 +207,12 @@ class HomePage extends StatelessWidget {
               return BottomCardMenuWidget(
                 icon: icons[position],
                 title: titles[position],
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    routes[position],
+                  );
+                },
               );
             },
             itemCount: titles.length,

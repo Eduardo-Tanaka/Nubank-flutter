@@ -51,7 +51,7 @@ class AppWidget extends StatelessWidget {
         "/doacao": (context) => DoacaoPage(),
         "/emprestimo": (context) => EmprestimoPage(),
         "/indicar_amigos": (context) => IndicarAmigosPage(),
-        "/limite_page": (context) => LimitePage(),
+        "/limite": (context) => LimitePage(),
         "/pagar": (context) => PagarPage(),
         "/pix": (context) => PixPage(),
         "/recarga": (context) => RecargaPage(),
