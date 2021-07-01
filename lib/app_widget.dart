@@ -33,29 +33,46 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final routes = {
+      "/splash": SplashPage(),
+      "/home": HomePage(),
+      "/ajuda": AjudaPage(),
+      "/bloquear_cartao": BloquearCartaoPage(),
+      "/cartao_virtual": CartaoVirtualPage(),
+      "/cobrar": CobrarPage(),
+      "/configuracao": ConfiguracaoPage(),
+      "/depositar": DepositarPage(),
+      "/doacao": DoacaoPage(),
+      "/emprestimo": EmprestimoPage(),
+      "/indicar_amigos": IndicarAmigosPage(),
+      "/limite": LimitePage(),
+      "/pagar": PagarPage(),
+      "/pix": PixPage(),
+      "/recarga": RecargaPage(),
+      "/transferir": TransferirPage()
+    };
     return MaterialApp(
       title: 'Nubank',
       theme: ThemeData(
         backgroundColor: AppColors.background,
       ),
       initialRoute: "/splash",
-      routes: {
-        "/splash": (context) => SplashPage(),
-        "/home": (context) => HomePage(),
-        "/ajuda": (context) => AjudaPage(),
-        "/bloquear_cartao": (context) => BloquearCartaoPage(),
-        "/cartao_virtual": (context) => CartaoVirtualPage(),
-        "/cobrar": (context) => CobrarPage(),
-        "/configuracao": (context) => ConfiguracaoPage(),
-        "/depositar": (context) => DepositarPage(),
-        "/doacao": (context) => DoacaoPage(),
-        "/emprestimo": (context) => EmprestimoPage(),
-        "/indicar_amigos": (context) => IndicarAmigosPage(),
-        "/limite": (context) => LimitePage(),
-        "/pagar": (context) => PagarPage(),
-        "/pix": (context) => PixPage(),
-        "/recarga": (context) => RecargaPage(),
-        "/transferir": (context) => TransferirPage()
+      onGenerateRoute: (settings) {
+        return PageRouteBuilder(
+          settings: settings,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              routes[settings.name]!,
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            var begin = Offset(0.0, 1.0);
+            var end = Offset.zero;
+            var tween = Tween(begin: begin, end: end);
+            var offsetAnimation = animation.drive(tween);
+            return SlideTransition(
+              position: offsetAnimation,
+              child: child,
+            );
+          },
+        );
       },
     );
   }
