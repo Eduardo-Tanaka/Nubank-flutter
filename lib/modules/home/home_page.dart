@@ -6,9 +6,15 @@ import 'package:nubank/shared/widgets/bottom_card_menu/bottom_card_menu_widget.d
 import 'package:nubank/shared/widgets/card_menu/card_menu_widget.dart';
 import 'package:nubank/shared/widgets/circle_icon_button/circle_icon_button_widget.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  bool isVisible = true;
   @override
   Widget build(BuildContext context) {
     final titles = [
@@ -75,7 +81,11 @@ class HomePage extends StatelessWidget {
                   children: [
                     CircleIconButtonWidget(
                       icon: Icons.visibility_off_outlined,
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          isVisible = !isVisible;
+                        });
+                      },
                     ),
                     CircleIconButtonWidget(
                       icon: Icons.settings_outlined,
@@ -148,6 +158,7 @@ class HomePage extends StatelessWidget {
                 info2: 'Limite disponível ',
                 info2Span: 'R\$ 3.564,64',
                 info2SpanStyle: TextStyles.textMoneyGreen,
+                isVisible: isVisible,
               ),
               CardMenuWidget(
                 icon: FontAwesomeIcons.dollarSign,
@@ -155,6 +166,7 @@ class HomePage extends StatelessWidget {
                 subtitle: 'Saldo Disponível',
                 info1: 'R\$ 8435,36',
                 info1Style: TextStyles.textBold,
+                isVisible: isVisible,
               ),
               CardMenuWidget(
                 icon: FontAwesomeIcons.handHoldingUsd,
@@ -164,6 +176,7 @@ class HomePage extends StatelessWidget {
                 info2Span: 'R\$ 25.000,00',
                 info2SpanStyle: TextStyles.textBold,
                 textButton: 'SIMULAR EMPRÉSTIMO',
+                isVisible: isVisible,
               ),
               CardMenuWidget(
                 icon: FontAwesomeIcons.gift,
@@ -175,6 +188,7 @@ class HomePage extends StatelessWidget {
                 info2Span: '1.533',
                 info2SpanStyle: TextStyles.textMoneyGreen,
                 info2Cont: ' pontos esse mês.',
+                isVisible: isVisible,
               ),
               CardMenuWidget(
                 icon: FontAwesomeIcons.signal,

@@ -13,6 +13,7 @@ class CardMenuWidget extends StatelessWidget {
   final TextStyle? info2SpanStyle;
   final String? info2Cont;
   final String? textButton;
+  final bool isVisible;
 
   const CardMenuWidget({
     Key? key,
@@ -27,6 +28,7 @@ class CardMenuWidget extends StatelessWidget {
     this.info2SpanStyle,
     this.info2Cont,
     this.textButton,
+    this.isVisible = true,
   }) : super(key: key);
 
   @override
@@ -61,29 +63,57 @@ class CardMenuWidget extends StatelessWidget {
                 Visibility(
                   visible: info1 == null ? false : true,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 12, bottom: 2, left: 0),
-                    child: Text(
-                      info1 ?? '',
-                      textScaleFactor: 1.5,
-                      style: info1Style,
+                    padding: EdgeInsets.only(top: 12),
+                    child: Container(
+                      color: isVisible ? null : Colors.grey[100],
+                      child: Visibility(
+                        visible: isVisible,
+                        maintainState: true,
+                        maintainAnimation: true,
+                        maintainSize: true,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Text(
+                              info1 ?? '',
+                              textScaleFactor: 1.5,
+                              style: info1Style,
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ),
                 Visibility(
                   visible: info2 == null ? false : true,
-                  child: Text.rich(
-                    TextSpan(
-                      text: info2,
-                      style: info2Style,
-                      children: [
-                        TextSpan(
-                          text: info2Span,
-                          style: info2SpanStyle,
-                        ),
-                        TextSpan(text: info2Cont)
-                      ],
+                  child: Container(
+                    color: isVisible ? null : Colors.grey[100],
+                    child: Visibility(
+                      visible: isVisible,
+                      maintainState: true,
+                      maintainAnimation: true,
+                      maintainSize: true,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text.rich(
+                            TextSpan(
+                              text: info2,
+                              style: info2Style,
+                              children: [
+                                TextSpan(
+                                  text: info2Span,
+                                  style: info2SpanStyle,
+                                ),
+                                TextSpan(text: info2Cont)
+                              ],
+                            ),
+                            textScaleFactor: 0.9,
+                          ),
+                        ],
+                      ),
                     ),
-                    textScaleFactor: 0.9,
                   ),
                 ),
                 Visibility(
