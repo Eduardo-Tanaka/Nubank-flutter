@@ -40,7 +40,6 @@ class AppWidget extends StatelessWidget {
       "/bloquear_cartao": BloquearCartaoPage(),
       "/cartao_virtual": CartaoVirtualPage(),
       "/cobrar": CobrarPage(),
-      "/configuracao": ConfiguracaoPage(),
       "/depositar": DepositarPage(),
       "/doacao": DoacaoPage(),
       "/emprestimo": EmprestimoPage(),
@@ -57,8 +56,10 @@ class AppWidget extends StatelessWidget {
         backgroundColor: AppColors.background,
       ),
       initialRoute: "/splash",
+      routes: {"/configuracao": (context) => ConfiguracaoPage()},
       onGenerateRoute: (settings) {
         return PageRouteBuilder(
+          transitionDuration: Duration(milliseconds: 400),
           settings: settings,
           pageBuilder: (context, animation, secondaryAnimation) =>
               routes[settings.name]!,

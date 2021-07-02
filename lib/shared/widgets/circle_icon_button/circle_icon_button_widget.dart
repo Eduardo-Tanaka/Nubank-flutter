@@ -4,11 +4,17 @@ import 'package:nubank/shared/themes/app_colors.dart';
 class CircleIconButtonWidget extends StatelessWidget {
   final IconData icon;
   final VoidCallback onPressed;
+  final Color? background;
+  final Color? color;
+  final double padding;
 
   const CircleIconButtonWidget({
     Key? key,
     required this.icon,
     required this.onPressed,
+    required this.padding,
+    this.background,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -17,13 +23,14 @@ class CircleIconButtonWidget extends StatelessWidget {
       onPressed: onPressed,
       child: Icon(
         icon,
-        color: Colors.white70,
+        color: color == null ? Colors.white70 : color,
       ),
       style: ElevatedButton.styleFrom(
-        primary: AppColors.circleButtonBackground,
+        primary:
+            background == null ? AppColors.circleButtonBackground : background,
         shape: CircleBorder(),
-        padding: EdgeInsets.all(8),
-        minimumSize: Size.fromWidth(1),
+        padding: EdgeInsets.all(padding),
+        minimumSize: Size(8, 8),
       ),
     );
   }
