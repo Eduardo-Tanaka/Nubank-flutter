@@ -5,12 +5,14 @@ class TileTransferirWidget extends StatelessWidget {
   final String title;
   final String subtitle;
   final IconData iconLeading;
+  final VoidCallback onTap;
 
   const TileTransferirWidget({
     Key? key,
     required this.title,
     required this.subtitle,
     required this.iconLeading,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -20,7 +22,7 @@ class TileTransferirWidget extends StatelessWidget {
         Material(
           color: Colors.white,
           child: InkWell(
-            onTap: () {},
+            onTap: onTap,
             child: Padding(
               padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
               child: ListTile(

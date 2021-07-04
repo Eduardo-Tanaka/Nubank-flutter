@@ -33,11 +33,15 @@ class TransferirQrcodePage extends StatelessWidget {
             ),
           ),
           TileTransferirWidget(
+            onTap: () {},
             title: "Ler QR Code",
             subtitle: "Use a câmera do seu celular",
             iconLeading: Icons.qr_code,
           ),
           TileTransferirWidget(
+            onTap: () {
+              Navigator.pushNamed(context, "/pix_copia_cola");
+            },
             title: "Pix Copia e Cola",
             subtitle: "Insira o código que você copiou",
             iconLeading: Icons.content_copy,

@@ -86,7 +86,7 @@ class _TransferirPageState extends State<TransferirPage> {
           size: 24,
         ),
         backgroundColor: moneyInputTextController.numberValue == 0
-            ? Colors.grey[300]
+            ? Colors.grey[200]
             : AppColors.background,
       ),
     );
