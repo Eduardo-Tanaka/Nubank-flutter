@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
+import 'package:nubank/shared/themes/app_images.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/bottom_card_menu/bottom_card_menu_widget.dart';
 import 'package:nubank/shared/widgets/card_menu/card_menu_widget.dart';
@@ -33,19 +34,19 @@ class _HomePageState extends State<HomePage> {
       "Me ajuda",
     ];
     final icons = [
-      FontAwesomeIcons.asterisk,
-      FontAwesomeIcons.barcode,
-      Icons.person_add_alt_1,
-      Icons.arrow_upward,
-      Icons.arrow_downward,
-      FontAwesomeIcons.handHoldingUsd,
-      FontAwesomeIcons.creditCard,
-      FontAwesomeIcons.mobile,
-      FontAwesomeIcons.slidersH,
-      FontAwesomeIcons.lock,
-      FontAwesomeIcons.commentDollar,
-      FontAwesomeIcons.handHoldingUsd,
-      FontAwesomeIcons.questionCircle,
+      AppImages.ic_pix,
+      AppImages.ic_code,
+      AppImages.ic_add_user,
+      AppImages.ic_give_money,
+      AppImages.ic_get_money,
+      AppImages.ic_loan,
+      AppImages.ic_virtual_card,
+      AppImages.ic_phone,
+      AppImages.ic_custom_settings,
+      AppImages.ic_lock_on,
+      AppImages.ic_request_money,
+      AppImages.ic_loan,
+      AppImages.ic_help,
     ];
     final routes = [
       "/pix",

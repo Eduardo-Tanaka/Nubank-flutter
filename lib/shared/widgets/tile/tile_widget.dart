@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 
-class TileTransferirWidget extends StatelessWidget {
+class TileWidget extends StatelessWidget {
   final String title;
   final String subtitle;
   final IconData iconLeading;
   final VoidCallback onTap;
 
-  const TileTransferirWidget({
+  const TileWidget({
     Key? key,
     required this.title,
     required this.subtitle,
@@ -46,9 +46,13 @@ class TileTransferirWidget extends StatelessWidget {
                   ),
                 ),
                 trailing: Container(
-                  padding: EdgeInsets.only(bottom: 16),
-                  child: Icon(
-                    Icons.chevron_right,
+                  width: 20,
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: Icon(
+                      Icons.chevron_right,
+                    ),
                   ),
                 ),
               ),

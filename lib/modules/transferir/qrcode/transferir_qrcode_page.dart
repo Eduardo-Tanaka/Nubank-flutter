@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
-import 'package:nubank/shared/widgets/tile_transferir/tile_transferir_widget.dart';
+import 'package:nubank/shared/widgets/tile/tile_widget.dart';
 
 class TransferirQrcodePage extends StatelessWidget {
   const TransferirQrcodePage({Key? key}) : super(key: key);
@@ -32,13 +32,13 @@ class TransferirQrcodePage extends StatelessWidget {
               style: TextStyles.textBigBold,
             ),
           ),
-          TileTransferirWidget(
+          TileWidget(
             onTap: () {},
             title: "Ler QR Code",
             subtitle: "Use a câmera do seu celular",
             iconLeading: Icons.qr_code,
           ),
-          TileTransferirWidget(
+          TileWidget(
             onTap: () {
               Navigator.pushNamed(context, "/pix_copia_cola");
             },

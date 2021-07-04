@@ -4,7 +4,7 @@ import 'package:nubank/shared/themes/app_text_styles.dart';
 
 class BottomCardMenuWidget extends StatelessWidget {
   final String title;
-  final IconData icon;
+  final String icon;
   final VoidCallback onTap;
 
   const BottomCardMenuWidget({
@@ -30,9 +30,11 @@ class BottomCardMenuWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(
+                Image.asset(
                   icon,
                   color: Colors.white,
+                  height: 25,
+                  width: 25,
                 ),
                 Text(
                   title,
