@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nubank/shared/themes/app_images.dart';
 import 'package:nubank/shared/widgets/circle_icon_button/circle_icon_button_widget.dart';
+import 'package:nubank/shared/widgets/tile_pix/tile_pix_widget.dart';
 
 class PixPage extends StatelessWidget {
   const PixPage({Key? key}) : super(key: key);
@@ -103,23 +104,27 @@ class PixPage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: SizedBox(
-        height: 180,
-        child: Container(
-          color: Colors.grey[200],
-          child: Column(
-            children: [
-              ListTile(
-                title: Text("Minhas chaves"),
-              ),
-              ListTile(
-                title: Text("Minhas chaves"),
-              ),
-              ListTile(
-                title: Text("Minhas chaves"),
-              ),
-            ],
-          ),
+      bottomNavigationBar: Container(
+        height: 170,
+        color: Colors.grey[200],
+        child: Column(
+          children: [
+            TilePixWidget(
+              title: "Minhas Chaves",
+              iconLeading: FontAwesomeIcons.asterisk,
+              onTap: () {},
+            ),
+            TilePixWidget(
+              title: "Meu limite Pix",
+              iconLeading: Icons.tune,
+              onTap: () {},
+            ),
+            TilePixWidget(
+              title: "Me ajuda",
+              iconLeading: Icons.help_outline,
+              onTap: () {},
+            ),
+          ],
         ),
       ),
     );

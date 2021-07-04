@@ -62,7 +62,7 @@ class AppWidget extends StatelessWidget {
           transitionDuration: Duration(milliseconds: 400),
           settings: settings,
           pageBuilder: (context, animation, secondaryAnimation) =>
-              routes[settings.name]!,
+              routes[settings.name] ?? HomePage(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             var begin = Offset(0.0, 1.0);
             var end = Offset.zero;
