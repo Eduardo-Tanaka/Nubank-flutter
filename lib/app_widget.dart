@@ -18,6 +18,7 @@ import 'package:nubank/modules/transferir/transferir_page.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 
 import 'modules/splash/splash_page.dart';
+import 'modules/transferir/qrcode/transferir_qrcode_page.dart';
 
 class AppWidget extends StatelessWidget {
   // travar orientacao da tela para retrato
@@ -48,7 +49,8 @@ class AppWidget extends StatelessWidget {
       "/pagar": PagarPage(),
       "/pix": PixPage(),
       "/recarga": RecargaPage(),
-      "/transferir": TransferirPage()
+      "/transferir": TransferirPage(),
+      "/transferir_qrcode": TransferirQrcodePage(),
     };
     return MaterialApp(
       title: 'Nubank',

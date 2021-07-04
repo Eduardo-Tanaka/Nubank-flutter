@@ -31,6 +31,7 @@ dependencies:
   google_fonts: ^2.1.0
   font_awesome_flutter: ^9.1.0
   animated_card: ^2.0.0
+  flutter_masked_text2: ^0.9.1
   
 dev_dependencies:
   flutter_test:

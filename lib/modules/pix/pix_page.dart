@@ -25,13 +25,16 @@ class PixPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              AppImages.logo,
+              AppImages.pix_page,
               width: 120,
               height: 120,
             ),
-            Text(
-              "Minha área PIX",
-              style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700),
+            Padding(
+              padding: const EdgeInsets.only(top: 16),
+              child: Text(
+                "Minha área PIX",
+                style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8),
