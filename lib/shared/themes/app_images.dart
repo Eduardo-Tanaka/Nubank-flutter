@@ -6,7 +6,7 @@ class AppImages {
   static const ic_pix = "assets/icons/ic_pix.png";
   static const ic_code = "assets/icons/nuds_ic_code.png";
   static const ic_add_user = "assets/icons/nuds_ic_add_user.png";
-  static const ic_give_money = "assets/icons/vector2.png";
+  static const ic_give_money = "assets/icons/ic_give_money.png";
   static const ic_get_money = "assets/icons/ic_get_money.png";
   static const ic_loan = "assets/icons/nuds_ic_personal_loan.png";
   static const ic_virtual_card = "assets/icons/ic_virtual_card.png";
