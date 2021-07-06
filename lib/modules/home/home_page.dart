@@ -157,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 CardMenuWidget(
-                  icon: FontAwesomeIcons.creditCard,
+                  icon: AppImages.ic_card_nu,
                   title: 'Cartão de Crédito',
                   subtitle: 'Fatura atual',
                   info1: 'R\$ 435,36',
@@ -168,7 +168,7 @@ class _HomePageState extends State<HomePage> {
                   isVisible: isVisible,
                 ),
                 CardMenuWidget(
-                  icon: FontAwesomeIcons.dollarSign,
+                  icon: AppImages.ic_money_coins,
                   title: 'Conta',
                   subtitle: 'Saldo Disponível',
                   info1: 'R\$ 8435,36',
@@ -176,7 +176,7 @@ class _HomePageState extends State<HomePage> {
                   isVisible: isVisible,
                 ),
                 CardMenuWidget(
-                  icon: FontAwesomeIcons.handHoldingUsd,
+                  icon: AppImages.ic_loan,
                   title: 'Empréstimo',
                   subtitle: '',
                   info2: 'Valor disponível de até \n',
@@ -186,7 +186,7 @@ class _HomePageState extends State<HomePage> {
                   isVisible: isVisible,
                 ),
                 CardMenuWidget(
-                  icon: FontAwesomeIcons.gift,
+                  icon: AppImages.ic_reward,
                   title: 'Rewards',
                   subtitle: 'Total',
                   info1: '1.536 pts',
@@ -198,7 +198,7 @@ class _HomePageState extends State<HomePage> {
                   isVisible: isVisible,
                 ),
                 CardMenuWidget(
-                  icon: FontAwesomeIcons.signal,
+                  icon: AppImages.ic_investment,
                   title: 'Investimentos',
                   subtitle: '',
                   info2:
@@ -207,7 +207,7 @@ class _HomePageState extends State<HomePage> {
                   textButton: 'CONHECER',
                 ),
                 CardMenuWidget(
-                  icon: FontAwesomeIcons.creditCard,
+                  icon: AppImages.ic_card_nu,
                   title: 'Google Pay',
                   subtitle: '',
                   info2: 'Use o Google Pay com seus cartões Nubank.',

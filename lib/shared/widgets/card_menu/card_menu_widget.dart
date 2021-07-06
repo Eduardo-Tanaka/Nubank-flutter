@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 
 class CardMenuWidget extends StatelessWidget {
-  final IconData icon;
+  final String icon;
   final String title;
   final String? subtitle;
   final String? info1;
@@ -38,7 +38,12 @@ class CardMenuWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ListTile(
-            leading: Icon(icon),
+            leading: Image.asset(
+              icon,
+              width: 24,
+              height: 24,
+              color: Colors.black,
+            ),
             title: Transform.translate(
               offset: Offset(-20, 0),
               child: Text(
