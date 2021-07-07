@@ -1,34 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 
-class TileWidget extends StatefulWidget {
+class TileWidget extends StatelessWidget {
   final String title;
   final String subtitle;
   final IconData iconLeading;
-  final VoidCallback? onTap;
+  final VoidCallback onTap;
   final double topPadding;
   final double bottomPadding;
   final bool ripple;
-  final String route;
+  final GestureTapDownCallback? onTapDown;
+  final VoidCallback? onTapCancel;
+  final double? opacity;
 
-  TileWidget({
+  const TileWidget({
     Key? key,
     required this.title,
     required this.subtitle,
     required this.iconLeading,
-    this.onTap,
+    required this.onTap,
     this.topPadding = 20,
     this.bottomPadding = 0,
     this.ripple = true,
-    required this.route,
+    this.onTapDown,
+    this.onTapCancel,
+    this.opacity = 1,
   }) : super(key: key);
 
-  @override
-  _TileWidgetState createState() => _TileWidgetState();
-}
-
-class _TileWidgetState extends State<TileWidget> {
-  var op = 1.0;
+  //var op = 1.0;
 
   @override
   Widget build(BuildContext context) {
@@ -36,54 +35,31 @@ class _TileWidgetState extends State<TileWidget> {
       children: [
         Material(
           color: Colors.white,
-          child: InkWell(
-            splashColor: widget.ripple ? null : Colors.transparent,
-            highlightColor: widget.ripple ? null : Colors.transparent,
-            onTap: widget.onTap == null
-                ? () {
-                    Future.delayed(Duration(seconds: 1)).then(
-                      (value) => {
-                        setState(() {
-                          op = 1;
-                          Navigator.pushNamed(context, widget.route);
-                        }),
-                      },
-                    );
-                  }
-                : widget.onTap,
-            onTapDown: widget.onTap == null
-                ? (_) {
-                    setState(() {
-                      op = 0.5;
-                    });
-                  }
-                : null,
-            onTapCancel: widget.onTap == null
-                ? () {
-                    setState(() {
-                      op = 1.0;
-                    });
-                  }
-                : null,
-            child: Opacity(
-              opacity: op,
+          child: Opacity(
+            opacity: opacity!,
+            child: InkWell(
+              splashColor: ripple ? null : Colors.transparent,
+              highlightColor: ripple ? null : Colors.transparent,
+              onTap: onTap,
+              onTapDown: onTapDown,
+              onTapCancel: onTapCancel,
               child: Padding(
                 padding: EdgeInsets.only(
                   left: 20,
                   right: 20,
-                  top: widget.topPadding,
-                  bottom: widget.bottomPadding,
+                  top: topPadding,
+                  bottom: bottomPadding,
                 ),
                 child: ListTile(
                   contentPadding: EdgeInsets.zero,
                   leading: Icon(
-                    widget.iconLeading,
+                    iconLeading,
                     color: Colors.black,
                   ),
                   title: Transform.translate(
                     offset: Offset(-10, 0),
                     child: Text(
-                      widget.title,
+                      title,
                       style: TextStyles.text,
                     ),
                   ),
@@ -91,7 +67,7 @@ class _TileWidgetState extends State<TileWidget> {
                     padding: const EdgeInsets.only(top: 8.0, bottom: 14),
                     child: Transform.translate(
                       offset: Offset(-10, 0),
-                      child: Text(widget.subtitle),
+                      child: Text(subtitle),
                     ),
                   ),
                   trailing: Container(
