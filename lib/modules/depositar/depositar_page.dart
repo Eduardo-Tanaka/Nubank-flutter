@@ -30,6 +30,7 @@ class DepositarPage extends StatelessWidget {
             ),
             TileWidget(
               onTap: () {},
+              route: "/pix_copia_cola",
               title: "Pix",
               subtitle:
                   "Sem custo e cai na hora, mesmo de madrugada e fim de semana.",
@@ -37,6 +38,7 @@ class DepositarPage extends StatelessWidget {
             ),
             TileWidget(
               onTap: () {},
+              route: "/pix_copia_cola",
               title: "Boleto",
               subtitle:
                   "Sem custo e pode levar 3 dias úteis para o dinheiro cair.",
@@ -44,6 +46,7 @@ class DepositarPage extends StatelessWidget {
             ),
             TileWidget(
               onTap: () {},
+              route: "/pix_copia_cola",
               title: "TED/DOC",
               subtitle:
                   "Pode ter custo e cai somente em horário comercial de dias úteis.",
@@ -51,6 +54,7 @@ class DepositarPage extends StatelessWidget {
             ),
             TileWidget(
               onTap: () {},
+              route: "/pix_copia_cola",
               title: "Trazer seu salário",
               subtitle: "Receba todo mês direto aqui na sua conta, sem custo.",
               iconLeading: Icons.payments,
