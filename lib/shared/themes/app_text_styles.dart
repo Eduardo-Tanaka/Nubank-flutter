@@ -33,8 +33,11 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: Colors.black,
   );
-  static final textCardGray = GoogleFonts.roboto(
+  static final textCardGrey = GoogleFonts.roboto(
     color: Colors.grey,
+  );
+  static final textCardGreyLight = GoogleFonts.roboto(
+    color: Colors.grey[400],
   );
   static final textMoneyBlue = GoogleFonts.roboto(
     fontWeight: FontWeight.w600,

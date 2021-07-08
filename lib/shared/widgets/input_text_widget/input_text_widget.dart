@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 
 class InputTextWidget extends StatelessWidget {
@@ -10,6 +11,7 @@ class InputTextWidget extends StatelessWidget {
   final void Function(String value) onChanged;
   final TextInputType textInputType;
   final bool autoFocus;
+  final String? hint;
 
   const InputTextWidget({
     Key? key,
@@ -21,6 +23,7 @@ class InputTextWidget extends StatelessWidget {
     required this.onChanged,
     this.textInputType = TextInputType.text,
     this.autoFocus = false,
+    this.hint,
   }) : super(key: key);
 
   @override
@@ -32,6 +35,7 @@ class InputTextWidget extends StatelessWidget {
       child: Column(
         children: [
           TextFormField(
+            cursorColor: AppColors.background,
             autofocus: autoFocus,
             keyboardType: textInputType,
             textAlign: TextAlign.left,
@@ -42,6 +46,8 @@ class InputTextWidget extends StatelessWidget {
             style: TextStyles.textBigBold,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
+              hintText: hint,
+              hintStyle: TextStyles.textCardGreyLight,
               contentPadding: EdgeInsets.zero,
               labelText: label,
               border: InputBorder.none,

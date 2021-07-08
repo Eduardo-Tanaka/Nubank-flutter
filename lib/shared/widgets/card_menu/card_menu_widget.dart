@@ -48,7 +48,7 @@ class CardMenuWidget extends StatelessWidget {
               offset: Offset(-20, 0),
               child: Text(
                 title,
-                style: TextStyles.textCardGray,
+                style: TextStyles.textCardGrey,
               ),
             ),
           ),
@@ -62,7 +62,7 @@ class CardMenuWidget extends StatelessWidget {
                   child: Text(
                     subtitle ?? '',
                     textScaleFactor: 0.8,
-                    style: TextStyles.textCardGray,
+                    style: TextStyles.textCardGrey,
                   ),
                 ),
                 Visibility(

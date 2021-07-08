@@ -31,11 +31,11 @@ class PixCopiaColaPage extends StatelessWidget {
             TextFormField(
               autofocus: true,
               cursorColor: AppColors.background,
-              style: TextStyles.textCardGray,
+              style: TextStyles.textCardGrey,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.zero,
                 hintText: "Cole o código aqui",
-                hintStyle: TextStyles.textCardGray,
+                hintStyle: TextStyles.textCardGrey,
                 focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.grey[300]!,

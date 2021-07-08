@@ -67,7 +67,6 @@ class _TransferirPageState extends State<TransferirPage> {
             InputTextWidget(
               autoFocus: true,
               onChanged: (String value) {
-                print(moneyInputTextController.numberValue.toDouble());
                 setState(() {});
               },
               textInputType: TextInputType.number,
