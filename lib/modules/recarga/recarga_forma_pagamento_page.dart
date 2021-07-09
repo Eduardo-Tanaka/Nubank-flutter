@@ -4,6 +4,9 @@ import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/tile/tile_widget.dart';
 
 class RecargaFormaPagamentoPage extends StatelessWidget {
+  final String saldo = "R\$ 2.000,00";
+  final String limite = "R\$ 3.000,00";
+
   const RecargaFormaPagamentoPage({Key? key}) : super(key: key);
 
   @override
@@ -28,15 +31,27 @@ class RecargaFormaPagamentoPage extends StatelessWidget {
           ),
           TileWidget(
             title: "Conta do Nubank",
-            subtitle: "Saldo disponível: R\$ 2.000,00",
+            subtitle: "Saldo disponível: $saldo",
             iconLeading: Icons.add_to_queue,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                "/recarga_valor",
+                arguments: "Saldo disponível: $saldo",
+              );
+            },
           ),
           TileWidget(
             title: "Cartão de Crédito",
-            subtitle: "Limite disponível: R\$ 3.000,00",
+            subtitle: "Limite disponível: $limite",
             iconLeading: Icons.tablet_android,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                "/recarga_valor",
+                arguments: "Limite disponível: $limite",
+              );
+            },
           ),
         ],
       ),

@@ -16,6 +16,7 @@ import 'package:nubank/modules/pix/pix_page.dart';
 import 'package:nubank/modules/recarga/recarga_forma_pagamento_page.dart';
 import 'package:nubank/modules/recarga/recarga_operadora_page.dart';
 import 'package:nubank/modules/recarga/recarga_page.dart';
+import 'package:nubank/modules/recarga/recarga_valor_page.dart';
 import 'package:nubank/modules/transferir/transferir_page.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 
@@ -54,6 +55,7 @@ class AppWidget extends StatelessWidget {
       "/recarga": RecargaPage(),
       "/recarga_operadora": RecargaOperadoraPage(),
       "/recarga_forma_pagamento": RecargaFormaPagamentoPage(),
+      "/recarga_valor": RecargaValorPage(),
       "/transferir": TransferirPage(),
       "/transferir_qrcode": TransferirQrcodePage(),
       "/pix_copia_cola": PixCopiaColaPage(),
@@ -79,6 +81,7 @@ class AppWidget extends StatelessWidget {
                 case "/pix_copia_cola":
                 case "/recarga_operadora":
                 case "/recarga_forma_pagamento":
+                case "/recarga_valor":
                   return slideRightLeft(animation, child);
                 default:
                   return slideBottomTop(animation, child);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
+import 'package:nubank/shared/themes/app_text_styles.dart';
 
 class RadioButtonWidget extends StatelessWidget {
   final groupValue;
@@ -33,7 +34,10 @@ class RadioButtonWidget extends StatelessWidget {
                   onChanged: onChanged,
                 ),
               ),
-              title: Text(value),
+              title: Text(
+                value,
+                style: TextStyles.textBold,
+              ),
             ),
           ),
           Divider(
