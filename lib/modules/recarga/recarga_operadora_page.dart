@@ -30,6 +30,7 @@ class _RecargaOperadoraPageState extends State<RecargaOperadoraPage> {
       backgroundColor: Colors.white,
       appBar: AppBarWidget(
         value: 0.4,
+        icon: Icons.navigate_before,
       ),
       body: SingleChildScrollView(
         child: Column(

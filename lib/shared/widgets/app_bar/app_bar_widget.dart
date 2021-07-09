@@ -3,6 +3,7 @@ import 'package:nubank/shared/themes/app_colors.dart';
 
 class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   final double? value;
+  final IconData? icon;
 
   @override
   final Size preferredSize = Size.fromHeight(kToolbarHeight);
@@ -10,6 +11,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   AppBarWidget({
     Key? key,
     this.value,
+    this.icon,
   }) : super(key: key);
 
   @override
@@ -30,7 +32,11 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
         ),
       ),
       leading: IconButton(
-        icon: Icon(Icons.close, color: Colors.grey),
+        icon: Icon(
+          icon ?? Icons.close,
+          color: Colors.grey,
+          size: icon == null ? 32 : 40,
+        ),
         onPressed: () => Navigator.of(context).pop(),
       ),
     );
