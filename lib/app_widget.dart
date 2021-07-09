@@ -13,6 +13,7 @@ import 'package:nubank/modules/indicar_amigos/indicar_amigos_page.dart';
 import 'package:nubank/modules/limite/limite_page.dart';
 import 'package:nubank/modules/pagar/pagar_page.dart';
 import 'package:nubank/modules/pix/pix_page.dart';
+import 'package:nubank/modules/recarga/recarga_forma_pagamento_page.dart';
 import 'package:nubank/modules/recarga/recarga_operadora_page.dart';
 import 'package:nubank/modules/recarga/recarga_page.dart';
 import 'package:nubank/modules/transferir/transferir_page.dart';
@@ -52,6 +53,7 @@ class AppWidget extends StatelessWidget {
       "/pix": PixPage(),
       "/recarga": RecargaPage(),
       "/recarga_operadora": RecargaOperadoraPage(),
+      "/recarga_forma_pagamento": RecargaFormaPagamentoPage(),
       "/transferir": TransferirPage(),
       "/transferir_qrcode": TransferirQrcodePage(),
       "/pix_copia_cola": PixCopiaColaPage(),
@@ -76,6 +78,7 @@ class AppWidget extends StatelessWidget {
               switch (settings.name) {
                 case "/pix_copia_cola":
                 case "/recarga_operadora":
+                case "/recarga_forma_pagamento":
                   return slideRightLeft(animation, child);
                 default:
                   return slideBottomTop(animation, child);

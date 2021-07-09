@@ -84,10 +84,10 @@ class _RecargaOperadoraPageState extends State<RecargaOperadoraPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           if (radioValue != null) {
-            /*Navigator.pushNamed(
+            Navigator.pushNamed(
               context,
-              "/recarga_operadora",
-            );*/
+              "/recarga_forma_pagamento",
+            );
           }
         },
         child: Icon(
