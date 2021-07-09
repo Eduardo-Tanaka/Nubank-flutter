@@ -13,6 +13,7 @@ import 'package:nubank/modules/indicar_amigos/indicar_amigos_page.dart';
 import 'package:nubank/modules/limite/limite_page.dart';
 import 'package:nubank/modules/pagar/pagar_page.dart';
 import 'package:nubank/modules/pix/pix_page.dart';
+import 'package:nubank/modules/recarga/recarga_operadora_page.dart';
 import 'package:nubank/modules/recarga/recarga_page.dart';
 import 'package:nubank/modules/transferir/transferir_page.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
@@ -50,6 +51,7 @@ class AppWidget extends StatelessWidget {
       "/pagar": PagarPage(),
       "/pix": PixPage(),
       "/recarga": RecargaPage(),
+      "/recarga_operadora": RecargaOperadoraPage(),
       "/transferir": TransferirPage(),
       "/transferir_qrcode": TransferirQrcodePage(),
       "/pix_copia_cola": PixCopiaColaPage(),
@@ -71,10 +73,12 @@ class AppWidget extends StatelessWidget {
                 routes[settings.name] ?? HomePage(),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
-              if (settings.name == "/pix_copia_cola") {
-                return slideRightLeft(animation, child);
-              } else {
-                return slideBottomTop(animation, child);
+              switch (settings.name) {
+                case "/pix_copia_cola":
+                case "/recarga_operadora":
+                  return slideRightLeft(animation, child);
+                default:
+                  return slideBottomTop(animation, child);
               }
             });
       },

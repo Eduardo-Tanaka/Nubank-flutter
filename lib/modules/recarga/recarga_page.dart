@@ -48,7 +48,15 @@ class _RecargaPageState extends State<RecargaPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          if (phoneInputTextController.text.length == 15) {
+            Navigator.pushNamed(
+              context,
+              "/recarga_operadora",
+              arguments: phoneInputTextController.text,
+            );
+          }
+        },
         child: Icon(
           Icons.arrow_forward,
           color: phoneInputTextController.text.length != 15
