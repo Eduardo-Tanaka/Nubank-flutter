@@ -77,10 +77,8 @@ class _RecargaValorPageState extends State<RecargaValorPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           if (groupValue != null) {
-            Navigator.pushNamed(
-              context,
-              "/recarga_forma_pagamento",
-            );
+            Navigator.pushNamed(context, "/recarga_resumo",
+                arguments: groupValue);
           }
         },
         child: Icon(

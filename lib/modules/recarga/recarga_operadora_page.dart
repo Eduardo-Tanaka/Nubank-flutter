@@ -65,14 +65,11 @@ class _RecargaOperadoraPageState extends State<RecargaOperadoraPage> {
                   onTap: () {
                     setState(() {
                       radioValue = operadoras[i];
-                      print(radioValue);
                     });
                   },
                   onChanged: (value) {
                     setState(() {
                       radioValue = operadoras[i];
-                      print(value);
-                      print(radioValue);
                     });
                   },
                 );

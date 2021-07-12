@@ -4,7 +4,7 @@ import 'package:nubank/shared/themes/app_text_styles.dart';
 class TileWidget extends StatelessWidget {
   final String title;
   final String subtitle;
-  final IconData iconLeading;
+  final IconData? iconLeading;
   final VoidCallback onTap;
   final double topPadding;
   final double bottomPadding;
@@ -17,7 +17,7 @@ class TileWidget extends StatelessWidget {
     Key? key,
     required this.title,
     required this.subtitle,
-    required this.iconLeading,
+    this.iconLeading,
     required this.onTap,
     this.topPadding = 20,
     this.bottomPadding = 0,
@@ -26,8 +26,6 @@ class TileWidget extends StatelessWidget {
     this.onTapCancel,
     this.opacity = 1,
   }) : super(key: key);
-
-  //var op = 1.0;
 
   @override
   Widget build(BuildContext context) {
@@ -52,9 +50,12 @@ class TileWidget extends StatelessWidget {
                 ),
                 child: ListTile(
                   contentPadding: EdgeInsets.zero,
-                  leading: Icon(
-                    iconLeading,
-                    color: Colors.black,
+                  leading: Visibility(
+                    visible: iconLeading == null ? false : true,
+                    child: Icon(
+                      iconLeading,
+                      color: Colors.black,
+                    ),
                   ),
                   title: Transform.translate(
                     offset: Offset(-10, 0),

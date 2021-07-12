@@ -7,6 +7,8 @@ class RadioButtonWidget extends StatelessWidget {
   final value;
   final void Function(dynamic value) onChanged;
   final VoidCallback onTap;
+  final String? trailingText;
+  final bool showDivider;
 
   const RadioButtonWidget({
     Key? key,
@@ -14,6 +16,8 @@ class RadioButtonWidget extends StatelessWidget {
     this.value,
     required this.onChanged,
     required this.onTap,
+    this.trailingText,
+    this.showDivider = true,
   }) : super(key: key);
 
   @override
@@ -38,11 +42,21 @@ class RadioButtonWidget extends StatelessWidget {
                 value,
                 style: TextStyles.textBold,
               ),
+              trailing: Visibility(
+                visible: trailingText == null ? false : true,
+                child: Text(
+                  trailingText ?? "",
+                  style: TextStyles.textGrey,
+                ),
+              ),
             ),
           ),
-          Divider(
-            height: 1,
-            thickness: 1,
+          Visibility(
+            visible: showDivider,
+            child: Divider(
+              height: 1,
+              thickness: 1,
+            ),
           ),
         ],
       ),

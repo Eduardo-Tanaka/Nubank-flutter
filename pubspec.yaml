@@ -33,6 +33,7 @@ dependencies:
   animated_card: ^2.0.0
   flutter_masked_text2: ^0.9.1
   flutter_svg: ^0.22.0
+  intl: ^0.17.0
   
 dev_dependencies:
   flutter_test:

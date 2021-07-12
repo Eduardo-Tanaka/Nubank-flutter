@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nubank/shared/themes/app_colors.dart';
 
 class TextStyles {
   static final titleHome = GoogleFonts.roboto(
@@ -29,7 +30,7 @@ class TextStyles {
     color: Colors.black,
   );
   static final textBigBold = GoogleFonts.roboto(
-    fontSize: 32,
+    fontSize: 30,
     fontWeight: FontWeight.w600,
     color: Colors.black,
   );
@@ -55,5 +56,15 @@ class TextStyles {
   static final input = GoogleFonts.roboto(
     fontSize: 15,
     fontWeight: FontWeight.w400,
+  );
+  static final textNuBigBold = GoogleFonts.roboto(
+    fontSize: 30,
+    fontWeight: FontWeight.w600,
+    color: AppColors.background,
+  );
+  static final textNuBold = GoogleFonts.roboto(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: AppColors.background,
   );
 }

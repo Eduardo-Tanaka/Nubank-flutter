@@ -113,6 +113,7 @@ class _HomePageState extends State<HomePage> {
         body: Padding(
           padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
           child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Column(
               children: [
                 Card(
@@ -224,6 +225,7 @@ class _HomePageState extends State<HomePage> {
             height: 100,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
+              physics: BouncingScrollPhysics(),
               itemBuilder: (context, position) {
                 return BottomCardMenuWidget(
                   icon: icons[position],
