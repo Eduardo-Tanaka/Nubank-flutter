@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:nubank/modules/bloquear/bloquear_cartao_page.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_images.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
@@ -231,10 +232,19 @@ class _HomePageState extends State<HomePage> {
                   icon: icons[position],
                   title: titles[position],
                   onTap: () {
-                    Navigator.pushNamed(
-                      context,
-                      routes[position],
-                    );
+                    if (routes[position] == "/bloquear_cartao") {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return BloquearCartaoPage();
+                        },
+                      );
+                    } else {
+                      Navigator.pushNamed(
+                        context,
+                        routes[position],
+                      );
+                    }
                   },
                 );
               },

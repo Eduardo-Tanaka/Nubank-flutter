@@ -17,12 +17,10 @@ class TextStyles {
     fontSize: 22,
     color: Colors.black,
   );
-  static final titleBottomMenu = GoogleFonts.roboto(
-    fontSize: 14,
-    color: Colors.white,
-  );
-  static final text = GoogleFonts.roboto(
-    fontSize: 18,
+  static final textBlack = GoogleFonts.roboto(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
   );
   static final textBold = GoogleFonts.roboto(
     fontSize: 18,
@@ -33,6 +31,13 @@ class TextStyles {
     fontSize: 30,
     fontWeight: FontWeight.w600,
     color: Colors.black,
+  );
+  static final titleBottomMenu = GoogleFonts.roboto(
+    fontSize: 14,
+    color: Colors.white,
+  );
+  static final text = GoogleFonts.roboto(
+    fontSize: 18,
   );
   static final textGrey = GoogleFonts.roboto(
     color: Colors.grey,
