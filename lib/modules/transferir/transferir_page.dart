@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
+import 'package:nubank/shared/widgets/floating_action_button/floating_action_button_widget.dart';
 import 'package:nubank/shared/widgets/input_text_widget/input_text_widget.dart';
 
 class TransferirPage extends StatefulWidget {
@@ -75,18 +76,9 @@ class _TransferirPageState extends State<TransferirPage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButtonWidget(
         onPressed: () {},
-        child: Icon(
-          Icons.arrow_forward,
-          color: moneyInputTextController.numberValue == 0
-              ? Colors.grey[400]
-              : Colors.white,
-          size: 24,
-        ),
-        backgroundColor: moneyInputTextController.numberValue == 0
-            ? Colors.grey[200]
-            : AppColors.background,
+        value: moneyInputTextController.numberValue,
       ),
     );
   }

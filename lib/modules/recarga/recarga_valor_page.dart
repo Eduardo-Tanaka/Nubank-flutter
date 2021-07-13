@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
+import 'package:nubank/shared/widgets/floating_action_button/floating_action_button_widget.dart';
 import 'package:nubank/shared/widgets/radio_button/radio_button_widget.dart';
 
 class RecargaValorPage extends StatefulWidget {
@@ -74,20 +74,14 @@ class _RecargaValorPageState extends State<RecargaValorPage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButtonWidget(
         onPressed: () {
           if (groupValue != null) {
             Navigator.pushNamed(context, "/recarga_resumo",
                 arguments: groupValue);
           }
         },
-        child: Icon(
-          Icons.arrow_forward,
-          color: groupValue == null ? Colors.grey[400] : Colors.white,
-          size: 24,
-        ),
-        backgroundColor:
-            groupValue == null ? Colors.grey[200] : AppColors.background,
+        value: groupValue,
       ),
     );
   }

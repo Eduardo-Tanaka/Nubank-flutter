@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
-import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
+import 'package:nubank/shared/widgets/floating_action_button/floating_action_button_widget.dart';
 import 'package:nubank/shared/widgets/input_text_widget/input_text_widget.dart';
 
 class RecargaPage extends StatefulWidget {
@@ -47,7 +47,7 @@ class _RecargaPageState extends State<RecargaPage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButtonWidget(
         onPressed: () {
           if (phoneInputTextController.text.length == 15) {
             Navigator.pushNamed(
@@ -57,16 +57,8 @@ class _RecargaPageState extends State<RecargaPage> {
             );
           }
         },
-        child: Icon(
-          Icons.arrow_forward,
-          color: phoneInputTextController.text.length != 15
-              ? Colors.grey[400]
-              : Colors.white,
-          size: 24,
-        ),
-        backgroundColor: phoneInputTextController.text.length != 15
-            ? Colors.grey[200]
-            : AppColors.background,
+        value: phoneInputTextController.text.length,
+        enableValue: 15,
       ),
     );
   }
