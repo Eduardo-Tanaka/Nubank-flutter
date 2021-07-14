@@ -17,6 +17,11 @@ class TextStyles {
     fontSize: 22,
     color: Colors.black,
   );
+  static final textBlackSmall = GoogleFonts.roboto(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  );
   static final textBlack = GoogleFonts.roboto(
     fontSize: 16,
     fontWeight: FontWeight.w600,

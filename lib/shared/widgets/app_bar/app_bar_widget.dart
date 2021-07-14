@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
+import 'package:nubank/shared/themes/app_text_styles.dart';
 
 class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   final double? value;
   final IconData? icon;
+  final String? title;
 
   @override
   final Size preferredSize = Size.fromHeight(kToolbarHeight);
@@ -12,6 +14,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
     Key? key,
     this.value,
     this.icon,
+    this.title,
   }) : super(key: key);
 
   @override
@@ -20,17 +23,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
       backgroundColor: Colors.white,
       elevation: 0,
       centerTitle: true,
-      title: Visibility(
-        visible: value == null ? false : true,
-        child: Container(
-          width: 100,
-          child: LinearProgressIndicator(
-            color: AppColors.background,
-            backgroundColor: Colors.grey[100],
-            value: value,
-          ),
-        ),
-      ),
+      title: showTitle(),
       leading: IconButton(
         icon: Icon(
           icon ?? Icons.close,
@@ -40,5 +33,29 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
         onPressed: () => Navigator.of(context).pop(),
       ),
     );
+  }
+
+  Widget showTitle() {
+    if (title != null) {
+      return Container(
+        child: Text(
+          title!,
+          style: TextStyles.textBlack,
+        ),
+      );
+    }
+
+    if (value != null) {
+      return Container(
+        width: 100,
+        child: LinearProgressIndicator(
+          color: AppColors.background,
+          backgroundColor: Colors.grey[100],
+          value: value,
+        ),
+      );
+    }
+
+    return Container();
   }
 }

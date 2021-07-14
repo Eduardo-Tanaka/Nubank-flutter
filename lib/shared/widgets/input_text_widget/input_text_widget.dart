@@ -12,6 +12,7 @@ class InputTextWidget extends StatelessWidget {
   final TextInputType textInputType;
   final bool autoFocus;
   final String? hint;
+  final bool enabled;
 
   const InputTextWidget({
     Key? key,
@@ -24,6 +25,7 @@ class InputTextWidget extends StatelessWidget {
     this.textInputType = TextInputType.text,
     this.autoFocus = false,
     this.hint,
+    this.enabled = true,
   }) : super(key: key);
 
   @override
@@ -35,6 +37,7 @@ class InputTextWidget extends StatelessWidget {
       child: Column(
         children: [
           TextFormField(
+            enabled: enabled,
             cursorColor: AppColors.background,
             autofocus: autoFocus,
             keyboardType: textInputType,

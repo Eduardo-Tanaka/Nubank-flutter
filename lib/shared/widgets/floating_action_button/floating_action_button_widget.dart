@@ -5,12 +5,14 @@ class FloatingActionButtonWidget extends StatelessWidget {
   final VoidCallback onPressed;
   final dynamic value;
   final int enableValue;
+  final IconData? icon;
 
   const FloatingActionButtonWidget({
     Key? key,
     required this.onPressed,
     this.value,
     this.enableValue = 0,
+    this.icon,
   }) : super(key: key);
 
   @override
@@ -26,8 +28,12 @@ class FloatingActionButtonWidget extends StatelessWidget {
     return FloatingActionButton(
       onPressed: onPressed,
       child: Icon(
-        Icons.arrow_forward,
-        color: isDisabled ? Colors.grey[400] : Colors.white,
+        icon ?? Icons.arrow_forward,
+        color: icon != null
+            ? Colors.black
+            : isDisabled
+                ? Colors.grey[400]
+                : Colors.white,
         size: 24,
       ),
       backgroundColor: isDisabled ? Colors.grey[200] : AppColors.background,
