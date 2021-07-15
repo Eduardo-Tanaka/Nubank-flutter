@@ -5,12 +5,14 @@ class TilePixWidget extends StatelessWidget {
   final String title;
   final IconData iconLeading;
   final VoidCallback onTap;
+  final showTrailingIcon;
 
   const TilePixWidget({
     Key? key,
     required this.title,
     required this.iconLeading,
     required this.onTap,
+    this.showTrailingIcon = true,
   }) : super(key: key);
 
   @override
@@ -27,7 +29,10 @@ class TilePixWidget extends StatelessWidget {
               style: TextStyles.textBold,
             ),
           ),
-          trailing: Icon(Icons.chevron_right),
+          trailing: Visibility(
+            visible: showTrailingIcon,
+            child: Icon(Icons.chevron_right),
+          ),
           onTap: null,
         ),
       ),

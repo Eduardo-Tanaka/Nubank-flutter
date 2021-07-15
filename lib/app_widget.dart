@@ -21,6 +21,7 @@ import 'package:nubank/modules/recarga/recarga_valor_page.dart';
 import 'package:nubank/modules/transferir/transferir_page.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 
+import 'modules/pix/pix_chaves/pix_chaves_page.dart';
 import 'modules/pix/pix_copia_cola/pix_copia_cola_page.dart';
 import 'modules/splash/splash_page.dart';
 import 'modules/transferir/qrcode/transferir_qrcode_page.dart';
@@ -53,6 +54,7 @@ class AppWidget extends StatelessWidget {
       "/limite": LimitePage(),
       "/pagar": PagarPage(),
       "/pix": PixPage(),
+      "/pix_chaves": PixChavesPage(),
       "/recarga": RecargaPage(),
       "/recarga_operadora": RecargaOperadoraPage(),
       "/recarga_forma_pagamento": RecargaFormaPagamentoPage(),
@@ -81,6 +83,7 @@ class AppWidget extends StatelessWidget {
                 (context, animation, secondaryAnimation, child) {
               switch (settings.name) {
                 case "/pix_copia_cola":
+                case "/pix_chaves":
                 case "/recarga_operadora":
                 case "/recarga_forma_pagamento":
                 case "/recarga_valor":

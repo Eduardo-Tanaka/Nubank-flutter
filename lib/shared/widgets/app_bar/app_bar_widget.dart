@@ -6,6 +6,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   final double? value;
   final IconData? icon;
   final String? title;
+  final bool showTrailingIcon;
 
   @override
   final Size preferredSize = Size.fromHeight(kToolbarHeight);
@@ -15,6 +16,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
     this.value,
     this.icon,
     this.title,
+    this.showTrailingIcon = false,
   }) : super(key: key);
 
   @override
@@ -32,6 +34,18 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
         ),
         onPressed: () => Navigator.of(context).pop(),
       ),
+      actions: [
+        Visibility(
+          visible: showTrailingIcon,
+          child: IconButton(
+            icon: Icon(
+              Icons.help_outline,
+              color: Colors.grey,
+            ),
+            onPressed: () {},
+          ),
+        ),
+      ],
     );
   }
 

@@ -12,6 +12,8 @@ class TileWidget extends StatelessWidget {
   final GestureTapDownCallback? onTapDown;
   final VoidCallback? onTapCancel;
   final double? opacity;
+  final IconData? iconTrailing;
+  final bool showDivider;
 
   const TileWidget({
     Key? key,
@@ -25,6 +27,8 @@ class TileWidget extends StatelessWidget {
     this.onTapDown,
     this.onTapCancel,
     this.opacity = 1,
+    this.iconTrailing,
+    this.showDivider = true,
   }) : super(key: key);
 
   @override
@@ -77,7 +81,7 @@ class TileWidget extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 20),
                       child: Icon(
-                        Icons.chevron_right,
+                        iconTrailing ?? Icons.chevron_right,
                       ),
                     ),
                   ),
@@ -86,9 +90,12 @@ class TileWidget extends StatelessWidget {
             ),
           ),
         ),
-        Divider(
-          height: 1,
-          thickness: 1,
+        Visibility(
+          visible: showDivider,
+          child: Divider(
+            height: 1,
+            thickness: 1,
+          ),
         ),
       ],
     );

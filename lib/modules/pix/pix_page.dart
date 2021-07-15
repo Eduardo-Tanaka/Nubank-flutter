@@ -58,8 +58,10 @@ class PixPage extends StatelessWidget {
                     Column(
                       children: [
                         CircleIconButtonWidget(
-                          icon: FontAwesomeIcons.vectorSquare,
-                          onPressed: () {},
+                          icon: Icons.qr_code,
+                          onPressed: () {
+                            Navigator.pushNamed(context, "/transferir_qrcode");
+                          },
                           background: Colors.grey[200],
                           color: Colors.black,
                           padding: 20,
@@ -73,8 +75,10 @@ class PixPage extends StatelessWidget {
                     Column(
                       children: [
                         CircleIconButtonWidget(
-                          icon: FontAwesomeIcons.dollarSign,
-                          onPressed: () {},
+                          icon: Icons.open_in_browser_outlined,
+                          onPressed: () {
+                            Navigator.pushNamed(context, "/transferir");
+                          },
                           background: Colors.grey[200],
                           color: Colors.black,
                           padding: 20,
@@ -88,7 +92,7 @@ class PixPage extends StatelessWidget {
                     Column(
                       children: [
                         CircleIconButtonWidget(
-                          icon: FontAwesomeIcons.commentDollar,
+                          icon: Icons.local_atm_outlined,
                           onPressed: () {},
                           background: Colors.grey[200],
                           color: Colors.black,
@@ -96,7 +100,7 @@ class PixPage extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.all(16),
-                          child: Text("Transferir"),
+                          child: Text("Cobrar"),
                         ),
                       ],
                     ),
@@ -115,7 +119,9 @@ class PixPage extends StatelessWidget {
             TilePixWidget(
               title: "Minhas Chaves",
               iconLeading: FontAwesomeIcons.asterisk,
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, "/pix_chaves");
+              },
             ),
             TilePixWidget(
               title: "Meu limite Pix",

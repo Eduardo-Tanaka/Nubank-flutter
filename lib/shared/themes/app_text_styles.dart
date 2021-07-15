@@ -3,11 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 
 class TextStyles {
-  static final titleHome = GoogleFonts.roboto(
-    fontSize: 26,
-    fontWeight: FontWeight.w600,
-    color: Colors.white,
-  );
   static final titleBlack = GoogleFonts.roboto(
     fontSize: 26,
     fontWeight: FontWeight.w600,
@@ -36,6 +31,11 @@ class TextStyles {
     fontSize: 30,
     fontWeight: FontWeight.w600,
     color: Colors.black,
+  );
+  static final titleHome = GoogleFonts.roboto(
+    fontSize: 26,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
   );
   static final titleBottomMenu = GoogleFonts.roboto(
     fontSize: 14,
