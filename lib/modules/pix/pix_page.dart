@@ -131,7 +131,9 @@ class PixPage extends StatelessWidget {
             TilePixWidget(
               title: "Me ajuda",
               iconLeading: Icons.help_outline,
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, "/ajuda_pix_home");
+              },
             ),
           ],
         ),

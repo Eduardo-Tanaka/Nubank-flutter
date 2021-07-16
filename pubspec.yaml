@@ -54,6 +54,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/ajuda/
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

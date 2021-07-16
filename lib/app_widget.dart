@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nubank/modules/ajuda/ajuda_page.dart';
+import 'package:nubank/modules/ajuda/pix/ajuda_pix_home_page.dart';
 import 'package:nubank/modules/bloquear/bloquear_cartao_page.dart';
 import 'package:nubank/modules/cartao_virtual/cartao_virtual_page.dart';
 import 'package:nubank/modules/cobrar/cobrar_page.dart';
@@ -44,6 +45,7 @@ class AppWidget extends StatelessWidget {
       "/splash": SplashPage(),
       "/home": HomePage(),
       "/ajuda": AjudaPage(),
+      "/ajuda_pix_home": AjudaPixHomePage(),
       "/bloquear_cartao": BloquearCartaoPage(),
       "/cartao_virtual": CartaoVirtualPage(),
       "/cobrar": CobrarPage(),

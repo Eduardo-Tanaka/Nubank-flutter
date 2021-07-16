@@ -14,9 +14,11 @@ class PixChavesPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBarWidget(
-        icon: Icons.navigate_before,
-        showTrailingIcon: true,
-      ),
+          icon: Icons.navigate_before,
+          showTrailingIcon: true,
+          onPressedTrailing: () {
+            Navigator.pushNamed(context, "/ajuda_pix_home");
+          }),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Column(
