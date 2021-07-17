@@ -76,6 +76,11 @@ class AppWidget extends StatelessWidget {
       title: 'Nubank',
       theme: ThemeData(
         backgroundColor: AppColors.background,
+        textSelectionTheme: TextSelectionThemeData(
+          cursorColor: AppColors.background,
+          selectionColor: AppColors.background,
+          selectionHandleColor: AppColors.background,
+        ),
       ),
       initialRoute: "/splash",
       routes: {

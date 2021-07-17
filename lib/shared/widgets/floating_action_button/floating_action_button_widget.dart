@@ -19,7 +19,7 @@ class FloatingActionButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isDisabled = false;
     if (value is String || value == null) {
-      isDisabled = value == null ? true : false;
+      isDisabled = value == null || value.toString().isEmpty ? true : false;
     } else if (value is int) {
       isDisabled = value != enableValue ? true : false;
     } else if (value is double) {

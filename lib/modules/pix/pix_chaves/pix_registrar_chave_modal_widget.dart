@@ -67,7 +67,7 @@ class PixRegistrarChaveModalWidget extends StatelessWidget {
                 "/pix_registrar_chave_input",
                 arguments: RegistrarChaveModel(
                   type: ChaveTipoEnum.TELEFONE,
-                  value: "(xx) xxxxxxxxx",
+                  value: "(99) 123456789",
                   icon: Icons.shield_outlined,
                 ),
               );
