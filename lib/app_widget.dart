@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nubank/modules/ajuda/ajuda_page.dart';
+import 'package:nubank/modules/ajuda/pix/ajuda_pix_detalhe_page.dart';
 import 'package:nubank/modules/ajuda/pix/ajuda_pix_home_page.dart';
 import 'package:nubank/modules/bloquear/bloquear_cartao_page.dart';
 import 'package:nubank/modules/cartao_virtual/cartao_virtual_page.dart';
@@ -46,6 +47,7 @@ class AppWidget extends StatelessWidget {
       "/home": HomePage(),
       "/ajuda": AjudaPage(),
       "/ajuda_pix_home": AjudaPixHomePage(),
+      "/ajuda_pix_detalhe": AjudaPixDetalhePage(),
       "/bloquear_cartao": BloquearCartaoPage(),
       "/cartao_virtual": CartaoVirtualPage(),
       "/cobrar": CobrarPage(),
@@ -84,6 +86,7 @@ class AppWidget extends StatelessWidget {
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
               switch (settings.name) {
+                case "/ajuda_pix_detalhe":
                 case "/pix_copia_cola":
                 case "/pix_chaves":
                 case "/recarga_operadora":

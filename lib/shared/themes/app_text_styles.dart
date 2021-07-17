@@ -27,6 +27,11 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: Colors.black,
   );
+  static final textAjudaBold = GoogleFonts.roboto(
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  );
   static final textBigBold = GoogleFonts.roboto(
     fontSize: 30,
     fontWeight: FontWeight.w600,
@@ -43,6 +48,10 @@ class TextStyles {
   );
   static final text = GoogleFonts.roboto(
     fontSize: 18,
+  );
+  static final textAjuda = GoogleFonts.roboto(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
   );
   static final textGrey = GoogleFonts.roboto(
     color: Colors.grey,

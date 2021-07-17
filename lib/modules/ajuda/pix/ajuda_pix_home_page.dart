@@ -27,7 +27,6 @@ class AjudaPixHomePage extends StatelessWidget {
             var list = json.decode(snapshot.data.toString());
             return ListView.separated(
               physics: BouncingScrollPhysics(),
-              shrinkWrap: true,
               itemCount: list.length + 1,
               itemBuilder: (context, index) {
                 if (index == list.length) {
@@ -41,6 +40,14 @@ class AjudaPixHomePage extends StatelessWidget {
                       TileAjudaWidget(
                         title: ajuda.title,
                         description: ajuda.description,
+                        expandSubtitle: false,
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            "/ajuda_pix_detalhe",
+                            arguments: ajuda,
+                          );
+                        },
                       ),
                     ],
                   );

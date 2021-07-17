@@ -1,26 +1,138 @@
 [
   {
     "title": "Como eu faço uma transferência usando Pix?",
-    "description": "desc"
+    "description": "Existem duas formas de você fazer uma transferência pelo Pix no Nubank. Você pode fazer isso acessando a área Pix do seu aplicativo e clicando em \"Transferir\" ou através do botão \"Transferir\" do menu que fica na tela do seu aplicativo\n\nAqui no Nubank nós sempre vampos priorizar o uso de Pix para enviar uma tansferência, fazendo com que ela seja instantânea e a qualquer momento. É importante lembrar que você não precisa ter uma chave cadastrada para realizar ou receber transferências pelo Pix. Após acessar o fluxo de transferência, basta seguir o passo-a-passo do aplicativo.\n\nVocê irá colocar primeiro o valor que deseja transferir e em seguida selecionar quem você irá pagar. Se você quiser transferir usando todas as informações bancárias, basta colocar o CPF ou selecionar direto na sua lista de contato. Agor, se você quiser fazer essa transferência usando uma chave Pix, você pode digitá-la diretamente no aplicativo. Para transferências pelo Pix ou entre contas do Nubank, na tela de confirmação você também pode escrever uma mensagem personalizada para acompanhar sua transferência. Após isso é só verificar as inforamaçõe, confirmar e colocar a senha de 4 dígitos do seu aplicativo."
   },
   {
     "title": "O que é a função Meu Limite Pix?",
-    "description": "desc"
+    "description": "A função \"Meu Limite Pix\" foi lançada para trazer ainda mais segurança e controle para as transferências pelo Pix. Através desta funçã, você determina o valor máximo que oide transferir ao longo do dia utilizando Pix. É importante lembrar que o \"Meu Limite Pix\" é uma das várias formasd que temos para garantir a segurança das transferências dos nossos clientes. Tansações consideradas suspeitas serão bloqueadas, mesmo dentro do limite diário. A função \"Meu Limite Pix\" está disponível na área Pix do seu aplicativo."
   },
   {
     "title": "Como posso mudar o meu limite diário Pix?",
-    "description": "desc"
+    "description": "Você pode definir um limite diário de Pix diretamente no seu aplicativo. Para isso, basta acessar a sua área Pix e clicar em  \"Meu Limite Pix\". Para sua segurança, você vai precisar colocar sua senha de 4 dígitos antes de fazer qualquer consulta ou alteração. Em seguida, digite o valor que deseja como seu novo limite diário para Pix e confirme. Vamos te avisar na mesma hora se seu pedido foi aprovado. Sempre que precisar consultar ou alterar o seu limite, é só acessar esta função."
   },
   {
     "title": "Como agendar o pagamento de um QR Code Pix?",
-    "description": "desc"
+    "description": "Para agendar o pagamento de um QR Code Pix basta acessar sua área Pix e clicar em \"Pagar\". Você pode ler o QR Code com a câmera do seu celular ou colar o código no Pix Copia e Cola. Na tela de confirmação basta clicar no calendário e escolher a data que você deseja pagar dentro do prazo de vencimento. Lembrando que o limite para agendamento são 60 dias."
   },
   {
     "title": "Por que meu pedido de aumento de limite diário Pix não foi aprovado?",
-    "description": "desc"
+    "description": "Para sua segurança, quando você faz uma solicitação de aumento de limite, além de considerarmos o valor que você está pedindo, utilizamos outras informações e regras de segurança para fazer uma análise da sua solicitação. Se seu pedido de limite não for aprovado, você pode tentar colocar um valor mais baixo. Caso você precise fazer uma transferência pelo Pix de um valor acima do seu limite máximo, vamos acionar outras formas de verificação diretamente no seu aplicativo."
+  },
+  {
+    "title": "Posso gerar um QR code Pix com data de vencimento?",
+    "description": "A opção de gerar um QR Code com data de vencimento ainda não está disponível aqui no Nubank."
+  },
+  {
+    "title": "Posso cancelar um pagamento agendado pelo QR Code Pix?",
+    "description": "Sim, você pode cancelar um pagamento agendado pelo QR Code Pix a qualquer momento, é só você fazer assim:\n\n1. Acesse o histórico de movimentações da sua conta do Nubank\n2. Localize e selecione o pagamento que você agendou\n3. Agora é só tocar em \"Cancelar\""
+  },
+  {
+    "title": "O que é Pix?",
+    "description": "O Pix é um novo meio de pagamentos criado pelo Banco Central do Brasil que facilita a transferência de dinheiro entre pessoas, empresas e até o recolhimento de impostos e taxas de serviços, entre outras possibilidades.\n\nAs transferências via Pix são instantâneas, 24 horas por dia, 7 dias por semana, incluindo feriados, ou seja, com Pix, é possível realizar transferências entre diferentes instituições da mesma forma que se transfere entre contas do Nubank. No Nubank, usar o Pix para enviar e receber transferências para outras pessoas ou para empresas é gratuito para todos, incluindo pessoas jurídicas.\n\nO Pix ainda traz mais uma novidade para facilitar e trazer mais segurança às transferências: as chaves Pix. Com elas, ao invés de você precisar informar ou pedir todos os dados bancários, você pode usar uma única informação para realizar suas transferências."
   },
   {
     "title": "Por que minha transferência foir bloqueada apesar de não ultrapassar meu limite diário?",
-    "description": "desc"
+    "description": "Além do limite diário de Pix, temos outras regras de segurança que são utilizadas para avaliar a segurança de suas transferências. Caso isso aconteça com você, é só seguir o passo a passo do seu aplicativo para realizar a transferência de forma segura."
+  },
+  {
+    "title": "O que é uma chave Pix?",
+    "description": "As chaves Pix são uma forma de tornar o processo de enviar e receber dinheiro mais fácil e seguro. Com elas, ao invés de você precisar informar ou pedir todos os dados bancários de uma pessoa ou empresa, você poderá usar uma única informação para realizar e receber suas transferências.\n\nSua chave Pix poderá ser criada utilizando seu CPF/CNPJ, telefone ou e-mail, ou uma chave aleatória. Depois de registrar uma chave Pix, você poderá disponibilizar apenas esta informação para receber uma transferência. Lembramos que não é necessário criar uma chave para enviar ou receber transferências via Pix, mas elas ajudam a facilitar o processo.\n\nPessoas físicas poderão registrar até cinco chaves por conta, enquanto pessoas jurídicas poderão registrar até vinte chaves para cada conta."
+  },
+  {
+    "title": "Quais os principais benefícios de Pix?",
+    "description": "Os principais benefícios de Pix são:\n\nRapidez: as transferências e pagamentos são concluídos em até dez segundos;\nSegurança e facilidade: com as chaves do Pix, não é necessário informar todos os dados bancários e pessoais para receber uma transferência ou pagamento, mas sim somente uma das chaves cadastradas - só CPF, só e-mail, só telefone celular, etc;\nDisponibilidade: o Pix pode ser enviado e recebido 24 horas por dia, 7 dias da semana ;\nCusto mais baixo: para pessoas físicas, o Pix é gratuito; para pessoa jurídica e estabelecimentos, ele pode ter um custo, mas muito menor do que o dos demais meios de pagamento. No Nubank, usar o Pix para enviar e receber transferências para outras pessoas ou para empresas é gratuito para todos, incluindo pessoas jurídicas."
+  },
+  {
+    "title": "Quanto custa para enviar e receber usando Pix?",
+    "description": "No Nubank, usar o Pix para enviar e receber transferências para outras pessoas ou para empresas é gratuito, tanto para clientes pessoa física quanto para clientes pessoa jurídica. Outras instituições podem cobrar para o uso de pessoa jurídica."
+  },
+  {
+    "title": "Quantas chaves Pix eu posso registrar?",
+    "description": "Pessoas físicas podem registrar até 5 chaves Pix por conta da qual seja titular; pessoas jurídicas, até 20 chaves, também por conta. Não existe um limite total de chaves que cada pessoa pode registrar.É importante lembrar que cada chave Pix é referente a uma única conta. Por exemplo: se você adicionar seu CPF como chave do Pix em uma conta, está informação não poderá ser uma chave Pix em outro banco. Você precisará pedir uma portabilidade de chaves caso queira mudar o vínculo."
+  },
+  {
+    "title": "Como registrar uma chave Pix?",
+    "description": "Para criar uma nova chave, acesse sua área Pix, disponível na tela principal do seu aplicativo. Na área \"Minhas chaves\", toque em \"Registrar chave\" e escolha qual nova chave você quer adicionar. Para seu e-mail ou telefone, iremos mandar um código de verificação. Caso a chave desejada já esteja vinculada a outra conta, ou no nome de outra pessoa ou empresa, vamos te avisar no momento do registro e te daremos as instruções sobre como prosseguir."
+  },
+  {
+    "title": "Quero excluir uma chave Pix da minha conta no Nubank. Como faço?",
+    "description": "Você pode gerenciar suas chaves de forma fácil e rápida. Basta acessar sua área Pix, disponível na tela principal do seu aplicativo. Na área \"Minhas chaves\", toque nos três pontinhos ao lado da chave que você pretende excluir para abrir as ações disponíveis. Depois disso, é só clicar na opção de excluir chave e digitar a senha do seu aplicativo."
+  },
+  {
+    "title": "Como sei que uma chave Pix foi registrada com sucesso?",
+    "description": "Você irá conseguir gerenciar suas chaves pela sua área Pix. Se a sua chave Pix aparecer na área de Minhas Chaves sem nenhum ícone ao lado, isso significa que ela foi registrada com sucesso. Nós também vamos te enviar um e-mail confirmando as chaves registradas, sempre que um pedido for finalizado. Se houver um processo de portabilidade ou reivindicação acontecendo, você irá ver os ícones com essa informação ao lado da sua chave."
+  },
+  {
+    "title": "O que é o status portabilidade de uma chave Pix?",
+    "description": "A portabilidade de chaves Pix existe para os casos em que você quer mudar a instituição em que sua chave Pix está vinculada. Se você quiser trazer para o Nubank uma chave que está em outra instituição, basta pedir o registro dessa chave na sua área \"Minhas chaves\". Assim que nós tentarmos registrar essa chave no sistema de Pix, vamos ver que ela está vinculada em outra conta e iniciar o seu pedido de portabilidade. Você poderá aceitar o pedido direto no aplicativo do Nubank e depois disso, precisará confirmá-lo na instituição em que a chave estava vinculada originalmente. O processo pode demorar até 7 dias e, enquanto ele estiver acontecendo, vamos deixar um ícone de portabilidade ao lado da sua chave."
+  },
+  {
+    "title": "O que é o status reivindicação de uma chave Pix?",
+    "description": "A reivindicação de chaves Pix existe para os casos em que você quer usar uma chave que está registrada em nome de outra pessoa. Se você quiser pedir esta chave para o seu nome, em sua conta do Nubank, basta pedir o registro dessa chave na sua área \"Minhas chaves\". Assim que nós tentarmos registrar essa chave no sistema de Pix, vamos ver que ela está vinculada ao nome de outra pessoa e iniciar o seu pedido de reivindicação. Você poderá aceitar o pedido de reivindicação direto no aplicativo do Nubank, mas depois disso, a pessoa que é dona da chave naquele momento precisará aceitá-lo. No caso de pedidos de registro de telefone ou e-mail, você irá precisar também verificar essa informação antes de finalizarmos o registro. O processo pode demorar até 14 dias e, enquanto ele estiver acontecendo, vamos deixar um ícone de reivindicação ao lado da sua chave."
+  },
+  {
+    "title": "Registrei uma chave Pix em um banco, mas quero levá-la para o Nubank. O que eu faço?",
+    "description": "Não se preocupe, nesse caso você pode tanto excluir a sua chave no banco original e criá-la aqui com a gente ou seguir o processo de portabilidade de chaves Pix.\n\nDepois de excluir a chave no banco original, basta acessar sua área Pix, disponível na tela principal do seu aplicativo. Na área \"Minhas chaves\", toque em \"Registrar chave\" e escolha qual nova chave você quer adicionar.\n\nSe você quiser fazer o pedido de portabilidade, basta pedir o registro dessa chave na sua área Minhas chaves. Assim que nós tentarmos registrar essa chave no sistema de Pix, vamos ver que ela está vinculada em outra conta e iniciar o seu pedido de portabilidade.\n\nVocê poderá aceitar o pedido direto no aplicativo do Nubank e depois disso, precisará confirmá-lo na instituição em que a chave estava vinculada originalmente. O processo pode demorar até 7 dias e, enquanto ele estiver acontecendo, vamos deixar um ícone de portabilidade ao lado da sua chave."
+  },
+  {
+    "title": "Por que Pix não aparece no meu aplicativo?",
+    "description": "Se a área Pix ainda não está disponível para você, certifique-se que seu aplicativo está atualizado. Se ainda assim a área Pix não aparecer, entre em contato com a gente para podermos te ajudar!"
+  },
+  {
+    "title": "Preciso de uma chave para receber ou enviar Pix?",
+    "description": "Aqui no Nubank, o envio de Pix não vai depender do uso da chave. O Pix é um tipo de transferência, assim como TED e DOC. Utilizar as chaves Pix para fazer e receber pagamentos deixa o processo mais fácil e rápido e é a melhor forma de você aproveitar todos os benefícios deste sistema."
+  },
+  {
+    "title": "Como eu envio uma chave Pix para receber uma transferência?",
+    "description": "Se você quiser compartilhar uma chave Pix através do aplicativo, basta acessar sua área Pix e clicar em \"Minhas chaves\". Clique na chave que você deseja compartilhar, para abrir as opções. Depois disso, basta clicar em \"Compartilhar chave\" para abrir as opções de compartilhamento padrão do seu celular. Se sua chave Pix for seu CPF/ CNPJ, telefone ou email, você também pode passar essa informação diretamente para quem vai te pagar."
+  },
+  {
+    "title": "Como crio um QR Code com minhas chaves Pix?",
+    "description": "Criar um QR Code com uma de suas chaves Pix é super simples. No seu aplicativo, acesse sua área Pix e clique em \"Minhas chaves\". Clique na chave que você deseja criar um QR Code para abrir as opções. Depois disso, basta clicar em \"Gerar código QR\" e pronto."
+  },
+  {
+    "title": "Como pago pelo Pix utilizando um QR Code?",
+    "description": "Existem duas formas de você pagar pelo Pix utilizando um QR Code aqui no Nubank. Você pode fazer isso acessando a área Pix do seu aplicativo e clicando em \"Pagar\" ou através do botão de \"Transferir\" do menu que fica na tela inicial do seu aplicativo, que você já conhece.Se você escolher pagar um QR Code utilizando a área dedicada de Pix, você primeiro deve escolher se prefere ler o QR Code, usando a câmera do celular para escanear o código, ou a opção de Pix copia e cola, onde você poderá colocar o código QR. Depois disso, você irá ver a tela de confirmação. Nela, você poderá escolher uma mensagem personalizada e, em alguns casos, editar o valor que será transferido. Se tudo estiver certo, é só colocar sua senha de 4 dígitos do seu aplicativo e pronto!Agora, se você quiser ir pelo menu do seu aplicativo, clicando em \"Transferir\", você irá ver um ícone de QR Code no canto superior da tela. Basta clicar nele para abrir o mesmo fluxo que explicamos antes."
+  },
+  {
+    "title": "O que é o processo de reembolso do Pix?",
+    "description": "Com Pix, ao receber uma transferência, você pode devolver o valor recebido para quem te pagou em até 90 dias, diretamente pelo aplicativo. Para isso, basta ir na linha do tempo da sua conta do Nubank e clicar na transferência recebida que você deseja fazer o reembolso. No comprovante de recebimento, você irá ver o botão de reembolso. Ao clicar nesta função, você só precisa preencher o valor que quer devolver para quem te pagou e confirmar seu reembolso. Nesta tela você também pode adicionar o motivo pelo qual está devolvendo parte daquela transferência. Depois disso, basta colocar a senha do seu aplicativo e enviaremos o reembolso."
+  },
+  {
+    "title": "Como posso cobrar alguém usando Pix?",
+    "description": "Existem duas formas de você cobrar alguém usando o Pix aqui no Nubank. Você pode fazer isso acessando a área Pix do seu aplicativo e clicando em \"Cobrar\" ou através do botão de \"Cobrar\" do menu que fica na tela inicial do seu aplicativo, que você já conhece. A experiência pelos dois caminhos é a mesma.\n\nA primeira informação que você deve preencher é o valor que quer receber. Você também pode escolher não especificar o valor, utilizando esse recurso para compartilhar suas informações de recebimento de forma simples e segura. Depois disso, vamos utilizar uma das suas chaves para gerar seu QR Code ou link de cobrança. Agora, se você ainda não tiver uma chave Pix ativa, vamos criar uma chave aleatória, para poder receber este valor.\n\nJá na tela de confirmação, você pode escrever uma mensagem personalizada para ser enviada junto com seu pedido de cobrança, além de editar o valor ou a chave Pix que será compartilhada. Depois que estiver tudo certo, basta criar o QR Code e compartilhá-lo com quem irá te pagar. Você pode mostrar a imagem para a outra pessoa escanear na mesma hora ou enviar o link usando as opções de compartilhamento padrão do seu aplicativo."
+  },
+  {
+    "title": "Posso agendar um Pix?",
+    "description": "Aqui no Nubank nós ainda não disponibilizamos o agendamento de Pix, mas estamos trabalhando para isso. Caso você queira agendar uma transferência, faremos uma TED para você - sem custo, como sempre fizemos. Para isso, basta seguir com o fluxo de transferências normalmente, mas sem utilizar uma chave Pix. Na tela de confirmação, basta editar a data em que deseja fazer este pagamento e tudo certo!"
+  },
+  {
+    "title": "Posso registrar as mesmas chaves que registrei no Nubank em outro banco?",
+    "description": "Não é possível registrar uma mesma chave Pix em mais de uma conta. Por exemplo: se você adicionar seu CPF como chave do Pix em uma conta, está informação não poderá ser uma chave Pix em outro banco. O mesmo vale para seu CNPJ, e-mail ou telefone. A chave aleatória é vinculada diretamente na conta em que é criada, portanto não há como registrar a mesma chave aleatória em diferentes bancos. Caso você queira alterar a conta com a qual uma chave Pix está associada, será necessário excluir essa chave do banco original e registrá-la no novo banco em que deseja ou fazer a portabilidade de chaves."
+  },
+  {
+    "title": "Tenho que baixar outro aplicativo para usar Pix?",
+    "description": "Não. Todas as funcionalidades de Pix serão integradas no próprio aplicativo do Nubank, na Minha área Pix."
+  },
+  {
+    "title": "O que é uma chave aleatória?",
+    "description": "A chave aleatória é uma sequência de letras e números gerada pelo sistema do Banco Central que fica vinculada à sua conta. Ela pode ser compartilhada se você não quiser passar nenhuma de suas outras chaves registradas."
+  },
+  {
+    "title": "As transações pelo Pix são seguras?",
+    "description": "A segurança do sistema foi um dos principais focos do Banco Central enquanto desenvolvia o Pix e como nós acompanhamos de perto esse desenvolvimento, temos confiança de que o sistema é robusto. As transações feitas com Pix possuem as mesmas camadas de segurança já adotadas nas transferências via TED ou DOC, como autenticação e criptografia. Além disso, todas as informações pessoais são protegidas pela lei de sigilo bancário e também pela Lei Geral de Proteção de Dados.\n\nNós também adicionamos o Meu Limite Pix na sua área Pix. Nela, você pode escolher qual o limite máximo diário de transferências Pix. Estando dentro do limite que você definiu, a transferência só vai depender do saldo que você tem na sua conta na hora e das nossas ferramentas de segurança."
+  },
+  {
+    "title": "O seu problema não foi resolvido? Saiba como registrar uma reclamação.",
+    "description": "A área de suporte ao cliente do Nubank funciona 24 horas por dia com autonomia para realizar atendimentos dos mais simples aos mais complexos. Dentro dessa área, existem três formas de falar com a gente:\n\nChat: jeito simples e rápido de chamar nosso atendimento. Basta abrir uma conversa com alguém do nosso time dentro do app Nubank.E-mail: meajuda@nubank.com.br. Por aqui, podemos te ajudar com as demandas recebidas.Telefone: 0800 591 2117, canal para atendimento ao cliente.\n\nAlém disso, caso seu problema persista, você sempre pode entrar em contato com a nossa ouvidoria por meio do telefone 0800 887 0463 ou e-mail (ouvidoria@nubank.com.br).Para saber mais informações acesse esse post no nosso blog."
+  },
+  {
+    "title": "Qual a diferença entre Pix, TED e DOC?",
+    "description": "A grande diferença entre Pix e os outros meios de pagamento já existentes é a rapidez e a disponibilidade: enquanto hoje existem restrições de dias, horários e até valor para fazer transferências usando TED e DOC, com Pix isso deixa de existir.As transferências pelo Pix são feitas de forma imediata, 24 horas por dia, sete dias por semana (incluindo até feriados nacionais) e sem valor mínimo ou máximo. Além disso, aqui no Nubank, usar o Pix para receber ou enviar dinheiro será gratuito tanto para clientes pessoa física quanto para clientes pessoa jurídica."
+  },
+  {
+    "title": "Tentei registrar meu telefone como chave Pix, mas não recebi o SMS para verificar meu código.",
+    "description": "Se o seu código de verificação não chegou, o passo-a-passo abaixo pode te ajudar:\n\nConfira se o número que você digitou está correto.\n\nOlhe sua caixa de mensagens de SMS. Às vezes o SMS chega mas o aparelho não notifica. Se houver a configuração de \"Spam/mensagens bloqueadas\", é bom também dar uma olhadinha lá.\n\nVerifique o sinal da operadora. Em alguns momentos o sinal do celular pode estar instável. Isso pode acontecer por um problema temporário ou mesmo pelo local, que não é coberto pela operadora.\n\nCheque a memória interna do dispositivo. Quando o dispositivo está com a memória comprometida, pode ser que ele não consiga fazer o recebimento de mensagens.\n\nReinicie o celular. Após ser reiniciado, o celular pode voltar para os ajustes anteriores e solucionar o problema.\n\nVeja se o celular possui alguma atualização disponível. Existe a possibilidade de o aplicativo de mensagens estar com algum problema por conta de falhas no software.\n\nConfira o funcionamento do chip pois caso ele não seja reconhecido pelo celular, o telefone fica impedido de realizar chamadas ou receber SMS."
   }
 ]
