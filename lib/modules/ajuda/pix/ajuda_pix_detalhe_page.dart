@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/modules/models/Ajuda.dart';
-import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
+import 'package:nubank/shared/widgets/button_ajuda/button_ajuda_widget.dart';
 import 'package:nubank/shared/widgets/tile_ajuda/tile_ajuda_widget.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -63,50 +63,8 @@ class _AjudaPixDetalhePageState extends State<AjudaPixDetalhePage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: OutlinedButton(
-                              onPressed: () {},
-                              child: Text(
-                                "SIM",
-                                style: TextStyles.textBlack,
-                              ),
-                              style: TextButton.styleFrom(
-                                backgroundColor: Colors.grey[200],
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 16,
-                                  horizontal: 60,
-                                ),
-                                shape: const RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(32),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: OutlinedButton(
-                              onPressed: () {},
-                              child: Text(
-                                "NÃO",
-                                style: TextStyles.textBlack,
-                              ),
-                              style: TextButton.styleFrom(
-                                backgroundColor: Colors.grey[200],
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 16,
-                                  horizontal: 60,
-                                ),
-                                shape: const RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(32),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
+                          ButtonAjudaWidget(title: "SIM", onPressed: () {}),
+                          ButtonAjudaWidget(title: "NÃO", onPressed: () {}),
                         ],
                       )
                     ],
