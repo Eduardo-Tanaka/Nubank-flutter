@@ -14,6 +14,8 @@ class TileWidget extends StatelessWidget {
   final double? opacity;
   final IconData? iconTrailing;
   final bool showDivider;
+  final bool showTrailing;
+  final Color? backgroundColor;
 
   const TileWidget({
     Key? key,
@@ -29,6 +31,8 @@ class TileWidget extends StatelessWidget {
     this.opacity = 1,
     this.iconTrailing,
     this.showDivider = true,
+    this.showTrailing = true,
+    this.backgroundColor,
   }) : super(key: key);
 
   @override
@@ -36,7 +40,7 @@ class TileWidget extends StatelessWidget {
     return Column(
       children: [
         Material(
-          color: Colors.white,
+          color: backgroundColor ?? Colors.white,
           child: Opacity(
             opacity: opacity!,
             child: InkWell(
@@ -80,9 +84,11 @@ class TileWidget extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 20),
-                      child: Icon(
-                        iconTrailing ?? Icons.chevron_right,
-                      ),
+                      child: showTrailing
+                          ? Icon(
+                              iconTrailing ?? Icons.chevron_right,
+                            )
+                          : Container(),
                     ),
                   ),
                 ),

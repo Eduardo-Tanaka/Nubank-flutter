@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/modules/pix/pix_chaves/pix_excluir_modal_widget.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/tile_pix/tile_pix_widget.dart';
+import 'package:share_plus/share_plus.dart';
 
 class PixChaveModalWidget extends StatelessWidget {
   final String type;
@@ -21,7 +23,6 @@ class PixChaveModalWidget extends StatelessWidget {
         children: [
           Center(
             child: IconButton(
-              color: Colors.orange,
               iconSize: 40,
               splashRadius: 1,
               padding: const EdgeInsets.only(top: 8, bottom: 0),
@@ -55,7 +56,9 @@ class PixChaveModalWidget extends StatelessWidget {
           TilePixWidget(
             title: "Compartilhar chave",
             iconLeading: Icons.upload_outlined,
-            onTap: () {},
+            onTap: () {
+              Share.share(value);
+            },
             showTrailingIcon: false,
           ),
           TilePixWidget(
@@ -67,8 +70,22 @@ class PixChaveModalWidget extends StatelessWidget {
           TilePixWidget(
             title: "Excluir chave",
             iconLeading: Icons.delete_outline,
-            onTap: () {},
+            onTap: () {
+              showModalBottomSheet(
+                context: context,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15.0),
+                    topRight: Radius.circular(15.0),
+                  ),
+                ),
+                builder: (context) {
+                  return PixExcluirModalWidget(type: type, value: value);
+                },
+              );
+            },
             showTrailingIcon: false,
+            danger: true,
           ),
         ],
       ),

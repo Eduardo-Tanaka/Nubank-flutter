@@ -116,6 +116,10 @@ class PixPage extends StatelessWidget {
         color: Colors.grey[200],
         child: Column(
           children: [
+            Divider(
+              height: 1,
+              thickness: 1,
+            ),
             TilePixWidget(
               title: "Minhas Chaves",
               iconLeading: FontAwesomeIcons.asterisk,

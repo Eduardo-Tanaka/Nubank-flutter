@@ -6,6 +6,7 @@ class TilePixWidget extends StatelessWidget {
   final IconData iconLeading;
   final VoidCallback onTap;
   final showTrailingIcon;
+  final bool danger;
 
   const TilePixWidget({
     Key? key,
@@ -13,6 +14,7 @@ class TilePixWidget extends StatelessWidget {
     required this.iconLeading,
     required this.onTap,
     this.showTrailingIcon = true,
+    this.danger = false,
   }) : super(key: key);
 
   @override
@@ -21,12 +23,15 @@ class TilePixWidget extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: ListTile(
-          leading: Icon(iconLeading),
+          leading: Icon(
+            iconLeading,
+            color: danger ? Colors.red : null,
+          ),
           title: Transform.translate(
             offset: Offset(-20, 0),
             child: Text(
               title,
-              style: TextStyles.textBold,
+              style: danger ? TextStyles.textBoldDanger : TextStyles.textBold,
             ),
           ),
           trailing: Visibility(

@@ -42,6 +42,11 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: Colors.white,
   );
+  static final textWhiteBold = GoogleFonts.roboto(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
+  );
   static final titleBottomMenu = GoogleFonts.roboto(
     fontSize: 14,
     color: Colors.white,
@@ -71,6 +76,11 @@ class TextStyles {
   static final textMoneyGreen = GoogleFonts.roboto(
     fontWeight: FontWeight.w600,
     color: Colors.green,
+  );
+  static final textBoldDanger = GoogleFonts.roboto(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: Colors.red,
   );
   static final input = GoogleFonts.roboto(
     fontSize: 15,

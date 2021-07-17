@@ -46,7 +46,6 @@ class _AjudaPixDetalhePageState extends State<AjudaPixDetalhePage> {
         children: [
           Container(
             height: bodyHeight,
-            color: Colors.orange,
             child: TileAjudaWidget(
               title: args.title,
               description: args.description,

@@ -13,7 +13,6 @@ class PixRegistrarChaveModalWidget extends StatelessWidget {
         children: [
           Center(
             child: IconButton(
-              color: Colors.orange,
               iconSize: 40,
               splashRadius: 1,
               padding: const EdgeInsets.only(top: 8, bottom: 0),
