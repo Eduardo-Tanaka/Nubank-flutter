@@ -14,10 +14,14 @@ class AjudaPixDetalhePage extends StatefulWidget {
 
 class _AjudaPixDetalhePageState extends State<AjudaPixDetalhePage> {
   bool showFeedback = false;
+  double? bodyHeight;
 
   @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments as Ajuda;
+    if (bodyHeight == null) {
+      bodyHeight = MediaQuery.of(context).size.height - 80;
+    }
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -31,19 +35,31 @@ class _AjudaPixDetalhePageState extends State<AjudaPixDetalhePage> {
           Future.delayed(Duration(seconds: 1)).then(
             (value) => setState(() {
               showFeedback = true;
+              // appbar + appstatus + bottomNavigationBar
+              bodyHeight = MediaQuery.of(context).size.height - 80 - 140;
             }),
           );
         },
       ),
-      body: TileAjudaWidget(
-        title: args.title,
-        description: args.description,
-        expandSubtitle: true,
-        onTap: () {
-          setState(() {
-            showFeedback = true;
-          });
-        },
+      body: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Container(
+            height: bodyHeight,
+            color: Colors.orange,
+            child: TileAjudaWidget(
+              title: args.title,
+              description: args.description,
+              expandSubtitle: true,
+              onTap: () {
+                setState(() {
+                  showFeedback = true;
+                  bodyHeight = MediaQuery.of(context).size.height - 80 - 140;
+                });
+              },
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: AnimatedSwitcher(
         duration: Duration(seconds: 1),

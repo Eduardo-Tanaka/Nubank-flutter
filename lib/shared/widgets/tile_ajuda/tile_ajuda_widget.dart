@@ -24,34 +24,34 @@ class TileAjudaWidget extends StatelessWidget {
         highlightColor: Colors.transparent,
         onTap: onTap,
         onTapCancel: onTap,
-        child: Column(
-          children: [
-            ListTile(
-              title: Text(
-                title,
-                style: expandSubtitle
-                    ? TextStyles.textAjudaBold
-                    : TextStyles.textBlack,
-              ),
-              subtitle: Padding(
-                padding: expandSubtitle
-                    ? const EdgeInsets.only(
-                        top: 12,
-                        bottom: 48,
-                      )
-                    : const EdgeInsets.symmetric(vertical: 8),
-                child: SingleChildScrollView(
-                  physics: BouncingScrollPhysics(),
-                  child: Text(
+        child: ListTile(
+          title: Text(
+            title,
+            style: expandSubtitle
+                ? TextStyles.textAjudaBold
+                : TextStyles.textBlack,
+          ),
+          subtitle: Padding(
+            padding: expandSubtitle
+                ? const EdgeInsets.only(
+                    top: 12,
+                    bottom: 48,
+                  )
+                : const EdgeInsets.symmetric(vertical: 8),
+            child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
+              child: Column(
+                children: [
+                  Text(
                     description,
                     maxLines: expandSubtitle ? null : 1,
                     overflow: expandSubtitle ? null : TextOverflow.ellipsis,
                     style: expandSubtitle ? TextStyles.textAjuda : null,
                   ),
-                ),
+                ],
               ),
             ),
-          ],
+          ),
         ),
       ),
     );

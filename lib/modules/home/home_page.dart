@@ -65,9 +65,7 @@ class _HomePageState extends State<HomePage> {
       "/ajuda",
     ];
     return RefreshIndicator(
-      onRefresh: () async {
-        print('1');
-      },
+      onRefresh: () async {},
       child: Scaffold(
         backgroundColor: AppColors.background,
         appBar: PreferredSize(

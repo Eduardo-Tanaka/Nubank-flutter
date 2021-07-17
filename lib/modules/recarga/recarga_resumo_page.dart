@@ -113,9 +113,7 @@ class _RecargaResumoPageState extends State<RecargaResumoPage> {
             TileRecargaWidget(
               title: "Pagando com",
               subtitle: "Cartão de Crédito",
-              onPressed: () {
-                print('shoe');
-              },
+              onPressed: () {},
             ),
             TileRecargaWidget(
               title: "Data da recarga",

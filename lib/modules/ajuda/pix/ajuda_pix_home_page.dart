@@ -61,7 +61,6 @@ class AjudaPixHomePage extends StatelessWidget {
               },
             );
           } else {
-            print('e');
             return CircularProgressIndicator();
           }
         },
