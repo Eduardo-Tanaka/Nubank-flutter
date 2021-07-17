@@ -3,6 +3,7 @@ import 'package:nubank/modules/models/Ajuda.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/tile_ajuda/tile_ajuda_widget.dart';
+import 'package:share_plus/share_plus.dart';
 
 class AjudaPixDetalhePage extends StatefulWidget {
   const AjudaPixDetalhePage({Key? key}) : super(key: key);
@@ -25,7 +26,14 @@ class _AjudaPixDetalhePageState extends State<AjudaPixDetalhePage> {
         title: "Pix",
         showTrailingIcon: true,
         trailingIcon: Icons.share_outlined,
-        onPressedTrailing: () {},
+        onPressedTrailing: () async {
+          await Share.share(args.title);
+          Future.delayed(Duration(seconds: 1)).then(
+            (value) => setState(() {
+              showFeedback = true;
+            }),
+          );
+        },
       ),
       body: TileAjudaWidget(
         title: args.title,
@@ -37,73 +45,77 @@ class _AjudaPixDetalhePageState extends State<AjudaPixDetalhePage> {
           });
         },
       ),
-      bottomNavigationBar: Visibility(
-        visible: showFeedback,
-        child: Material(
-          elevation: 10,
-          color: Colors.white,
-          child: Container(
-            height: 140,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Text("Este artigo foi útil?"),
+      bottomNavigationBar: AnimatedSwitcher(
+        duration: Duration(seconds: 1),
+        child: showFeedback
+            ? Material(
+                elevation: 10,
+                color: Colors.white,
+                child: Container(
+                  height: 140,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Text("Este artigo foi útil?"),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: OutlinedButton(
+                              onPressed: () {},
+                              child: Text(
+                                "SIM",
+                                style: TextStyles.textBlack,
+                              ),
+                              style: TextButton.styleFrom(
+                                backgroundColor: Colors.grey[200],
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 16,
+                                  horizontal: 60,
+                                ),
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(32),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: OutlinedButton(
+                              onPressed: () {},
+                              child: Text(
+                                "NÃO",
+                                style: TextStyles.textBlack,
+                              ),
+                              style: TextButton.styleFrom(
+                                backgroundColor: Colors.grey[200],
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 16,
+                                  horizontal: 60,
+                                ),
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(32),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: OutlinedButton(
-                        onPressed: () {},
-                        child: Text(
-                          "SIM",
-                          style: TextStyles.textBlack,
-                        ),
-                        style: TextButton.styleFrom(
-                          backgroundColor: Colors.grey[200],
-                          padding: EdgeInsets.symmetric(
-                            vertical: 16,
-                            horizontal: 60,
-                          ),
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(32),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: OutlinedButton(
-                        onPressed: () {},
-                        child: Text(
-                          "NÃO",
-                          style: TextStyles.textBlack,
-                        ),
-                        style: TextButton.styleFrom(
-                          backgroundColor: Colors.grey[200],
-                          padding: EdgeInsets.symmetric(
-                            vertical: 16,
-                            horizontal: 60,
-                          ),
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(32),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
-        ),
+              )
+            : Container(
+                height: 0,
+              ),
       ),
     );
   }
