@@ -46,7 +46,7 @@ class RadioButtonWidget extends StatelessWidget {
                 visible: trailingText == null ? false : true,
                 child: Text(
                   trailingText ?? "",
-                  style: TextStyles.textGrey,
+                  style: TextStyles.textGreyBold,
                 ),
               ),
             ),

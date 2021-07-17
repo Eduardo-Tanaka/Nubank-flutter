@@ -3,7 +3,7 @@ import 'package:nubank/shared/themes/app_text_styles.dart';
 
 class TileWidget extends StatelessWidget {
   final String title;
-  final String subtitle;
+  final String? subtitle;
   final IconData? iconLeading;
   final VoidCallback onTap;
   final double topPadding;
@@ -72,13 +72,15 @@ class TileWidget extends StatelessWidget {
                       style: TextStyles.text,
                     ),
                   ),
-                  subtitle: Padding(
-                    padding: const EdgeInsets.only(top: 8.0, bottom: 14),
-                    child: Transform.translate(
-                      offset: Offset(-10, 0),
-                      child: Text(subtitle),
-                    ),
-                  ),
+                  subtitle: subtitle != null
+                      ? Padding(
+                          padding: const EdgeInsets.only(top: 8.0, bottom: 14),
+                          child: Transform.translate(
+                            offset: Offset(-10, 0),
+                            child: Text(subtitle!),
+                          ),
+                        )
+                      : null,
                   trailing: Container(
                     width: 20,
                     alignment: Alignment.centerRight,

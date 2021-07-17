@@ -47,7 +47,7 @@ class _RecargaValorPageState extends State<RecargaValorPage> {
               ),
               child: Text(
                 args,
-                style: TextStyles.textGrey,
+                style: TextStyles.textGreyBold,
               ),
             ),
             ListView.builder(

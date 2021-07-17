@@ -50,7 +50,7 @@ class PixChaveModalWidget extends StatelessWidget {
             ),
             child: Text(
               value,
-              style: TextStyles.textGrey,
+              style: TextStyles.textGreyBold,
             ),
           ),
           TilePixWidget(

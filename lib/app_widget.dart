@@ -14,6 +14,8 @@ import 'package:nubank/modules/home/home_page.dart';
 import 'package:nubank/modules/indicar_amigos/indicar_amigos_page.dart';
 import 'package:nubank/modules/limite/limite_page.dart';
 import 'package:nubank/modules/pagar/pagar_page.dart';
+import 'package:nubank/modules/pix/pix_chaves/registrar/pix_registrar_chave_input_page.dart';
+import 'package:nubank/modules/pix/pix_chaves/registrar/pix_registrar_chave_page.dart';
 import 'package:nubank/modules/pix/pix_page.dart';
 import 'package:nubank/modules/recarga/recarga_forma_pagamento_page.dart';
 import 'package:nubank/modules/recarga/recarga_operadora_page.dart';
@@ -59,6 +61,8 @@ class AppWidget extends StatelessWidget {
       "/pagar": PagarPage(),
       "/pix": PixPage(),
       "/pix_chaves": PixChavesPage(),
+      "/pix_registrar_chave": PixRegistrarChavePage(),
+      "/pix_registrar_chave_input": PixRegistrarChaveInputPage(),
       "/recarga": RecargaPage(),
       "/recarga_operadora": RecargaOperadoraPage(),
       "/recarga_forma_pagamento": RecargaFormaPagamentoPage(),
@@ -89,6 +93,8 @@ class AppWidget extends StatelessWidget {
                 case "/ajuda_pix_detalhe":
                 case "/pix_copia_cola":
                 case "/pix_chaves":
+                case "/pix_registrar_chave":
+                case "/pix_registrar_chave_input":
                 case "/recarga_operadora":
                 case "/recarga_forma_pagamento":
                 case "/recarga_valor":

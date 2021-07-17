@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/modules/pix/pix_chaves/enums/ChaveTipoEnum.dart';
+import 'package:nubank/modules/pix/pix_chaves/registrar/RegistrarChaveModel.dart';
 import 'package:nubank/shared/widgets/tile_pix/tile_pix_widget.dart';
 
 class PixRegistrarChaveModalWidget extends StatelessWidget {
@@ -41,25 +43,69 @@ class PixRegistrarChaveModalWidget extends StatelessWidget {
           TilePixWidget(
             title: "CPF",
             iconLeading: Icons.article_outlined,
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(
+                context,
+                "/pix_registrar_chave",
+                arguments: RegistrarChaveModel(
+                  type: ChaveTipoEnum.CPF,
+                  value: "xxx.xxx.xxx-xx",
+                  icon: Icons.article_outlined,
+                ),
+              );
+            },
             showTrailingIcon: false,
           ),
           TilePixWidget(
             title: "Celular",
             iconLeading: Icons.phone_android_outlined,
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(
+                context,
+                "/pix_registrar_chave_input",
+                arguments: RegistrarChaveModel(
+                  type: ChaveTipoEnum.TELEFONE,
+                  value: "(xx) xxxxxxxxx",
+                  icon: Icons.shield_outlined,
+                ),
+              );
+            },
             showTrailingIcon: false,
           ),
           TilePixWidget(
             title: "E-mail",
             iconLeading: Icons.mail_outline,
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(
+                context,
+                "/pix_registrar_chave_input",
+                arguments: RegistrarChaveModel(
+                  type: ChaveTipoEnum.EMAIL,
+                  value: "teste@teste.com",
+                  icon: Icons.shield_outlined,
+                ),
+              );
+            },
             showTrailingIcon: false,
           ),
           TilePixWidget(
             title: "Chave aleatória",
             iconLeading: Icons.shield_outlined,
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(
+                context,
+                "/pix_registrar_chave",
+                arguments: RegistrarChaveModel(
+                  type: ChaveTipoEnum.EVP,
+                  value: null,
+                  icon: Icons.shield_outlined,
+                ),
+              );
+            },
             showTrailingIcon: false,
           ),
         ],
