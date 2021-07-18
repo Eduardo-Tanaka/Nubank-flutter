@@ -100,4 +100,8 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.background,
   );
+  static final textNuSmall = GoogleFonts.roboto(
+    fontSize: 14,
+    color: AppColors.background,
+  );
 }

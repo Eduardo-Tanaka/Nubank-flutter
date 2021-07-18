@@ -93,7 +93,9 @@ class PixPage extends StatelessWidget {
                       children: [
                         CircleIconButtonWidget(
                           icon: Icons.local_atm_outlined,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, "/cobrar");
+                          },
                           background: Colors.grey[200],
                           color: Colors.black,
                           padding: 20,
