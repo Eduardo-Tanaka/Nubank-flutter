@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Como navegar na tela inicial do app?",
+    "description": "Você pode acessar seus dados pessoais, configurações do aplicativo e opções de notificações tocando no ícone localizado no topo esquerdo da tela inicial.\n\nLá você também consegue trocar para a sua conta PJ, se tiver uma. Ao arrastar a tela para cima, você poderá navegar pelo app e ver todos os produtos que você tem no Nubank.\n\nPara ver mais detalhes basta tocar na área do produto desejado. Por exemplo, para acessar sua fatura e seu histórico de compras, é só tocar na área de cartão de crédito. Agora também existe uma área chamada \"meus cartões\", dedicada às configurações do seu cartão, dados do cartão virtual e ações como bloquear ou desbloquear.\n\nPara descobrir novas funcionalidades disponíveis para você, arraste a tela até o final e conheça a área de \"Descubra mais\"."
+  },
+  {
+    "title": "Por que a tela inicial do meu app mudou?",
+    "description": "A nova tela inicial do app do Nubank foi pensada para facilitar ainda mais a vida dos nossos clientes, dando destaque para as funções mais usadas, como pagar uma conta ou fazer uma transferência. Na área \"descubra mais\", você também vai poder explorar dicas e novidades para descomplicar sua vida financeira."
+  },
+  {
+    "title": "Por que minha tela inicial do Nubank ainda não mudou?",
+    "description": "Estamos sempre pensando em criar a melhor experiência possível para nossos clientes. Por isso, estamos liberando a nova interface aos poucos, para uma base menor de usuários que foram escolhidos aleatoriamente. Caso você ainda não esteja visualizando a nova interface, não se preocupe! Em algumas semanas, a nova tela inicial do Nubank aparecerá para você de forma automática."
+  },
+  {
+    "title": "O que posso encontrar no meu perfil?",
+    "description": "Ao clicar no seu perfil, no canto superior esquerdo da sua página inicial, te direcionaremos para uma área onde você poderá acessar suas informações pessoais, configurar seu aplicativo e seus produtos e trocar seu acesso para sua conta PJ, caso tenha uma.\n\nTambém é nessa área que você pode visualizar seu histórico completo de notificações.\n\nAcessar Meu perfil"
+  },
+  {
+    "title": "O que são os botões da área superior do app?",
+    "description": "No topo superior direito da tela, você vai encontrar três botões para ações no seu app.\n\nTocando no ícone de um \"olho\", você poderá esconder suas informações financeiras da página inicial, como o saldo da sua conta, fatura e limite do cartão de crédito;\n\nAo clicar no ícone da interrogação, você irá acessar o \"me ajuda\", onde você pode encontrar a nossa FAQ ou entrar em contato com os nossos canais de atendimento pelo chat ou email;\n\nTocando no ícone do envelope, você poderá convidar um amigo para fazer parte do Nubank."
+  },
+  {
+    "title": "O que são os botões de  atalho que ficam abaixo da área da Conta?",
+    "description": "Logo abaixo da área da sua conta do Nubank, você vai encontrar alguns atalhos para suas movimentações financeiras frequentes.\n\nAlém de acessos mais rápidos para fazer um Pix, um pagamento ou um depósito, ao arrastar para o lado, você também verá atalhos para fazer uma recarga no seu celular ou usar a opção \"cobrar\" do Nubank.\n\nTudo simples e fácil para agilizar sua vida."
+  },
+  {
+    "title": "Onde posso encontrar ações referentes aos meus cartões?",
+    "description": "Para visualizar os dados do seu cartão ou alterar alguma configuração dele, basta clicar na área \"meus cartões\", que fica logo abaixo da área de atalhos.\n\nNela, você pode visualizar os dados de todos os seus cartões Nubank e realizar ações como criar um cartão virtual e bloquear/desbloquear cartão (físico ou virtual)."
+  },
+  {
+    "title": "Como acesso os meus produtos do Nubank?",
+    "description": "Ao arrastar a tela inicial para cima, você verá todos seus produtos ativos do Nubank e, com apenas um toque, pode acessar cada uma das áreas: conta, cartão de crédito, investimentos, empréstimos e seguros."
+  },
+  {
+    "title": "O que é a área do \"descubra mais\"?",
+    "description": "Pensando em te oferecer ainda mais da experiência do Nubank dentro do seu app, criamos duas novas áreas na sua tela inicial  dedicadas a novidades e lançamentos.\n\nNelas, você terá acesso a conteúdos exclusivos do Nubank e também ficará por dentro de todas as novidades e lançamentos de novos produtos."
+  }
+]
