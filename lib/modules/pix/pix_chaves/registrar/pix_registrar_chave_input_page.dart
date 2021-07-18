@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
+import 'package:nubank/shared/enums/ChaveTipoEnum.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
-import 'package:nubank/modules/pix/pix_chaves/enums/ChaveTipoEnum.dart';
 import 'package:nubank/shared/widgets/floating_action_button/floating_action_button_widget.dart';
 import 'package:nubank/shared/widgets/input_text_widget/input_text_widget.dart';
 import 'RegistrarChaveModel.dart';

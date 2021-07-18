@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nubank/modules/models/Ajuda.dart';
+import 'package:nubank/shared/models/Ajuda.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/button_ajuda/button_ajuda_widget.dart';
 import 'package:nubank/shared/widgets/tile_ajuda/tile_ajuda_widget.dart';

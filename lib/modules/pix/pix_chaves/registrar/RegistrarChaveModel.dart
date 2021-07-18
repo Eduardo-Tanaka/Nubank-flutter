@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nubank/modules/pix/pix_chaves/enums/ChaveTipoEnum.dart';
+import 'package:nubank/shared/enums/ChaveTipoEnum.dart';
 
 class RegistrarChaveModel {
   final ChaveTipoEnum type;

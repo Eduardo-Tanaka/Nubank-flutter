@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:nubank/modules/models/Ajuda.dart';
+import 'package:nubank/shared/models/Ajuda.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/tile_ajuda/tile_ajuda_widget.dart';
 
@@ -34,7 +34,7 @@ class AjudaPixHomePage extends StatelessWidget {
                     height: 0.4,
                   );
                 } else {
-                  Ajuda ajuda = Ajuda.fromMap(list[index]);
+                  var ajuda = Ajuda.fromMap(list[index]);
                   return Column(
                     children: [
                       TileAjudaWidget(
