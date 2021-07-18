@@ -20,6 +20,9 @@ class _TransferirDestinoPageState extends State<TransferirDestinoPage> {
   );
   final textController = TextEditingController();
   PermissionStatus _permissionStatus = PermissionStatus.denied;
+  bool active = false;
+  Iterable<Contact> contacts = [];
+  List<Contact> lcontacts = [];
 
   @override
   void initState() {
@@ -34,9 +37,7 @@ class _TransferirDestinoPageState extends State<TransferirDestinoPage> {
       _permissionStatus = status;
     });
 
-    if (!status.isGranted && !status.isPermanentlyDenied) {
-      requestPermission(Permission.contacts);
-    }
+    await getListContact();
   }
 
   Future<void> requestPermission(Permission permission) async {
@@ -45,6 +46,20 @@ class _TransferirDestinoPageState extends State<TransferirDestinoPage> {
     setState(() {
       _permissionStatus = status;
     });
+
+    await getListContact();
+  }
+
+  Future<void> getListContact() async {
+    if (!_permissionStatus.isGranted &&
+        !_permissionStatus.isPermanentlyDenied) {
+      requestPermission(Permission.contacts);
+    } else {
+      setState(() async {
+        contacts = await ContactsService.getContacts(withThumbnails: false);
+        lcontacts = contacts.toList();
+      });
+    }
   }
 
   @override
@@ -66,37 +81,58 @@ class _TransferirDestinoPageState extends State<TransferirDestinoPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Para quem você quer transferir ${moneyInputTextController.text}?",
-                    style: TextStyles.textBigBold,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 8,
-                      bottom: 32,
-                    ),
-                    child: Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "Encontre um contato ",
-                            style: TextStyles.textBlack,
+                  Visibility(
+                    visible: !active,
+                    child: Column(
+                      children: [
+                        Text(
+                          "Para quem você quer transferir ${moneyInputTextController.text}?",
+                          style: TextStyles.textBigBold,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 8,
+                            bottom: 32,
                           ),
-                          TextSpan(
-                            text: "na sua lista ou inicie uma ",
+                          child: Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: "Encontre um contato ",
+                                  style: TextStyles.textBlack,
+                                ),
+                                TextSpan(
+                                  text: "na sua lista ou inicie uma ",
+                                ),
+                                TextSpan(
+                                  text: "nova transferência",
+                                  style: TextStyles.textBlack,
+                                ),
+                              ],
+                            ),
                           ),
-                          TextSpan(
-                            text: "nova transferência",
-                            style: TextStyles.textBlack,
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                   InputTextWidget(
                     autoFocus: false,
                     onChanged: (String value) {
-                      setState(() {});
+                      setState(() {
+                        lcontacts = contacts.where(
+                          (element) {
+                            return element.displayName!
+                                .toLowerCase()
+                                .contains(value);
+                          },
+                        ).toList();
+                      });
+                      print(lcontacts.toString());
+                    },
+                    onTap: () {
+                      setState(() {
+                        active = true;
+                      });
                     },
                     textInputType: TextInputType.text,
                     controller: textController,
@@ -112,54 +148,41 @@ class _TransferirDestinoPageState extends State<TransferirDestinoPage> {
                 ],
               ),
             ),
-            FutureBuilder(
-              future: _permissionStatus.isGranted
-                  ? ContactsService.getContacts(withThumbnails: false)
-                  : null,
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  var contacts = snapshot.data as Iterable<Contact>;
-                  var lcontacts = contacts.toList();
-                  return Container(
-                    child: ListView.separated(
-                      shrinkWrap: true,
-                      itemCount: contacts.length + 1,
-                      itemBuilder: (context, position) {
-                        if (position == lcontacts.length) {
-                          return Divider(
-                            height: 0.4,
-                          );
-                        } else {
-                          return ListTile(
-                            leading: CircleAvatar(
-                              backgroundColor: Colors.purple[100],
-                              child: Text(
-                                lcontacts[position].givenName![0] +
-                                    (lcontacts[position].familyName == null
-                                        ? ""
-                                        : lcontacts[position].familyName![0]),
-                                style: TextStyles.textNuBold,
-                              ),
-                            ),
-                            title: Text(
-                              lcontacts[position].displayName ?? "",
-                              style: TextStyles.textBold,
-                            ),
-                          );
-                        }
-                      },
-                      separatorBuilder: (context, position) {
-                        return Divider(
-                          height: 1,
-                          thickness: 1,
-                        );
-                      },
-                    ),
+            Container(
+              child: ListView.separated(
+                shrinkWrap: true,
+                itemCount: lcontacts.length + 1,
+                itemBuilder: (context, position) {
+                  if (position == lcontacts.length) {
+                    return Divider(
+                      height: 0.4,
+                    );
+                  } else {
+                    return ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.purple[100],
+                        child: Text(
+                          lcontacts[position].givenName![0] +
+                              (lcontacts[position].familyName == null
+                                  ? ""
+                                  : lcontacts[position].familyName![0]),
+                          style: TextStyles.textNuBold,
+                        ),
+                      ),
+                      title: Text(
+                        lcontacts[position].displayName ?? "",
+                        style: TextStyles.textBold,
+                      ),
+                    );
+                  }
+                },
+                separatorBuilder: (context, position) {
+                  return Divider(
+                    height: 1,
+                    thickness: 1,
                   );
-                } else {
-                  return CircularProgressIndicator();
-                }
-              },
+                },
+              ),
             ),
           ],
         ),

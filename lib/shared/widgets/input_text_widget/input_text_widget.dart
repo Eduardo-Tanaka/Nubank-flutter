@@ -13,6 +13,7 @@ class InputTextWidget extends StatelessWidget {
   final bool autoFocus;
   final String? hint;
   final bool enabled;
+  final VoidCallback? onTap;
 
   const InputTextWidget({
     Key? key,
@@ -26,6 +27,7 @@ class InputTextWidget extends StatelessWidget {
     this.autoFocus = false,
     this.hint,
     this.enabled = true,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -44,6 +46,7 @@ class InputTextWidget extends StatelessWidget {
             textAlign: TextAlign.left,
             controller: controller,
             onChanged: onChanged,
+            onTap: onTap,
             initialValue: initialValue,
             validator: validator,
             style: TextStyles.textBigBold,
