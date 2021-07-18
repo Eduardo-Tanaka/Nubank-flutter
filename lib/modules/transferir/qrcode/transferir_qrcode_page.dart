@@ -33,7 +33,9 @@ class TransferirQrcodePage extends StatelessWidget {
             ),
           ),
           TileWidget(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, "/qrcode_read");
+            },
             title: "Ler QR Code",
             subtitle: "Use a câmera do seu celular",
             iconLeading: Icons.qr_code,

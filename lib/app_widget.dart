@@ -22,6 +22,7 @@ import 'package:nubank/modules/recarga/recarga_operadora_page.dart';
 import 'package:nubank/modules/recarga/recarga_page.dart';
 import 'package:nubank/modules/recarga/recarga_resumo_page.dart';
 import 'package:nubank/modules/recarga/recarga_valor_page.dart';
+import 'package:nubank/modules/transferir/qrcode/qrcode_read_page.dart';
 import 'package:nubank/modules/transferir/transferir_destino_page.dart';
 import 'package:nubank/modules/transferir/transferir_page.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
@@ -73,6 +74,7 @@ class AppWidget extends StatelessWidget {
       "/transferir_destino": TransferirDestinoPage(),
       "/transferir_qrcode": TransferirQrcodePage(),
       "/pix_copia_cola": PixCopiaColaPage(),
+      "/qrcode_read": QrcodeReadPage(),
     };
     return MaterialApp(
       title: 'Nubank',
@@ -107,6 +109,7 @@ class AppWidget extends StatelessWidget {
                 case "/recarga_valor":
                 case "/recarga_resumo":
                 case "/transferir_destino":
+                case "/qrcode_read":
                   return slideRightLeft(animation, child);
                 default:
                   return slideBottomTop(animation, child);
