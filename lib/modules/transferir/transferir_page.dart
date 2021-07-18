@@ -77,7 +77,13 @@ class _TransferirPageState extends State<TransferirPage> {
         ),
       ),
       floatingActionButton: FloatingActionButtonWidget(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(
+            context,
+            "/transferir_destino",
+            arguments: moneyInputTextController.numberValue,
+          );
+        },
         value: moneyInputTextController.numberValue,
       ),
     );
