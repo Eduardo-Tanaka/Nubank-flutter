@@ -37,7 +37,20 @@ class _TransferirDestinoPageState extends State<TransferirDestinoPage> {
       _permissionStatus = status;
     });
 
-    await getListContact();
+    if (!_permissionStatus.isGranted &&
+        !_permissionStatus.isPermanentlyDenied) {
+      requestPermission(Permission.contacts).then((s) async {
+        setState(() {
+          _permissionStatus = status;
+        });
+
+        if (_permissionStatus.isGranted) {
+          getListContact();
+        }
+      });
+    } else if (_permissionStatus.isGranted) {
+      getListContact();
+    }
   }
 
   Future<void> requestPermission(Permission permission) async {
@@ -46,20 +59,13 @@ class _TransferirDestinoPageState extends State<TransferirDestinoPage> {
     setState(() {
       _permissionStatus = status;
     });
-
-    await getListContact();
   }
 
   Future<void> getListContact() async {
-    if (!_permissionStatus.isGranted &&
-        !_permissionStatus.isPermanentlyDenied) {
-      requestPermission(Permission.contacts);
-    } else {
-      setState(() async {
-        contacts = await ContactsService.getContacts(withThumbnails: false);
-        lcontacts = contacts.toList();
-      });
-    }
+    contacts = await ContactsService.getContacts(withThumbnails: false);
+    setState(() {
+      lcontacts = contacts.toList();
+    });
   }
 
   @override
@@ -127,7 +133,6 @@ class _TransferirDestinoPageState extends State<TransferirDestinoPage> {
                           },
                         ).toList();
                       });
-                      print(lcontacts.toString());
                     },
                     onTap: () {
                       setState(() {
@@ -148,13 +153,16 @@ class _TransferirDestinoPageState extends State<TransferirDestinoPage> {
                 ],
               ),
             ),
-            FutureBuilder(
-              future: ContactsService.getContacts(withThumbnails: false),
+            FutureBuilder<Iterable<Contact>>(
+              future: _permissionStatus.isGranted
+                  ? ContactsService.getContacts(withThumbnails: false)
+                  : null,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   return Container(
                     child: ListView.separated(
                       shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
                       itemCount: lcontacts.length + 1,
                       itemBuilder: (context, position) {
                         if (position == lcontacts.length) {

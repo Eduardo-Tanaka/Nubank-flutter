@@ -63,6 +63,7 @@ class _ReceberPageState extends State<ReceberPage> {
                         arguments: moneyInputTextController.numberValue,
                       ).then((value) {
                         moneyInputTextController.text = value.toString();
+                        opacity = 1;
                         setState(() {});
                       });
                     },

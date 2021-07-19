@@ -41,24 +41,19 @@ class _AjudaPixDetalhePageState extends State<AjudaPixDetalhePage> {
           );
         },
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Container(
-            height: bodyHeight,
-            child: TileAjudaWidget(
-              title: args.title,
-              description: args.description,
-              expandSubtitle: true,
-              onTap: () {
-                setState(() {
-                  showFeedback = true;
-                  bodyHeight = MediaQuery.of(context).size.height - 80 - 140;
-                });
-              },
-            ),
-          ),
-        ],
+      body: Container(
+        height: bodyHeight,
+        child: TileAjudaWidget(
+          title: args.title,
+          description: args.description,
+          expandSubtitle: true,
+          onTap: () {
+            setState(() {
+              showFeedback = true;
+              bodyHeight = MediaQuery.of(context).size.height - 80 - 140;
+            });
+          },
+        ),
       ),
       bottomNavigationBar: AnimatedSwitcher(
         duration: Duration(seconds: 1),
