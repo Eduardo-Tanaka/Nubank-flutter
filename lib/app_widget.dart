@@ -22,6 +22,7 @@ import 'package:nubank/modules/recarga/recarga_operadora_page.dart';
 import 'package:nubank/modules/recarga/recarga_page.dart';
 import 'package:nubank/modules/recarga/recarga_resumo_page.dart';
 import 'package:nubank/modules/recarga/recarga_valor_page.dart';
+import 'package:nubank/modules/receber/receber_page.dart';
 import 'package:nubank/modules/transferir/qrcode/qrcode_read_page.dart';
 import 'package:nubank/modules/transferir/transferir_destino_page.dart';
 import 'package:nubank/modules/transferir/transferir_page.dart';
@@ -70,6 +71,7 @@ class AppWidget extends StatelessWidget {
       "/recarga_forma_pagamento": RecargaFormaPagamentoPage(),
       "/recarga_valor": RecargaValorPage(),
       "/recarga_resumo": RecargaResumoPage(),
+      "/receber": ReceberPage(),
       "/transferir": TransferirPage(),
       "/transferir_destino": TransferirDestinoPage(),
       "/transferir_qrcode": TransferirQrcodePage(),
@@ -108,6 +110,7 @@ class AppWidget extends StatelessWidget {
                 case "/recarga_forma_pagamento":
                 case "/recarga_valor":
                 case "/recarga_resumo":
+                case "/receber":
                 case "/transferir_destino":
                 case "/qrcode_read":
                   return slideRightLeft(animation, child);

@@ -148,41 +148,50 @@ class _TransferirDestinoPageState extends State<TransferirDestinoPage> {
                 ],
               ),
             ),
-            Container(
-              child: ListView.separated(
-                shrinkWrap: true,
-                itemCount: lcontacts.length + 1,
-                itemBuilder: (context, position) {
-                  if (position == lcontacts.length) {
-                    return Divider(
-                      height: 0.4,
-                    );
-                  } else {
-                    return ListTile(
-                      leading: CircleAvatar(
-                        backgroundColor: Colors.purple[100],
-                        child: Text(
-                          lcontacts[position].givenName![0] +
-                              (lcontacts[position].familyName == null
-                                  ? ""
-                                  : lcontacts[position].familyName![0]),
-                          style: TextStyles.textNuBold,
-                        ),
-                      ),
-                      title: Text(
-                        lcontacts[position].displayName ?? "",
-                        style: TextStyles.textBold,
-                      ),
-                    );
-                  }
-                },
-                separatorBuilder: (context, position) {
-                  return Divider(
-                    height: 1,
-                    thickness: 1,
+            FutureBuilder(
+              future: ContactsService.getContacts(withThumbnails: false),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Container(
+                    child: ListView.separated(
+                      shrinkWrap: true,
+                      itemCount: lcontacts.length + 1,
+                      itemBuilder: (context, position) {
+                        if (position == lcontacts.length) {
+                          return Divider(
+                            height: 0.4,
+                          );
+                        } else {
+                          return ListTile(
+                            leading: CircleAvatar(
+                              backgroundColor: Colors.purple[100],
+                              child: Text(
+                                lcontacts[position].givenName![0] +
+                                    (lcontacts[position].familyName == null
+                                        ? ""
+                                        : lcontacts[position].familyName![0]),
+                                style: TextStyles.textNuBold,
+                              ),
+                            ),
+                            title: Text(
+                              lcontacts[position].displayName ?? "",
+                              style: TextStyles.textBold,
+                            ),
+                          );
+                        }
+                      },
+                      separatorBuilder: (context, position) {
+                        return Divider(
+                          height: 1,
+                          thickness: 1,
+                        );
+                      },
+                    ),
                   );
-                },
-              ),
+                } else {
+                  return CircularProgressIndicator();
+                }
+              },
             ),
           ],
         ),
