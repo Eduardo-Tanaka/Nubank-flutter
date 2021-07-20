@@ -58,9 +58,18 @@ class _CobrarPageState extends State<CobrarPage> {
                     controller: moneyInputTextController,
                   ),
                 ),
-                Text(
-                  "Não especificar um valor >",
-                  style: TextStyles.textNuSmall,
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      "/receber",
+                      arguments: 0.0,
+                    );
+                  },
+                  child: Text(
+                    "Não especificar um valor >",
+                    style: TextStyles.textNuSmall,
+                  ),
                 ),
               ],
             ),

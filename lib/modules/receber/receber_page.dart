@@ -98,7 +98,7 @@ class _ReceberPageState extends State<ReceberPage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(32),
+              padding: const EdgeInsets.all(24),
               child: TextButton(
                 style: TextButton.styleFrom(
                   primary: Colors.grey,

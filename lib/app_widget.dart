@@ -32,6 +32,7 @@ import 'modules/pix/pix_chaves/pix_chaves_page.dart';
 import 'modules/pix/pix_copia_cola/pix_copia_cola_page.dart';
 import 'modules/splash/splash_page.dart';
 import 'modules/transferir/qrcode/transferir_qrcode_page.dart';
+import 'modules/transferir/transferir_confirmar_page.dart';
 
 class AppWidget extends StatelessWidget {
   // travar orientacao da tela para retrato
@@ -73,6 +74,7 @@ class AppWidget extends StatelessWidget {
       "/recarga_resumo": RecargaResumoPage(),
       "/receber": ReceberPage(),
       "/transferir": TransferirPage(),
+      "/transferir_confirmar": TransferirConfirmarPage(),
       "/transferir_destino": TransferirDestinoPage(),
       "/transferir_qrcode": TransferirQrcodePage(),
       "/pix_copia_cola": PixCopiaColaPage(),

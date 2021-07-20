@@ -91,6 +91,12 @@ class _QrcodeReadPageState extends State<QrcodeReadPage> {
       this.controller = controller;
     });
     controller.scannedDataStream.listen((scanData) {
+      Navigator.pushReplacementNamed(
+        context,
+        "/transferir_confirmar",
+        arguments: scanData.code,
+      );
+      controller.pauseCamera();
       setState(() {
         result = scanData;
       });
