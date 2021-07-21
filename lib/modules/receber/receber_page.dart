@@ -62,9 +62,11 @@ class _ReceberPageState extends State<ReceberPage> {
                         "/cobrar",
                         arguments: moneyInputTextController.numberValue,
                       ).then((value) {
-                        print(value);
-                        moneyInputTextController.text =
-                            value == 0.0 ? 0.0.toString() : value.toString();
+                        moneyInputTextController.text = value == 0.0
+                            ? 0.0.toString()
+                            : value == null
+                                ? 0.0.toString()
+                                : value.toString();
                         setState(() {});
                       });
                     },

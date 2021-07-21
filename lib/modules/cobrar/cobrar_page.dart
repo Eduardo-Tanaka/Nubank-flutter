@@ -75,11 +75,18 @@ class _CobrarPageState extends State<CobrarPage> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.pushNamed(
-                        context,
-                        "/receber",
-                        arguments: 0.0,
-                      );
+                      if (showFab) {
+                        Navigator.pushNamed(
+                          context,
+                          "/receber",
+                          arguments: 0.0,
+                        );
+                      } else {
+                        Navigator.pop(
+                          context,
+                          0.0,
+                        );
+                      }
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
