@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:nubank/shared/models/Ajuda.dart';
+import 'package:nubank/shared/models/ajuda.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/tile_ajuda/tile_ajuda_widget.dart';
 
@@ -11,7 +11,6 @@ class AjudaPixHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBarWidget(
         icon: Icons.navigate_before,
         title: "Pix",

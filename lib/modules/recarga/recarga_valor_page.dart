@@ -20,7 +20,6 @@ class _RecargaValorPageState extends State<RecargaValorPage> {
     final args = ModalRoute.of(context)!.settings.arguments as String;
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBarWidget(
         value: 0.8,
         icon: Icons.navigate_before,

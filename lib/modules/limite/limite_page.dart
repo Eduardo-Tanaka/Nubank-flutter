@@ -64,7 +64,6 @@ class _LimitePageState extends State<LimitePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBarWidget(
         title: "Ajuste de Limite",
       ),

@@ -73,7 +73,6 @@ class _TransferirDestinoPageState extends State<TransferirDestinoPage> {
     final args = ModalRoute.of(context)!.settings.arguments as double;
     moneyInputTextController.text = args.toString();
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBarWidget(
         icon: Icons.navigate_before,
       ),

@@ -84,6 +84,7 @@ class AppWidget extends StatelessWidget {
       title: 'Nubank',
       theme: ThemeData(
         backgroundColor: AppColors.background,
+        scaffoldBackgroundColor: Colors.white,
         textSelectionTheme: TextSelectionThemeData(
           cursorColor: AppColors.background,
           selectionColor: AppColors.background,

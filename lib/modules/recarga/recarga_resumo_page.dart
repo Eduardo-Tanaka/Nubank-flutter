@@ -44,7 +44,6 @@ class _RecargaResumoPageState extends State<RecargaResumoPage> {
       formatter2.format(now.add(Duration(days: 60))),
     ];
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBarWidget(
         value: 1.0,
         icon: Icons.navigate_before,

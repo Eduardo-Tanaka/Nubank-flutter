@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/modules/pix/pix_chaves/registrar/RegistrarChaveModel.dart';
-import 'package:nubank/shared/enums/ChaveTipoEnum.dart';
+import 'package:nubank/shared/enums/chave_tipo_enum.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
@@ -30,7 +30,6 @@ class PixRegistrarChavePage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBarWidget(
         icon: Icons.navigate_before,
       ),

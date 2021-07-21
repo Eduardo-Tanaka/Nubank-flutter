@@ -20,7 +20,6 @@ class _RecargaPageState extends State<RecargaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBarWidget(
         value: 0.2,
       ),

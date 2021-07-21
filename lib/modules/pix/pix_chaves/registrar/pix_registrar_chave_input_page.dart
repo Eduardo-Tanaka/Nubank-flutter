@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
-import 'package:nubank/shared/enums/ChaveTipoEnum.dart';
+import 'package:nubank/shared/enums/chave_tipo_enum.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/floating_action_button/floating_action_button_widget.dart';
@@ -33,7 +33,6 @@ class _PixRegistrarChaveInputPageState
       firstBuild = false;
     }
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBarWidget(
         icon: Icons.navigate_before,
       ),

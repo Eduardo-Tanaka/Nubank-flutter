@@ -27,7 +27,6 @@ class _RecargaOperadoraPageState extends State<RecargaOperadoraPage> {
     final args = ModalRoute.of(context)!.settings.arguments as String;
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBarWidget(
         value: 0.4,
         icon: Icons.navigate_before,

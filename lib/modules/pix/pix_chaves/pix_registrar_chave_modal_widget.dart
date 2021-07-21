@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/modules/pix/pix_chaves/registrar/RegistrarChaveModel.dart';
-import 'package:nubank/shared/enums/ChaveTipoEnum.dart';
+import 'package:nubank/shared/enums/chave_tipo_enum.dart';
 import 'package:nubank/shared/widgets/tile_pix/tile_pix_widget.dart';
 
 class PixRegistrarChaveModalWidget extends StatelessWidget {

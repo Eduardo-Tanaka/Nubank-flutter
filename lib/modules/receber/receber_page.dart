@@ -27,7 +27,6 @@ class _ReceberPageState extends State<ReceberPage> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBarWidget(
         icon: Icons.navigate_before,
       ),

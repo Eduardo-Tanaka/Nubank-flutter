@@ -12,7 +12,6 @@ class RecargaFormaPagamentoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBarWidget(
         value: 0.6,
         icon: Icons.navigate_before,

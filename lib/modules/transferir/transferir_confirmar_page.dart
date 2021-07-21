@@ -20,7 +20,6 @@ class TransferirConfirmarPage extends StatelessWidget {
 
     moneyInputTextController.text = '0.01';
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBarWidget(
         icon: Icons.navigate_before,
       ),

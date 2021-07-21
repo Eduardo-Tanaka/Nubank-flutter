@@ -38,7 +38,6 @@ class _CobrarPageState extends State<CobrarPage> {
         return false;
       },
       child: Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBarWidget(
           onPress: () {
             Navigator.pop(
