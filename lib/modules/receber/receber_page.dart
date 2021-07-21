@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
-import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
+import 'package:nubank/shared/widgets/button_message/button_message_widget.dart';
+import 'package:nubank/shared/widgets/button_nu/button_nu_widget.dart';
+import 'package:nubank/shared/widgets/text_money_edit/text_money_edit_widget.dart';
 
 class ReceberPage extends StatefulWidget {
   const ReceberPage({Key? key}) : super(key: key);
@@ -12,7 +14,6 @@ class ReceberPage extends StatefulWidget {
 }
 
 class _ReceberPageState extends State<ReceberPage> {
-  double opacity = 1;
   final moneyInputTextController = MoneyMaskedTextController(
     leftSymbol: "R\$ ",
     decimalSeparator: ",",
@@ -53,81 +54,27 @@ class _ReceberPageState extends State<ReceberPage> {
                       style: TextStyles.textGrey,
                     ),
                   ),
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
+                  TextMoneyEditWidget(
+                    text: moneyInputTextController.text,
                     onTap: () {
                       Navigator.pushNamed(
                         context,
                         "/cobrar",
                         arguments: moneyInputTextController.numberValue,
                       ).then((value) {
-                        moneyInputTextController.text = value.toString();
-                        opacity = 1;
+                        print(value);
+                        moneyInputTextController.text =
+                            value == 0.0 ? 0.0.toString() : value.toString();
                         setState(() {});
                       });
                     },
-                    onTapDown: (TapDownDetails details) {
-                      setState(() {
-                        opacity = 0.4;
-                      });
-                    },
-                    onTapCancel: () {
-                      setState(() {
-                        opacity = 1.0;
-                      });
-                    },
-                    child: Opacity(
-                      opacity: opacity,
-                      child: Row(
-                        children: [
-                          Text(
-                            moneyInputTextController.text,
-                            style: TextStyles.textNuBigBold,
-                          ),
-                          Icon(
-                            Icons.edit_outlined,
-                            color: AppColors.background,
-                            size: 24,
-                          ),
-                        ],
-                      ),
-                    ),
                   ),
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(24),
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  primary: Colors.grey,
-                  padding: EdgeInsets.all(16),
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(32),
-                    ),
-                  ),
-                ),
-                onPressed: () {},
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.comment_outlined,
-                      color: AppColors.background,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8),
-                      child: Text(
-                        "Escrever uma mensagem",
-                        style: TextStyles.textNuBold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            ButtonMessageWidget(
+              text: "Escrever uma mensagem",
+              onPressed: () {},
             ),
             TextButton(
               onPressed: () {},
@@ -224,30 +171,9 @@ class _ReceberPageState extends State<ReceberPage> {
                 right: 20,
                 bottom: 20,
               ),
-              child: TextButton(
+              child: ButtonNuWidget(
+                text: "Criar QR code",
                 onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Criar QR code",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                      ),
-                    ),
-                  ],
-                ),
-                style: TextButton.styleFrom(
-                  backgroundColor: AppColors.background,
-                  padding: EdgeInsets.all(16),
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(32),
-                    ),
-                  ),
-                ),
               ),
             ),
           ],

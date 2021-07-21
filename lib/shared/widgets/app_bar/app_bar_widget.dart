@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 
@@ -9,6 +10,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   final bool showTrailingIcon;
   final IconData? trailingIcon;
   final VoidCallback? onPressedTrailing;
+  final VoidCallback? onPress;
 
   @override
   final Size preferredSize = Size.fromHeight(kToolbarHeight);
@@ -21,6 +23,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
     this.showTrailingIcon = false,
     this.trailingIcon,
     this.onPressedTrailing,
+    this.onPress,
   }) : super(key: key);
 
   @override
@@ -36,7 +39,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
           color: Colors.grey,
           size: icon == null ? 32 : 40,
         ),
-        onPressed: () => Navigator.of(context).pop(),
+        onPressed: onPress ?? () => Navigator.of(context).pop(),
       ),
       actions: [
         Visibility(

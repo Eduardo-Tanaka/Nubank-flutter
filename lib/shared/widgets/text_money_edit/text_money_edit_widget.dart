@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 
 class TextMoneyEditWidget extends StatefulWidget {
   final String text;
+  final VoidCallback? onTap;
   const TextMoneyEditWidget({
     Key? key,
     required this.text,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -20,7 +23,12 @@ class _TextMoneyEditWidgetState extends State<TextMoneyEditWidget> {
     return InkWell(
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
-      onTap: () {},
+      onTap: () {
+        widget.onTap!();
+        setState(() {
+          opacity = 1.0;
+        });
+      },
       onTapDown: (TapDownDetails details) {
         setState(() {
           opacity = 0.4;

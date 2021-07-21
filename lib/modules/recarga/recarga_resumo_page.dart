@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
+import 'package:nubank/shared/widgets/button_nu/button_nu_widget.dart';
 import 'package:nubank/shared/widgets/radio_button/radio_button_widget.dart';
 import 'package:nubank/shared/widgets/tile_recarga/tile_recarga_widget.dart';
 
@@ -255,30 +256,9 @@ class _RecargaResumoPageState extends State<RecargaResumoPage> {
             padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
             child: Column(
               children: [
-                TextButton(
+                ButtonNuWidget(
+                  text: "Confirmar Pagamento",
                   onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Confirmar Pagamento",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ],
-                  ),
-                  style: TextButton.styleFrom(
-                    backgroundColor: AppColors.background,
-                    padding: EdgeInsets.all(16),
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(32),
-                      ),
-                    ),
-                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 16),

@@ -41,8 +41,10 @@ class TransferirConfirmarPage extends StatelessWidget {
                     top: 16,
                     bottom: 8,
                   ),
-                  child:
-                      TextMoneyEditWidget(text: moneyInputTextController.text),
+                  child: TextMoneyEditWidget(
+                    text: moneyInputTextController.text,
+                    onTap: () {},
+                  ),
                 ),
                 Text.rich(
                   TextSpan(
