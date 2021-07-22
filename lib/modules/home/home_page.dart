@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:nubank/modules/bloquear/bloquear_cartao_page.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
-import 'package:nubank/shared/themes/app_images.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
-import 'package:nubank/shared/widgets/bottom_card_menu/bottom_card_menu_widget.dart';
-import 'package:nubank/shared/widgets/card_menu/card_menu_widget.dart';
 import 'package:nubank/shared/widgets/circle_icon_button/circle_icon_button_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,237 +13,305 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool isVisible = true;
+  final titles = [
+    "Pix",
+    "Pagar",
+    "Transferir",
+    "Depositar",
+    "Empréstimos",
+    "Recarga de\ncelular",
+    "Cobrar",
+    "Doação",
+    "Me ajuda",
+  ];
+  final icons = [
+    FontAwesomeIcons.asterisk,
+    FontAwesomeIcons.barcode,
+    Icons.arrow_upward,
+    Icons.arrow_downward,
+    FontAwesomeIcons.handHoldingUsd,
+    FontAwesomeIcons.mobile,
+    FontAwesomeIcons.commentDollar,
+    Icons.favorite_border_outlined,
+  ];
+  final routes = [
+    "/pix",
+    "/pagar",
+    "/transferir",
+    "/depositar",
+    "/emprestimo",
+    "/recarga",
+    "/cobrar",
+    "/doacao",
+  ];
+
   @override
   Widget build(BuildContext context) {
-    final titles = [
-      "Pix",
-      "Pagar",
-      "Indicar\namigos",
-      "Transferir",
-      "Depositar",
-      "Empréstimos",
-      "Cartão\nvirtual",
-      "Recarga de\ncelular",
-      "Ajustar limite",
-      "Bloquear cartão",
-      "Cobrar",
-      "Doação",
-      "Me ajuda",
-    ];
-    final icons = [
-      AppImages.ic_pix,
-      AppImages.ic_code,
-      AppImages.ic_add_user,
-      AppImages.ic_give_money,
-      AppImages.ic_get_money,
-      AppImages.ic_loan,
-      AppImages.ic_virtual_card,
-      AppImages.ic_phone,
-      AppImages.ic_custom_settings,
-      AppImages.ic_lock_on,
-      AppImages.ic_request_money,
-      AppImages.ic_loan,
-      AppImages.ic_help,
-    ];
-    final routes = [
-      "/pix",
-      "/pagar",
-      "/indicar_amigos",
-      "/transferir",
-      "/depositar",
-      "/emprestimo",
-      "/cartao_virtual",
-      "/recarga",
-      "/limite",
-      "/bloquear_cartao",
-      "/cobrar",
-      "/doacao",
-      "/ajuda",
-    ];
     return RefreshIndicator(
       onRefresh: () async {},
       child: Scaffold(
-        backgroundColor: AppColors.background,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(100),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 32, left: 16, right: 16),
-            child: Container(
-              height: 100,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Olá, Eduardo",
-                    style: TextStyles.titleHome,
+          preferredSize: Size.fromHeight(8.0),
+          child: AppBar(
+            backgroundColor: AppColors.primary,
+            leading: Icon(null),
+            elevation: 0,
+          ),
+        ),
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              Container(
+                height: 140,
+                color: AppColors.primary,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 20,
+                    right: 20,
+                    top: 8,
+                    bottom: 20,
                   ),
-                  Row(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CircleIconButtonWidget(
-                        icon: Icons.visibility_off_outlined,
-                        padding: 8,
-                        onPressed: () {
-                          setState(() {
-                            isVisible = !isVisible;
-                          });
-                        },
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CircleIconButtonWidget(
+                            icon: Icons.person_outline,
+                            padding: 14,
+                            onPressed: () {},
+                          ),
+                          Row(
+                            children: [
+                              CircleIconButtonWidget(
+                                icon: isVisible
+                                    ? Icons.visibility_outlined
+                                    : Icons.visibility_off_outlined,
+                                padding: 8,
+                                background: AppColors.primary,
+                                onPressed: () {
+                                  setState(() {
+                                    isVisible = !isVisible;
+                                  });
+                                },
+                              ),
+                              CircleIconButtonWidget(
+                                icon: Icons.help_outline,
+                                padding: 8,
+                                background: AppColors.primary,
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                    context,
+                                    "/ajuda",
+                                  );
+                                },
+                              ),
+                              CircleIconButtonWidget(
+                                icon: Icons.forward_to_inbox_outlined,
+                                padding: 8,
+                                background: AppColors.primary,
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                    context,
+                                    "/indicar_amigos",
+                                  );
+                                },
+                              ),
+                            ],
+                          )
+                        ],
                       ),
-                      CircleIconButtonWidget(
-                        icon: Icons.settings_outlined,
-                        padding: 8,
-                        onPressed: () {
-                          Navigator.pushNamed(
-                            context,
-                            "/configuracao",
-                          );
-                        },
+                      Padding(
+                        padding: const EdgeInsets.only(left: 12),
+                        child: Text(
+                          "Olá, Eduardo",
+                          style: TextStyles.titleHome,
+                        ),
                       ),
                     ],
-                  )
-                ],
-              ),
-            ),
-          ),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
-          child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: Column(
-              children: [
-                Card(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          leading: Icon(FontAwesomeIcons.whatsapp),
-                          title: Transform.translate(
-                            offset: Offset(-20, 0),
-                            child: Text('Pagamentos no WhatsApp'),
-                          ),
-                        ),
-                        Text(
-                          "Envie e receba dinheiro sem sair da conversa",
-                          style: TextStyles.textBold,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 12,
-                          ),
-                          child: Text(
-                              'Os pagamentos no WhatsApp são seguros, rápidos e sem tarifas. Tão fácil quanto mandar uma foto de "bom dia!" no grupo da família.'),
-                        ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text("Quero conhecer"),
-                          style: TextButton.styleFrom(
-                            primary: Colors.purple,
-                            side: BorderSide(color: Colors.purple, width: 1),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 14,
-                        ),
-                      ],
-                    ),
                   ),
                 ),
-                CardMenuWidget(
-                  icon: AppImages.ic_card_nu,
-                  title: 'Cartão de Crédito',
-                  subtitle: 'Fatura atual',
-                  info1: 'R\$ 435,36',
-                  info1Style: TextStyles.textMoneyBlue,
-                  info2: 'Limite disponível ',
-                  info2Span: 'R\$ 3.564,64',
-                  info2SpanStyle: TextStyles.textMoneyGreen,
-                  isVisible: isVisible,
+              ),
+              InkWell(
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: ListTile(
+                    title: Text(
+                      "Conta",
+                      style: TextStyles.textBold,
+                    ),
+                    subtitle: Padding(
+                      padding: const EdgeInsets.only(top: 16),
+                      child: Container(
+                        color: isVisible ? null : Colors.grey[200],
+                        child: Text(
+                          isVisible ? "R\$ 5.000,00" : "",
+                          style: TextStyles.titleBlack,
+                        ),
+                      ),
+                    ),
+                    trailing: Icon(Icons.chevron_right),
+                  ),
                 ),
-                CardMenuWidget(
-                  icon: AppImages.ic_money_coins,
-                  title: 'Conta',
-                  subtitle: 'Saldo Disponível',
-                  info1: 'R\$ 8435,36',
-                  info1Style: TextStyles.textBold,
-                  isVisible: isVisible,
-                ),
-                CardMenuWidget(
-                  icon: AppImages.ic_loan,
-                  title: 'Empréstimo',
-                  subtitle: '',
-                  info2: 'Valor disponível de até \n',
-                  info2Span: 'R\$ 25.000,00',
-                  info2SpanStyle: TextStyles.textBold,
-                  textButton: 'SIMULAR EMPRÉSTIMO',
-                  isVisible: isVisible,
-                ),
-                CardMenuWidget(
-                  icon: AppImages.ic_reward,
-                  title: 'Rewards',
-                  subtitle: 'Total',
-                  info1: '1.536 pts',
-                  info1Style: TextStyles.textBold,
-                  info2: 'Você acumulou ',
-                  info2Span: '1.533',
-                  info2SpanStyle: TextStyles.textMoneyGreen,
-                  info2Cont: ' pontos esse mês.',
-                  isVisible: isVisible,
-                ),
-                CardMenuWidget(
-                  icon: AppImages.ic_investment,
-                  title: 'Investimentos',
-                  subtitle: '',
-                  info2:
-                      'A revolução roxa começou. Invista de maneira simples, sem burocracia e 100% digital.',
-                  info2Style: TextStyles.text,
-                  textButton: 'CONHECER',
-                ),
-                CardMenuWidget(
-                  icon: AppImages.ic_card_nu,
-                  title: 'Google Pay',
-                  subtitle: '',
-                  info2: 'Use o Google Pay com seus cartões Nubank.',
-                  info2Style: TextStyles.text,
-                  textButton: 'REGISTRAR MEU CARTÃO',
-                ),
-              ],
-            ),
-          ),
-        ),
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.only(bottom: 12, left: 14, right: 14),
-          child: SizedBox(
-            height: 100,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              physics: BouncingScrollPhysics(),
-              itemBuilder: (context, position) {
-                return BottomCardMenuWidget(
-                  icon: icons[position],
-                  title: titles[position],
-                  onTap: () {
-                    if (routes[position] == "/bloquear_cartao") {
-                      showModalBottomSheet(
-                        context: context,
-                        builder: (context) {
-                          return BloquearCartaoPage();
-                        },
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+                child: SizedBox(
+                  height: 140,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    physics: BouncingScrollPhysics(),
+                    itemBuilder: (context, position) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        child: Column(
+                          children: [
+                            CircleIconButtonWidget(
+                              icon: icons[position],
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  routes[position],
+                                );
+                              },
+                              background: Colors.grey[200],
+                              color: Colors.black,
+                              padding: 20,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 16),
+                              child: Text(
+                                titles[position],
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ],
+                        ),
                       );
-                    } else {
-                      Navigator.pushNamed(
-                        context,
-                        routes[position],
-                      );
-                    }
-                  },
-                );
-              },
-              itemCount: titles.length,
-            ),
+                    },
+                    itemCount: titles.length,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 8,
+                ),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.phone_android_outlined,
+                        color: Colors.black,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: Text(
+                          "Meus cartões",
+                          style: TextStyles.textBlack,
+                        ),
+                      )
+                    ],
+                  ),
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.grey[200],
+                    padding: EdgeInsets.all(16),
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
+                    primary: Colors.black87,
+                    elevation: 0,
+                  ),
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                child: SizedBox(
+                  height: 90,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    physics: BouncingScrollPhysics(),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                        ),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width / 1.3,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: Text(
+                                "Você tem R\$ 25.000,00 disponíveis para empréstimo.",
+                                style: TextStyles.textBlack,
+                              ),
+                            ),
+                            style: TextButton.styleFrom(
+                              backgroundColor: Colors.grey[200],
+                              padding: EdgeInsets.all(16),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(10),
+                                ),
+                              ),
+                              primary: Colors.black87,
+                              elevation: 0,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                        ),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width / 1.3,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: Text(
+                                "Conquiste planos futuros: conheça as opções para guardar dinheiro.",
+                                style: TextStyles.textBlack,
+                              ),
+                            ),
+                            style: TextButton.styleFrom(
+                              backgroundColor: Colors.grey[200],
+                              padding: EdgeInsets.all(16),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(10),
+                                ),
+                              ),
+                              primary: Colors.black87,
+                              elevation: 0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                child: Divider(
+                  height: 1,
+                  thickness: 1,
+                ),
+              ),
+            ],
           ),
         ),
       ),

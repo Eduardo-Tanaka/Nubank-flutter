@@ -42,6 +42,12 @@ class IndicarAmigosPage extends StatelessWidget {
                 side: BorderSide(color: Colors.purple, width: 1),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(top: 24),
+              child: Placeholder(
+                fallbackHeight: 300,
+              ),
+            )
           ],
         ),
       ),

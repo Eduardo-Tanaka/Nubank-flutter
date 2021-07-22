@@ -38,7 +38,7 @@ class TextStyles {
     color: Colors.black,
   );
   static final titleHome = GoogleFonts.roboto(
-    fontSize: 26,
+    fontSize: 18,
     fontWeight: FontWeight.w600,
     color: Colors.white,
   );

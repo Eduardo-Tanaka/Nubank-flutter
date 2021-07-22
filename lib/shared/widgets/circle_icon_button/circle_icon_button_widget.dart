@@ -23,13 +23,16 @@ class CircleIconButtonWidget extends StatelessWidget {
       onPressed: onPressed,
       child: Icon(
         icon,
-        color: color == null ? Colors.white70 : color,
+        color: color == null ? Colors.white : color,
+        size: 26,
       ),
       style: ElevatedButton.styleFrom(
         primary:
             background == null ? AppColors.circleButtonBackground : background,
+        onPrimary: Colors.black45,
         shape: CircleBorder(),
         padding: EdgeInsets.all(padding),
+        elevation: 0,
         minimumSize: Size(8, 8),
       ),
     );
