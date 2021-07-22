@@ -54,6 +54,9 @@ class TextStyles {
   static final text = GoogleFonts.roboto(
     fontSize: 18,
   );
+  static final textSmall = GoogleFonts.roboto(
+    fontSize: 16,
+  );
   static final textAjuda = GoogleFonts.roboto(
     fontSize: 16,
     fontWeight: FontWeight.w400,

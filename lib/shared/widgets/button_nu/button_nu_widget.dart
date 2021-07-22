@@ -4,10 +4,13 @@ import 'package:nubank/shared/themes/app_colors.dart';
 class ButtonNuWidget extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
+  final double padding;
+
   const ButtonNuWidget({
     Key? key,
     required this.text,
     required this.onPressed,
+    this.padding = 16,
   }) : super(key: key);
 
   @override
@@ -29,7 +32,7 @@ class ButtonNuWidget extends StatelessWidget {
       ),
       style: TextButton.styleFrom(
         backgroundColor: AppColors.background,
-        padding: EdgeInsets.all(16),
+        padding: EdgeInsets.all(padding),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(32),
