@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
-import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/button_nu/button_nu_widget.dart';
 import 'package:nubank/shared/widgets/circle_icon_button/circle_icon_button_widget.dart';
 
@@ -30,6 +29,19 @@ final title = [
   "Configurar cartão",
   "Configurar Rewards",
   "Sobre",
+];
+
+final routes = [
+  "/ajuda",
+  "/meus_dados",
+  "/configurar_app",
+  "/pix_chaves",
+  "/conta_pj",
+  "/notificacoes",
+  "configurar_conta",
+  "configurar_cartao",
+  "configurar_rewards",
+  "/sobre",
 ];
 
 class PerfilPage extends StatelessWidget {
@@ -143,7 +155,9 @@ class PerfilPage extends StatelessWidget {
                         trailing: Icon(
                           Icons.chevron_right_outlined,
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, routes[position]);
+                        },
                       ),
                     );
                   },
@@ -170,7 +184,9 @@ class PerfilPage extends StatelessWidget {
                   text: "Sair do aplicativo",
                   color: Colors.grey[300],
                   textColor: Colors.black,
-                  onPressed: () {},
+                  onPressed: () {
+                    SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+                  },
                 ),
               ),
             ],

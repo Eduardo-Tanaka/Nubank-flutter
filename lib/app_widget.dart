@@ -13,6 +13,7 @@ import 'package:nubank/modules/emprestimo/emprestimo_page.dart';
 import 'package:nubank/modules/home/home_page.dart';
 import 'package:nubank/modules/indicar_amigos/indicar_amigos_page.dart';
 import 'package:nubank/modules/limite/limite_page.dart';
+import 'package:nubank/modules/meus_dados/meus_dados_page.dart';
 import 'package:nubank/modules/pagar/pagar_page.dart';
 import 'package:nubank/modules/perfil/perfil_page.dart';
 import 'package:nubank/modules/pix/pix_chaves/registrar/pix_registrar_chave_input_page.dart';
@@ -63,6 +64,7 @@ class AppWidget extends StatelessWidget {
       "/emprestimo": EmprestimoPage(),
       "/indicar_amigos": IndicarAmigosPage(),
       "/limite": LimitePage(),
+      "/meus_dados": MeusDadosPage(),
       "/pagar": PagarPage(),
       "/perfil": PerfilPage(),
       "/pix": PixPage(),
@@ -107,6 +109,7 @@ class AppWidget extends StatelessWidget {
                 (context, animation, secondaryAnimation, child) {
               switch (settings.name) {
                 case "/ajuda_pix_detalhe":
+                case "/meus_dados":
                 case "/pix_copia_cola":
                 case "/pix_chaves":
                 case "/pix_registrar_chave":

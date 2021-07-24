@@ -61,6 +61,15 @@ class TextStyles {
     fontSize: 16,
     fontWeight: FontWeight.w400,
   );
+  static final textGreySmall = GoogleFonts.roboto(
+    color: Colors.grey,
+    fontSize: 16,
+  );
+  static final textGreySmallBold = GoogleFonts.roboto(
+    color: Colors.grey,
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+  );
   static final textGreyBold = GoogleFonts.roboto(
     color: Colors.grey,
     fontSize: 18,
