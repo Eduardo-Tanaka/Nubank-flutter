@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+
 import 'package:nubank/shared/themes/app_colors.dart';
 
 class ButtonNuWidget extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final double padding;
+  final Color? color;
+  final Color? textColor;
 
   const ButtonNuWidget({
     Key? key,
     required this.text,
     required this.onPressed,
     this.padding = 16,
+    this.color,
+    this.textColor,
   }) : super(key: key);
 
   @override
@@ -23,7 +28,7 @@ class ButtonNuWidget extends StatelessWidget {
           Text(
             text,
             style: TextStyle(
-              color: Colors.white,
+              color: textColor ?? Colors.white,
               fontWeight: FontWeight.w600,
               fontSize: 18,
             ),
@@ -31,7 +36,7 @@ class ButtonNuWidget extends StatelessWidget {
         ],
       ),
       style: TextButton.styleFrom(
-        backgroundColor: AppColors.background,
+        backgroundColor: color ?? AppColors.primary,
         padding: EdgeInsets.all(padding),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
