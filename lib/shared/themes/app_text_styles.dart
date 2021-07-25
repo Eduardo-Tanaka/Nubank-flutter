@@ -3,15 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 
 class TextStyles {
-  static final titleBlack = GoogleFonts.roboto(
-    fontSize: 26,
-    fontWeight: FontWeight.w600,
-    color: Colors.black,
-  );
-  static final textTitle = GoogleFonts.roboto(
-    fontSize: 22,
-    color: Colors.black,
-  );
   static final textBlackSmall = GoogleFonts.roboto(
     fontSize: 14,
     fontWeight: FontWeight.w600,
@@ -32,14 +23,31 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: Colors.black,
   );
+  static final textTitle = GoogleFonts.roboto(
+    fontSize: 22,
+    color: Colors.black,
+  );
+  static final textTitleBold = GoogleFonts.roboto(
+    fontSize: 22,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  );
+  static final titleBlack = GoogleFonts.roboto(
+    fontSize: 26,
+    color: Colors.black,
+  );
+  static final titleBlackBold = GoogleFonts.roboto(
+    fontSize: 26,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  );
   static final textBigBold = GoogleFonts.roboto(
     fontSize: 30,
     fontWeight: FontWeight.w600,
     color: Colors.black,
   );
-  static final titleHome = GoogleFonts.roboto(
-    fontSize: 18,
-    fontWeight: FontWeight.w600,
+  static final titleBottomMenu = GoogleFonts.roboto(
+    fontSize: 14,
     color: Colors.white,
   );
   static final textWhiteBold = GoogleFonts.roboto(
@@ -47,12 +55,10 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: Colors.white,
   );
-  static final titleBottomMenu = GoogleFonts.roboto(
-    fontSize: 14,
-    color: Colors.white,
-  );
-  static final text = GoogleFonts.roboto(
+  static final titleHome = GoogleFonts.roboto(
     fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
   );
   static final textSmall = GoogleFonts.roboto(
     fontSize: 16,
@@ -60,6 +66,9 @@ class TextStyles {
   static final textAjuda = GoogleFonts.roboto(
     fontSize: 16,
     fontWeight: FontWeight.w400,
+  );
+  static final text = GoogleFonts.roboto(
+    fontSize: 18,
   );
   static final textGreySmall = GoogleFonts.roboto(
     color: Colors.grey,
@@ -93,6 +102,10 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: Colors.green,
   );
+  static final textDanger = GoogleFonts.roboto(
+    fontSize: 18,
+    color: Colors.red,
+  );
   static final textBoldDanger = GoogleFonts.roboto(
     fontSize: 18,
     fontWeight: FontWeight.w600,
@@ -102,18 +115,18 @@ class TextStyles {
     fontSize: 15,
     fontWeight: FontWeight.w400,
   );
-  static final textNuBigBold = GoogleFonts.roboto(
-    fontSize: 30,
-    fontWeight: FontWeight.w600,
-    color: AppColors.background,
+  static final textNuSmall = GoogleFonts.roboto(
+    fontSize: 14,
+    color: AppColors.primary,
   );
   static final textNuBold = GoogleFonts.roboto(
     fontSize: 18,
     fontWeight: FontWeight.w600,
-    color: AppColors.background,
+    color: AppColors.primary,
   );
-  static final textNuSmall = GoogleFonts.roboto(
-    fontSize: 14,
-    color: AppColors.background,
+  static final textNuBigBold = GoogleFonts.roboto(
+    fontSize: 30,
+    fontWeight: FontWeight.w600,
+    color: AppColors.primary,
   );
 }

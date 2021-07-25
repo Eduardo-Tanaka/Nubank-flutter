@@ -50,7 +50,7 @@ class HomeCardWidget extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: TextStyles.titleBlack,
+                      style: TextStyles.titleBlackBold,
                     ),
                     Icon(
                       Icons.chevron_right,
@@ -71,7 +71,7 @@ class HomeCardWidget extends StatelessWidget {
                     width: MediaQuery.of(context).size.width / 1.4,
                     child: Text(
                       isVisible ? value ?? "" : "",
-                      style: TextStyles.titleBlack,
+                      style: TextStyles.titleBlackBold,
                     ),
                   ),
                 ),

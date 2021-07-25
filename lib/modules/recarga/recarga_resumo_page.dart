@@ -203,7 +203,7 @@ class _RecargaResumoPageState extends State<RecargaResumoPage> {
                                 ),
                                 child: Text(
                                   "Quando você quer receber o lembrete?",
-                                  style: TextStyles.titleBlack,
+                                  style: TextStyles.titleBlackBold,
                                 ),
                               ),
                               ListView.builder(

@@ -38,7 +38,7 @@ class _PagarPageState extends State<PagarPage> {
                 (value) => {
                   setState(() {
                     op1 = 1.0;
-                    Navigator.pushNamed(context, "/pix_copia_cola");
+                    Navigator.pushNamed(context, "/transferir_qrcode");
                   })
                 },
               );
@@ -69,7 +69,7 @@ class _PagarPageState extends State<PagarPage> {
                 (value) => {
                   setState(() {
                     op2 = 1.0;
-                    Navigator.pushNamed(context, "/pix_copia_cola");
+                    Navigator.popAndPushNamed(context, "/pagar_valor");
                   })
                 },
               );

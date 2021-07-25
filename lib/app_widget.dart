@@ -30,6 +30,7 @@ import 'package:nubank/modules/transferir/transferir_destino_page.dart';
 import 'package:nubank/modules/transferir/transferir_page.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 
+import 'modules/pagar/pagar_valor_page.dart';
 import 'modules/pix/pix_chaves/pix_chaves_page.dart';
 import 'modules/pix/pix_copia_cola/pix_copia_cola_page.dart';
 import 'modules/splash/splash_page.dart';
@@ -66,6 +67,7 @@ class AppWidget extends StatelessWidget {
       "/limite": LimitePage(),
       "/meus_dados": MeusDadosPage(),
       "/pagar": PagarPage(),
+      "/pagar_valor": PagarValorPage(),
       "/perfil": PerfilPage(),
       "/pix": PixPage(),
       "/pix_chaves": PixChavesPage(),

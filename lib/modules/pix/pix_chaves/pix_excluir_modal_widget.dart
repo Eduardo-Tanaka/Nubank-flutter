@@ -37,7 +37,7 @@ class PixExcluirModalWidget extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: Text(
               "Você quer mesmo excluir essa chave?",
-              style: TextStyles.titleBlack,
+              style: TextStyles.titleBlackBold,
             ),
           ),
           TileWidget(

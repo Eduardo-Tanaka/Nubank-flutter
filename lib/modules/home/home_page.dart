@@ -173,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                               color: isVisible ? null : Colors.grey[200],
                               child: Text(
                                 isVisible ? "R\$ 5.000,00" : "",
-                                style: TextStyles.titleBlack,
+                                style: TextStyles.titleBlackBold,
                               ),
                             ),
                           ),

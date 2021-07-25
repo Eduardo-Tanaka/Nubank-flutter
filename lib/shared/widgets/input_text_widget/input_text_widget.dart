@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 
@@ -14,6 +15,7 @@ class InputTextWidget extends StatelessWidget {
   final String? hint;
   final bool enabled;
   final VoidCallback? onTap;
+  final bool showDivider;
 
   const InputTextWidget({
     Key? key,
@@ -28,6 +30,7 @@ class InputTextWidget extends StatelessWidget {
     this.hint,
     this.enabled = true,
     this.onTap,
+    this.showDivider = true,
   }) : super(key: key);
 
   @override
@@ -38,30 +41,42 @@ class InputTextWidget extends StatelessWidget {
       ),
       child: Column(
         children: [
-          TextFormField(
-            enabled: enabled,
-            cursorColor: AppColors.background,
-            autofocus: autoFocus,
-            keyboardType: textInputType,
-            textAlign: TextAlign.left,
-            controller: controller,
-            onChanged: onChanged,
-            onTap: onTap,
-            initialValue: initialValue,
-            validator: validator,
-            style: TextStyles.textBigBold,
-            textInputAction: TextInputAction.next,
-            decoration: InputDecoration(
-              hintText: hint,
-              hintStyle: TextStyles.textCardGreyLight,
-              contentPadding: EdgeInsets.zero,
-              labelText: label,
-              border: InputBorder.none,
+          Theme(
+            data: Theme.of(context).copyWith(
+              textSelectionTheme: TextSelectionThemeData(
+                cursorColor: Colors.black,
+                selectionColor: Colors.black,
+                selectionHandleColor: Colors.black,
+              ),
+            ),
+            child: TextFormField(
+              enabled: enabled,
+              cursorColor: AppColors.background,
+              autofocus: autoFocus,
+              keyboardType: textInputType,
+              textAlign: TextAlign.left,
+              controller: controller,
+              onChanged: onChanged,
+              onTap: onTap,
+              initialValue: initialValue,
+              validator: validator,
+              style: TextStyles.textBigBold,
+              textInputAction: TextInputAction.next,
+              decoration: InputDecoration(
+                hintText: hint,
+                hintStyle: TextStyles.textCardGreyLight,
+                contentPadding: EdgeInsets.zero,
+                labelText: label,
+                border: InputBorder.none,
+              ),
             ),
           ),
-          Divider(
-            height: 1,
-            thickness: 1,
+          Visibility(
+            visible: showDivider,
+            child: Divider(
+              height: 1,
+              thickness: 1,
+            ),
           ),
         ],
       ),
