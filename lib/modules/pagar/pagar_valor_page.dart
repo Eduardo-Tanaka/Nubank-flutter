@@ -99,8 +99,15 @@ class _PagarValorPageState extends State<PagarValorPage> {
                   style: OutlinedButton.styleFrom(
                     primary: Colors.black,
                   ),
-                  onPressed:
-                      moneyInputTextController.numberValue > 3 ? () {} : null,
+                  onPressed: moneyInputTextController.numberValue > 3
+                      ? () {
+                          Navigator.pushNamed(
+                            context,
+                            "/pagar_modo_pagamento",
+                            arguments: moneyInputTextController.text,
+                          );
+                        }
+                      : null,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 20),
                     child: Text(

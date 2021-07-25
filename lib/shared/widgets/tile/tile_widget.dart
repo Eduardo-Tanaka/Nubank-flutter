@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:nubank/shared/themes/app_text_styles.dart';
 
 class TileWidget extends StatelessWidget {
@@ -16,6 +17,7 @@ class TileWidget extends StatelessWidget {
   final bool showDivider;
   final bool showTrailing;
   final Color? backgroundColor;
+  final Color? leadingIconColor;
 
   const TileWidget({
     Key? key,
@@ -33,6 +35,7 @@ class TileWidget extends StatelessWidget {
     this.showDivider = true,
     this.showTrailing = true,
     this.backgroundColor,
+    this.leadingIconColor = Colors.black,
   }) : super(key: key);
 
   @override
@@ -62,7 +65,7 @@ class TileWidget extends StatelessWidget {
                     visible: iconLeading == null ? false : true,
                     child: Icon(
                       iconLeading,
-                      color: Colors.black,
+                      color: leadingIconColor,
                     ),
                   ),
                   title: Transform.translate(
