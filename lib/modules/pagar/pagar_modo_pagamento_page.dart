@@ -120,7 +120,9 @@ class PagarModoPagamentoPage extends StatelessWidget {
             child: Material(
               color: Colors.transparent,
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, "/pagar_boleto");
+                },
                 child: Container(
                   child: Center(
                     child: ListTile(
