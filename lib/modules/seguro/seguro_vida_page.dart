@@ -46,7 +46,9 @@ class _SeguroVidaPageState extends State<SeguroVidaPage> {
                   children: [
                     CircleIconButtonWidget(
                       icon: Icons.chevron_left_outlined,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       padding: 4,
                       background: Colors.black,
                       iconSize: 20,
@@ -93,7 +95,9 @@ class _SeguroVidaPageState extends State<SeguroVidaPage> {
                   Opacity(
                     opacity: 1,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/seguro_vida_info");
+                      },
                       child: Row(
                         children: [
                           Padding(
