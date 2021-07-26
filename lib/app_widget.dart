@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:nubank/modules/ajuda/ajuda_home_page.dart';
 import 'package:nubank/modules/ajuda/ajuda_page.dart';
 import 'package:nubank/modules/ajuda/pix/ajuda_pix_detalhe_page.dart';
 import 'package:nubank/modules/ajuda/pix/ajuda_pix_home_page.dart';
@@ -63,6 +64,7 @@ class AppWidget extends StatelessWidget {
       "/splash": SplashPage(),
       "/home": HomePage(),
       "/ajuda": AjudaPage(),
+      "/ajuda_home": AjudaHomePage(),
       "/ajuda_pix_home": AjudaPixHomePage(),
       "/ajuda_pix_detalhe": AjudaPixDetalhePage(),
       "/ajuda_whatsapp_home": AjudaWhatsappHomePage(),

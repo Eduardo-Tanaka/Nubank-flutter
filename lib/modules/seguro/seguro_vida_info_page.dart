@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/shared/models/ajuda_params.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/button_nu/button_nu_widget.dart';
@@ -12,7 +13,15 @@ class SeguroVidaInfoPage extends StatelessWidget {
       appBar: AppBarWidget(
         showTrailingIcon: true,
         onPressedTrailing: () {
-          Navigator.pushNamed(context, "/ajuda_seguro_vida_home");
+          Navigator.pushNamed(
+            context,
+            "/ajuda_home",
+            arguments: AjudaParams(
+              title: "Seguro de vida",
+              jsonFile: "seguro_vida.json",
+              route: "ajuda_detalhe",
+            ),
+          );
         },
       ),
       body: SingleChildScrollView(

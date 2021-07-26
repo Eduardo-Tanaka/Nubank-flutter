@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/shared/models/ajuda_params.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/button_nu/button_nu_widget.dart';
@@ -57,7 +58,17 @@ class _SeguroVidaPageState extends State<SeguroVidaPage> {
                       message: "Ajuda",
                       child: CircleIconButtonWidget(
                         icon: Icons.help_outline,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(
+                            context,
+                            "/ajuda_home",
+                            arguments: AjudaParams(
+                              title: "Seguro de vida",
+                              jsonFile: "seguro_vida.json",
+                              route: "ajuda_detalhe",
+                            ),
+                          );
+                        },
                         padding: 4,
                         background: Colors.black,
                         iconSize: 20,
