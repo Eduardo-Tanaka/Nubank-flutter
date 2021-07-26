@@ -4,6 +4,7 @@ import 'package:nubank/modules/ajuda/ajuda_page.dart';
 import 'package:nubank/modules/ajuda/pix/ajuda_pix_detalhe_page.dart';
 import 'package:nubank/modules/ajuda/pix/ajuda_pix_home_page.dart';
 import 'package:nubank/modules/bloquear/bloquear_cartao_page.dart';
+import 'package:nubank/modules/boleto/boleto_page.dart';
 import 'package:nubank/modules/cartao_virtual/cartao_virtual_page.dart';
 import 'package:nubank/modules/cobrar/cobrar_page.dart';
 import 'package:nubank/modules/configuracao/configuracao_page.dart';
@@ -60,6 +61,7 @@ class AppWidget extends StatelessWidget {
       "/ajuda_pix_home": AjudaPixHomePage(),
       "/ajuda_pix_detalhe": AjudaPixDetalhePage(),
       "/bloquear_cartao": BloquearCartaoPage(),
+      "/boleto": BoletoPage(),
       "/cartao_virtual": CartaoVirtualPage(),
       "/cobrar": CobrarPage(),
       "/depositar": DepositarPage(),
@@ -115,6 +117,7 @@ class AppWidget extends StatelessWidget {
                 (context, animation, secondaryAnimation, child) {
               switch (settings.name) {
                 case "/ajuda_pix_detalhe":
+                case "/boleto":
                 case "/meus_dados":
                 case "/pagar_boleto":
                 case "/pagar_modo_pagamento":

@@ -88,7 +88,13 @@ class PagarBoletoPage extends StatelessWidget {
                   style: OutlinedButton.styleFrom(
                     primary: Colors.black,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      "/boleto",
+                      (route) => route.isFirst,
+                    );
+                  },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 20),
                     child: Text(

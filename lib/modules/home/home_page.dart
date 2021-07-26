@@ -34,9 +34,10 @@ class _HomePageState extends State<HomePage> {
     Icons.arrow_upward,
     Icons.arrow_downward,
     FontAwesomeIcons.handHoldingUsd,
-    FontAwesomeIcons.mobile,
+    FontAwesomeIcons.mobileAlt,
     FontAwesomeIcons.commentDollar,
     Icons.favorite_border_outlined,
+    Icons.help_outline,
   ];
   final routes = [
     "/pix",
@@ -47,6 +48,7 @@ class _HomePageState extends State<HomePage> {
     "/recarga",
     "/cobrar",
     "/doacao",
+    "/ajuda",
   ];
 
   @override
