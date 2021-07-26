@@ -347,18 +347,29 @@ class _HomePageState extends State<HomePage> {
                         scrollDirection: Axis.horizontal,
                         physics: BouncingScrollPhysics(),
                         children: [
-                          HomeCardDescubraWidget(
-                            title: "WhatsApp",
-                            subtitle:
-                                "Pagamentos seguros, rápidos e sem tarifa. A experiência Nubank sem nem sair da conversa.",
-                            chipText: "Quero conhecer",
-                            isNew: true,
+                          Container(
+                            width: MediaQuery.of(context).size.width / 1.25,
+                            child: HomeCardDescubraWidget(
+                              title: "WhatsApp",
+                              subtitle:
+                                  "Pagamentos seguros, rápidos e sem tarifa. A experiência Nubank sem nem sair da conversa.",
+                              chipText: "Quero conhecer",
+                              isNew: true,
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                    context, "/whatsapp_cadastrar");
+                              },
+                            ),
                           ),
-                          HomeCardDescubraWidget(
-                            title: "Indique seus amigos",
-                            subtitle:
-                                "Mostre aos seus amigos como é fácil ter uma vida sem burocracia.",
-                            chipText: "Indicar amigos",
+                          Container(
+                            width: MediaQuery.of(context).size.width / 1.25,
+                            child: HomeCardDescubraWidget(
+                              title: "Indique seus amigos",
+                              subtitle:
+                                  "Mostre aos seus amigos como é fácil ter uma vida sem burocracia.",
+                              chipText: "Indicar amigos",
+                              onPressed: () {},
+                            ),
                           ),
                         ],
                       ),

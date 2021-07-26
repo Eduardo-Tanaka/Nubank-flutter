@@ -11,6 +11,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   final IconData? trailingIcon;
   final VoidCallback? onPressedTrailing;
   final VoidCallback? onPress;
+  final Color? backgroundColor;
 
   @override
   final Size preferredSize = Size.fromHeight(kToolbarHeight);
@@ -24,19 +25,20 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
     this.trailingIcon,
     this.onPressedTrailing,
     this.onPress,
+    this.backgroundColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: backgroundColor ?? Colors.white,
       elevation: 0,
       centerTitle: true,
       title: showTitle(),
       leading: IconButton(
         icon: Icon(
           icon ?? Icons.close,
-          color: Colors.grey,
+          color: backgroundColor != null ? Colors.white : Colors.grey,
           size: icon == null ? 32 : 40,
         ),
         onPressed: onPress ?? () => Navigator.of(context).pop(),
@@ -47,7 +49,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
           child: IconButton(
             icon: Icon(
               trailingIcon ?? Icons.help_outline,
-              color: Colors.grey,
+              color: backgroundColor != null ? Colors.white : Colors.grey,
             ),
             onPressed: onPressedTrailing,
           ),

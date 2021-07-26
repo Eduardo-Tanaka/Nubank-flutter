@@ -6,24 +6,25 @@ import 'package:nubank/shared/themes/app_text_styles.dart';
 class HomeCardDescubraWidget extends StatelessWidget {
   final String title;
   final String subtitle;
-  final String chipText;
+  final String? chipText;
   final bool isNew;
+  final VoidCallback? onPressed;
 
   const HomeCardDescubraWidget({
     Key? key,
     required this.title,
     required this.subtitle,
-    required this.chipText,
+    this.chipText,
     this.isNew = false,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width / 1.25,
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 8),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: TextButton.styleFrom(
           backgroundColor: Colors.grey[200],
           padding: EdgeInsets.all(16),
@@ -77,13 +78,16 @@ class HomeCardDescubraWidget extends StatelessWidget {
                 ),
               ],
             ),
-            Chip(
-              label: Text(
-                chipText,
-                style: TextStyles.textWhiteBold,
+            Visibility(
+              visible: chipText == null ? false : true,
+              child: Chip(
+                label: Text(
+                  chipText ?? "",
+                  style: TextStyles.textWhiteBold,
+                ),
+                backgroundColor: AppColors.primary,
+                padding: const EdgeInsets.all(10),
               ),
-              backgroundColor: AppColors.primary,
-              padding: const EdgeInsets.all(10),
             ),
           ],
         ),

@@ -39,6 +39,7 @@ import 'modules/pix/pix_copia_cola/pix_copia_cola_page.dart';
 import 'modules/splash/splash_page.dart';
 import 'modules/transferir/qrcode/transferir_qrcode_page.dart';
 import 'modules/transferir/transferir_confirmar_page.dart';
+import 'modules/whatsapp/whatsapp_cadastrar_page.dart';
 
 class AppWidget extends StatelessWidget {
   // travar orientacao da tela para retrato
@@ -91,6 +92,7 @@ class AppWidget extends StatelessWidget {
       "/transferir_qrcode": TransferirQrcodePage(),
       "/pix_copia_cola": PixCopiaColaPage(),
       "/qrcode_read": QrcodeReadPage(),
+      "/whatsapp_cadastrar": WhatsappCadastrarPage(),
     };
     return MaterialApp(
       title: 'Nubank',

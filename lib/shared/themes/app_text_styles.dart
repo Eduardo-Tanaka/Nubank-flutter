@@ -60,6 +60,11 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: Colors.white,
   );
+  static final textWhiteBigBold = GoogleFonts.roboto(
+    fontSize: 30,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
+  );
   static final textSmall = GoogleFonts.roboto(
     fontSize: 16,
   );
