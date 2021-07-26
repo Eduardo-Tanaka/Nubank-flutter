@@ -12,6 +12,7 @@ class HomeCardWidget extends StatelessWidget {
   final String? value;
   final String? info;
   final bool showButton;
+  final VoidCallback? onTap;
 
   const HomeCardWidget({
     Key? key,
@@ -23,6 +24,7 @@ class HomeCardWidget extends StatelessWidget {
     this.value,
     this.info,
     this.showButton = false,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -30,7 +32,7 @@ class HomeCardWidget extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: () {},
+        onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,

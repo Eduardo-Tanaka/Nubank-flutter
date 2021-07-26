@@ -274,6 +274,7 @@ class _HomePageState extends State<HomePage> {
                     subTitle: "Fatura atual",
                     value: "R\$ 5.000,00",
                     info: "Limite disponível de R\$ 4.000,00",
+                    onTap: () {},
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -299,6 +300,7 @@ class _HomePageState extends State<HomePage> {
                     title: "Empréstimo",
                     subTitle: "Valor disponível de até",
                     info: "R\$ 30.000,00",
+                    onTap: () {},
                   ),
                   Divider(
                     height: 1,
@@ -312,6 +314,7 @@ class _HomePageState extends State<HomePage> {
                     subTitle:
                         "A revolução roxa começou. Invista de maneira simples, sem burocracia e 100% digital.",
                     showButton: true,
+                    onTap: () {},
                   ),
                   Divider(
                     height: 1,
@@ -324,6 +327,12 @@ class _HomePageState extends State<HomePage> {
                     title: "Seguro de vida",
                     subTitle:
                         "Conheça Nubank Vida: um seguro simples e que cabe no bolso.",
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        "/seguro_vida",
+                      );
+                    },
                   ),
                   Divider(
                     height: 1,
@@ -357,7 +366,9 @@ class _HomePageState extends State<HomePage> {
                               isNew: true,
                               onPressed: () {
                                 Navigator.pushNamed(
-                                    context, "/whatsapp_cadastrar");
+                                  context,
+                                  "/whatsapp_cadastrar",
+                                );
                               },
                             ),
                           ),
@@ -368,7 +379,12 @@ class _HomePageState extends State<HomePage> {
                               subtitle:
                                   "Mostre aos seus amigos como é fácil ter uma vida sem burocracia.",
                               chipText: "Indicar amigos",
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  "/indicar_amigos",
+                                );
+                              },
                             ),
                           ),
                         ],

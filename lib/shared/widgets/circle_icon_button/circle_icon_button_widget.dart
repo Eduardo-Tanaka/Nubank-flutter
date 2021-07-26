@@ -7,6 +7,7 @@ class CircleIconButtonWidget extends StatelessWidget {
   final Color? background;
   final Color? color;
   final double padding;
+  final double iconSize;
 
   const CircleIconButtonWidget({
     Key? key,
@@ -15,6 +16,7 @@ class CircleIconButtonWidget extends StatelessWidget {
     required this.padding,
     this.background,
     this.color,
+    this.iconSize = 26,
   }) : super(key: key);
 
   @override
@@ -24,7 +26,7 @@ class CircleIconButtonWidget extends StatelessWidget {
       child: Icon(
         icon,
         color: color == null ? Colors.white : color,
-        size: 26,
+        size: iconSize,
       ),
       style: ElevatedButton.styleFrom(
         primary:

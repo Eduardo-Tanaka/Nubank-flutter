@@ -7,12 +7,18 @@ class CardWhatsappWidget extends StatelessWidget {
   final IconData icon;
   final String title;
   final String subtitle;
+  final double size;
+  final double padding;
+  final Color? iconColor;
 
   const CardWhatsappWidget({
     Key? key,
     required this.icon,
     required this.title,
     required this.subtitle,
+    this.size = 26,
+    this.iconColor,
+    this.padding = 12,
   }) : super(key: key);
 
   @override
@@ -25,8 +31,9 @@ class CardWhatsappWidget extends StatelessWidget {
           CircleIconButtonWidget(
             icon: icon,
             background: Colors.grey[200],
-            color: Colors.black,
-            padding: 12,
+            color: iconColor ?? Colors.black,
+            padding: padding,
+            iconSize: size,
             onPressed: null,
           ),
           Padding(
