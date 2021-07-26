@@ -65,7 +65,6 @@ class _SeguroVidaPageState extends State<SeguroVidaPage> {
                             arguments: AjudaParams(
                               title: "Seguro de vida",
                               jsonFile: "seguro_vida.json",
-                              route: "ajuda_detalhe",
                             ),
                           );
                         },

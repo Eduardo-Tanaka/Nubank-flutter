@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:nubank/modules/ajuda/ajuda_detalhe_page.dart';
 import 'package:nubank/modules/ajuda/ajuda_home_page.dart';
 import 'package:nubank/modules/ajuda/ajuda_page.dart';
 import 'package:nubank/modules/ajuda/pix/ajuda_pix_detalhe_page.dart';
@@ -64,6 +65,7 @@ class AppWidget extends StatelessWidget {
       "/splash": SplashPage(),
       "/home": HomePage(),
       "/ajuda": AjudaPage(),
+      "/ajuda_detalhe": AjudaDetalhePage(),
       "/ajuda_home": AjudaHomePage(),
       "/ajuda_pix_home": AjudaPixHomePage(),
       "/ajuda_pix_detalhe": AjudaPixDetalhePage(),
@@ -128,6 +130,7 @@ class AppWidget extends StatelessWidget {
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
               switch (settings.name) {
+                case "/ajuda_detalhe":
                 case "/ajuda_pix_detalhe":
                 case "/ajuda_whatsapp_detalhe":
                 case "/boleto":

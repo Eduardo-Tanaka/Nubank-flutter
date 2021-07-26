@@ -3,12 +3,10 @@ import 'dart:convert';
 class AjudaParams {
   final String title;
   final String jsonFile;
-  final String route;
 
   AjudaParams({
     required this.title,
     required this.jsonFile,
-    required this.route,
   });
 
   AjudaParams copyWith({
@@ -19,7 +17,6 @@ class AjudaParams {
     return AjudaParams(
       title: title ?? this.title,
       jsonFile: jsonFile ?? this.jsonFile,
-      route: route ?? this.route,
     );
   }
 
@@ -27,7 +24,6 @@ class AjudaParams {
     return {
       'title': title,
       'jsonFile': jsonFile,
-      'route': route,
     };
   }
 
@@ -35,7 +31,6 @@ class AjudaParams {
     return AjudaParams(
       title: map['title'],
       jsonFile: map['jsonFile'],
-      route: map['route'],
     );
   }
 
@@ -45,8 +40,7 @@ class AjudaParams {
       AjudaParams.fromMap(json.decode(source));
 
   @override
-  String toString() =>
-      'AjudaParams(title: $title, jsonFile: $jsonFile, route: $route)';
+  String toString() => 'AjudaParams(title: $title, jsonFile: $jsonFile)';
 
   @override
   bool operator ==(Object other) {
@@ -54,10 +48,9 @@ class AjudaParams {
 
     return other is AjudaParams &&
         other.title == title &&
-        other.jsonFile == jsonFile &&
-        other.route == route;
+        other.jsonFile == jsonFile;
   }
 
   @override
-  int get hashCode => title.hashCode ^ jsonFile.hashCode ^ route.hashCode;
+  int get hashCode => title.hashCode ^ jsonFile.hashCode;
 }

@@ -19,7 +19,6 @@ class SeguroVidaInfoPage extends StatelessWidget {
             arguments: AjudaParams(
               title: "Seguro de vida",
               jsonFile: "seguro_vida.json",
-              route: "ajuda_detalhe",
             ),
           );
         },

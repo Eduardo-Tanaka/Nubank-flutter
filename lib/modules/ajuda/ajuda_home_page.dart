@@ -46,8 +46,8 @@ class AjudaHomePage extends StatelessWidget {
                         onTap: () {
                           Navigator.pushNamed(
                             context,
-                            args.route,
-                            arguments: ajuda,
+                            "/ajuda_detalhe",
+                            arguments: ajuda.copyWith(superTitle: args.title),
                           );
                         },
                       ),
