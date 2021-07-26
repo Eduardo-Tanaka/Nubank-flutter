@@ -15,6 +15,9 @@ class WhatsappCadastrarPage extends StatelessWidget {
       appBar: AppBarWidget(
         backgroundColor: AppColors.primary,
         showTrailingIcon: true,
+        onPressedTrailing: () {
+          Navigator.pushNamed(context, "/ajuda_whatsapp_home");
+        },
       ),
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (OverscrollIndicatorNotification overscroll) {
