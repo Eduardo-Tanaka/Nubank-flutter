@@ -38,6 +38,7 @@ class ButtonNuWidget extends StatelessWidget {
       style: TextButton.styleFrom(
         backgroundColor: color ?? AppColors.primary,
         padding: EdgeInsets.all(padding),
+        primary: Colors.black87,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(32),

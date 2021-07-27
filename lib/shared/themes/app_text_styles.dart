@@ -84,14 +84,14 @@ class TextStyles {
     fontSize: 16,
     fontWeight: FontWeight.w600,
   );
+  static final textGrey = GoogleFonts.roboto(
+    color: Colors.grey,
+    fontSize: 18,
+  );
   static final textGreyBold = GoogleFonts.roboto(
     color: Colors.grey,
     fontSize: 18,
     fontWeight: FontWeight.w600,
-  );
-  static final textGrey = GoogleFonts.roboto(
-    color: Colors.grey,
-    fontSize: 18,
   );
   static final textCardGrey = GoogleFonts.roboto(
     color: Colors.grey,

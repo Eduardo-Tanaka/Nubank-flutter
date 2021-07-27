@@ -12,6 +12,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   final VoidCallback? onPressedTrailing;
   final VoidCallback? onPress;
   final Color? backgroundColor;
+  final double? linearProgressWidth;
 
   @override
   final Size preferredSize = Size.fromHeight(kToolbarHeight);
@@ -26,6 +27,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
     this.onPressedTrailing,
     this.onPress,
     this.backgroundColor,
+    this.linearProgressWidth = 100,
   }) : super(key: key);
 
   @override
@@ -70,7 +72,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
 
     if (value != null) {
       return Container(
-        width: 100,
+        width: linearProgressWidth,
         child: LinearProgressIndicator(
           color: AppColors.background,
           backgroundColor: Colors.grey[100],

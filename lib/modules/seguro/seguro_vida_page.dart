@@ -190,7 +190,9 @@ class _SeguroVidaPageState extends State<SeguroVidaPage> {
             children: [
               ButtonNuWidget(
                 text: "Simular meu seguro",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, "/seguro_vida_simular");
+                },
               ),
             ],
           ),

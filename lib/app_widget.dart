@@ -32,6 +32,7 @@ import 'package:nubank/modules/recarga/recarga_valor_page.dart';
 import 'package:nubank/modules/receber/receber_page.dart';
 import 'package:nubank/modules/seguro/seguro_vida_info_page.dart';
 import 'package:nubank/modules/seguro/seguro_vida_page.dart';
+import 'package:nubank/modules/seguro/seguro_vida_simular_page.dart';
 import 'package:nubank/modules/transferir/qrcode/qrcode_read_page.dart';
 import 'package:nubank/modules/transferir/transferir_destino_page.dart';
 import 'package:nubank/modules/transferir/transferir_page.dart';
@@ -98,6 +99,7 @@ class AppWidget extends StatelessWidget {
       "/receber": ReceberPage(),
       "/seguro_vida": SeguroVidaPage(),
       "/seguro_vida_info": SeguroVidaInfoPage(),
+      "/seguro_vida_simular": SeguroVidaSimularPage(),
       "/transferir": TransferirPage(),
       "/transferir_confirmar": TransferirConfirmarPage(),
       "/transferir_destino": TransferirDestinoPage(),
