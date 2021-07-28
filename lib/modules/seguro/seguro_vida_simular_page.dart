@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:nubank/shared/models/ajuda_params.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
@@ -65,7 +67,9 @@ class _SeguroVidaSimularPageState extends State<SeguroVidaSimularPage> {
                       ),
                       ButtonNuWidget(
                         text: "Continuar",
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         textColor: Colors.black,
                         color: Colors.grey[200],
                       ),
@@ -77,6 +81,10 @@ class _SeguroVidaSimularPageState extends State<SeguroVidaSimularPage> {
           );
         },
       );
+
+      _focus.addListener(_onFocusChange);
+      copyProfissoes = profissoes;
+      setState(() {});
     });
   }
 
@@ -100,119 +108,198 @@ class _SeguroVidaSimularPageState extends State<SeguroVidaSimularPage> {
     "Bancário(a)",
     "Biomédico(a)",
     "Biólogo(a)",
-    "Bombeiro(a), Salva-vidas"
+    "Bombeiro(a), Salva-vidas",
+    "Outro não especificado",
   ];
+  List<String> copyProfissoes = [];
+  FocusNode _focus = new FocusNode();
+  void _onFocusChange() {
+    visible = !visible;
+    copyProfissoes = profissoes;
+    setState(() {});
+  }
+
   final textController = TextEditingController();
+  bool visible = true;
+  Timer? _debounce;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBarWidget(
-        value: 0.2,
-        linearProgressWidth: null,
-        icon: Icons.navigate_before,
-        showTrailingIcon: true,
-        onPressedTrailing: () {
-          Navigator.pushNamed(
+    return WillPopScope(
+      onWillPop: () async {
+        if (visible) {
+          Navigator.pop(
             context,
-            "/ajuda_home",
-            arguments: AjudaParams(
-              title: "Seguro de vida",
-              jsonFile: "seguro_vida.json",
-            ),
           );
-        },
-      ),
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: [
-                  Text(
-                    "Qual é a sua atividade profissional?",
-                    style: TextStyles.textBigBold,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: Text(
-                      "Selecione sua profissão atual na lista abaixo. É importante selecionar a atividade correta, pois isso interfere na sua proposta e na validação do contrato.",
-                      style: TextStyles.textGrey,
+        } else {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+
+          if (!currentFocus.hasPrimaryFocus) {
+            currentFocus.unfocus();
+          }
+          textController.clear();
+        }
+
+        return false;
+      },
+      child: Scaffold(
+        appBar: visible
+            ? AppBarWidget(
+                value: 0.2,
+                linearProgressWidth: null,
+                icon: Icons.navigate_before,
+                showTrailingIcon: true,
+                onPressedTrailing: () {
+                  Navigator.pushNamed(
+                    context,
+                    "/ajuda_home",
+                    arguments: AjudaParams(
+                      title: "Seguro de vida",
+                      jsonFile: "seguro_vida.json",
                     ),
-                  ),
-                  TextField(
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(12),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(32),
-                        borderSide: BorderSide(
-                          width: 0,
-                          style: BorderStyle.none,
-                        ),
-                      ),
-                      hintText: "Buscar \"comerciante\"",
-                      fillColor: Colors.grey[200],
-                      filled: true,
-                      suffixIcon: IconButton(
-                        icon: Icon(Icons.cancel_outlined),
-                        color: Colors.black54,
-                        onPressed: () {
-                          textController.clear();
-                        },
-                        splashColor: Colors.transparent,
-                      ),
-                      prefixIcon: IconButton(
-                        icon: Icon(
-                          Icons.chevron_left_outlined,
-                        ),
-                        color: Colors.black54,
-                        onPressed: () {},
-                        splashColor: Colors.transparent,
-                      ),
-                    ),
-                    controller: textController,
-                  ),
-                ],
+                  );
+                },
+              )
+            : null,
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              Visibility(
+                visible: !visible,
+                child: SizedBox(
+                  height: 40,
+                ),
               ),
-            ),
-            ListView.builder(
-              physics: ScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: profissoes.length,
-              itemBuilder: (context, index) {
-                return RadioButtonWidget(
-                  onChanged: (value) {
-                    setState(() {
-                      groupValue = value;
-                    });
-                  },
-                  onTap: () {
-                    setState(() {
-                      groupValue = profissoes[index];
-                    });
-                  },
-                  groupValue: groupValue,
-                  value: profissoes[index],
-                );
-              },
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Visibility(
+                      visible: visible,
+                      child: Column(
+                        children: [
+                          Text(
+                            "Qual é a sua atividade profissional?",
+                            style: TextStyles.textBigBold,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            child: Text(
+                              "Selecione sua profissão atual na lista abaixo. É importante selecionar a atividade correta, pois isso interfere na sua proposta e na validação do contrato.",
+                              style: TextStyles.textGrey,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(12),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32),
+                          borderSide: BorderSide(
+                            width: 0,
+                            style: BorderStyle.none,
+                          ),
+                        ),
+                        hintText: "Buscar \"comerciante\"",
+                        fillColor: Colors.grey[200],
+                        filled: true,
+                        suffixIcon: IconButton(
+                          icon: Icon(Icons.cancel_outlined),
+                          color: Colors.black54,
+                          onPressed: () {
+                            textController.clear();
+                          },
+                          splashColor: Colors.transparent,
+                        ),
+                        prefixIcon: IconButton(
+                          icon: Icon(
+                            Icons.chevron_left_outlined,
+                          ),
+                          color: Colors.black54,
+                          onPressed: () {
+                            FocusScopeNode currentFocus =
+                                FocusScope.of(context);
+
+                            if (!currentFocus.hasPrimaryFocus) {
+                              currentFocus.unfocus();
+                            }
+                            textController.clear();
+                          },
+                          splashColor: Colors.transparent,
+                        ),
+                      ),
+                      controller: textController,
+                      focusNode: _focus,
+                      onChanged: (value) {
+                        if (_debounce?.isActive ?? false) _debounce?.cancel();
+                        _debounce =
+                            Timer(const Duration(milliseconds: 300), () {
+                          copyProfissoes = profissoes.where(
+                            (element) {
+                              return element.toLowerCase().contains(value);
+                            },
+                          ).toList();
+                          if (copyProfissoes.isEmpty) {
+                            copyProfissoes.add("Outro não especificado");
+                          }
+                          setState(() {});
+                        });
+                      },
+                      onSubmitted: (value) {
+                        textController.clear();
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              ListView.builder(
+                physics: ScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: copyProfissoes.length,
+                itemBuilder: (context, index) {
+                  return RadioButtonWidget(
+                    onChanged: (value) {
+                      setState(() {
+                        groupValue = value;
+                      });
+                    },
+                    onTap: () {
+                      setState(() {
+                        groupValue = copyProfissoes[index];
+                      });
+                    },
+                    groupValue: groupValue,
+                    value: copyProfissoes[index],
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+        floatingActionButton: FloatingActionButtonWidget(
+          onPressed: () {
+            if (groupValue != null) {
+              Navigator.pushNamed(
+                context,
+                "/recarga_resumo",
+                arguments: groupValue,
+              );
+            }
+          },
+          value: groupValue,
         ),
       ),
-      floatingActionButton: FloatingActionButtonWidget(
-        onPressed: () {
-          if (groupValue != null) {
-            Navigator.pushNamed(
-              context,
-              "/recarga_resumo",
-              arguments: groupValue,
-            );
-          }
-        },
-        value: groupValue,
-      ),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _focus.dispose();
+    _debounce?.cancel();
+    textController.dispose();
   }
 }
