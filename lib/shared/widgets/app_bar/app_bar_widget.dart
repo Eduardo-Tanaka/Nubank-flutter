@@ -50,7 +50,12 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
           visible: showTrailingIcon,
           child: IconButton(
             icon: Icon(
-              trailingIcon ?? Icons.help_outline,
+              // TODO para não mostrar o ícone, mas manter o epaço do ícone refatorar melhor depois
+              trailingIcon == null
+                  ? Icons.help_outline
+                  : trailingIcon == Icons.help_outline
+                      ? null
+                      : trailingIcon,
               color: backgroundColor != null ? Colors.white : Colors.grey,
             ),
             onPressed: onPressedTrailing,

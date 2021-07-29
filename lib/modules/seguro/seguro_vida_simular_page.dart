@@ -145,7 +145,7 @@ class _SeguroVidaSimularPageState extends State<SeguroVidaSimularPage> {
       child: Scaffold(
         appBar: visible
             ? AppBarWidget(
-                value: 0.2,
+                value: 0.25,
                 linearProgressWidth: null,
                 icon: Icons.navigate_before,
                 showTrailingIcon: true,
@@ -284,7 +284,7 @@ class _SeguroVidaSimularPageState extends State<SeguroVidaSimularPage> {
             if (groupValue != null) {
               Navigator.pushNamed(
                 context,
-                "/recarga_resumo",
+                "/seguro_vida_simular2",
                 arguments: groupValue,
               );
             }

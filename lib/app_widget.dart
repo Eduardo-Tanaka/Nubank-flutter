@@ -33,6 +33,7 @@ import 'package:nubank/modules/receber/receber_page.dart';
 import 'package:nubank/modules/seguro/seguro_vida_info_page.dart';
 import 'package:nubank/modules/seguro/seguro_vida_page.dart';
 import 'package:nubank/modules/seguro/seguro_vida_simular_page.dart';
+import 'package:nubank/modules/seguro/seguro_vida_simular_page2.dart';
 import 'package:nubank/modules/transferir/qrcode/qrcode_read_page.dart';
 import 'package:nubank/modules/transferir/transferir_destino_page.dart';
 import 'package:nubank/modules/transferir/transferir_page.dart';
@@ -100,6 +101,7 @@ class AppWidget extends StatelessWidget {
       "/seguro_vida": SeguroVidaPage(),
       "/seguro_vida_info": SeguroVidaInfoPage(),
       "/seguro_vida_simular": SeguroVidaSimularPage(),
+      "/seguro_vida_simular2": SeguroVidaSimularPage2(),
       "/transferir": TransferirPage(),
       "/transferir_confirmar": TransferirConfirmarPage(),
       "/transferir_destino": TransferirDestinoPage(),
@@ -149,6 +151,7 @@ class AppWidget extends StatelessWidget {
                 case "/recarga_resumo":
                 case "/receber":
                 case "/seguro_vida":
+                case "/seguro_vida_simular2":
                 case "/transferir_destino":
                 case "/qrcode_read":
                   return slideRightLeft(animation, child);
