@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
@@ -65,7 +66,8 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8),
                         child: Text(
-                          "R\$ $cobertura",
+                          NumberFormat.currency(locale: "pt_BR", symbol: "R\$")
+                              .format(cobertura),
                           style: TextStyles.textAjudaBold,
                         ),
                       ),
@@ -140,20 +142,28 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
                           style: TextStyles.textGreySmallBold,
                         ),
                       ),
-                      Row(
-                        children: [
-                          Text(
-                            "Ver detalhes",
-                            style: TextStyles.textNuSmallBold,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: Icon(
-                              Icons.arrow_forward_outlined,
-                              color: AppColors.primary,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            "/seguro_vida_detalhe_morte_natural_acidental",
+                          );
+                        },
+                        child: Row(
+                          children: [
+                            Text(
+                              "Ver detalhes",
+                              style: TextStyles.textNuSmallBold,
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8),
+                              child: Icon(
+                                Icons.arrow_forward_outlined,
+                                color: AppColors.primary,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -220,7 +230,8 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
               familiares: familiares,
               checkbox1: SeguroVidaCheckboxWidget(
                 title: familiares[0],
-                badge: "+R\$ ${valores[0]}",
+                badge:
+                    "+${NumberFormat.currency(locale: "pt_BR", symbol: "R\$").format(valores[0])}",
                 value: familiar1,
                 onTap: () {
                   familiar1 = !familiar1;
@@ -235,7 +246,8 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
               ),
               checkbox2: SeguroVidaCheckboxWidget(
                 title: familiares[1],
-                badge: "+R\$ ${valores[1]}",
+                badge:
+                    "+${NumberFormat.currency(locale: "pt_BR", symbol: "R\$").format(valores[1])}",
                 value: familiar2,
                 onTap: () {
                   familiar2 = !familiar2;
@@ -265,7 +277,7 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "R\$ ${total.toStringAsFixed(2).replaceAll(".", ",")} / mês",
+                    "${NumberFormat.currency(locale: "pt_BR", symbol: "R\$").format(total)} / mês",
                     style: TextStyles.textBold,
                   ),
                   Text(
