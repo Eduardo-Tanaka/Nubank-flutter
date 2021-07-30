@@ -45,6 +45,7 @@ import 'modules/pagar/pagar_modo_pagamento_page.dart';
 import 'modules/pagar/pagar_valor_page.dart';
 import 'modules/pix/pix_chaves/pix_chaves_page.dart';
 import 'modules/pix/pix_copia_cola/pix_copia_cola_page.dart';
+import 'modules/seguro/detalhes/seguro_vida_detalhe_funeral_titular_page.dart';
 import 'modules/splash/splash_page.dart';
 import 'modules/transferir/qrcode/transferir_qrcode_page.dart';
 import 'modules/transferir/transferir_confirmar_page.dart';
@@ -102,6 +103,8 @@ class AppWidget extends StatelessWidget {
       "/seguro_vida": SeguroVidaPage(),
       "/seguro_vida_detalhe_morte_natural_acidental":
           SeguroVidaDetalheMorteNaturalAcidentalPage(),
+      "/seguro_vida_detalhe_funeral_titular":
+          SeguroVidaDetalheFuneralTitularPage(),
       "/seguro_vida_info": SeguroVidaInfoPage(),
       "/seguro_vida_simular": SeguroVidaSimularPage(),
       "/seguro_vida_simular2": SeguroVidaSimularPage2(),

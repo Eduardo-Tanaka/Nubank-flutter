@@ -183,6 +183,12 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
               subtitle1:
                   "Há uma carência de 90 dias para morte natural. Para morte acidental, não há carência.",
               subtitle2: "Os beneficiários são definidos nas próximas etapas.",
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  "/seguro_vida_detalhe_funeral_titular",
+                );
+              },
             ),
             CardSeguroVidaWidget(
               title: "Hospitalização",
@@ -201,6 +207,7 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
                   }
                 });
               },
+              onTap: () {},
             ),
             CardSeguroVidaWidget(
               title: "Invalidez",
@@ -219,6 +226,7 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
                   }
                 });
               },
+              onTap: () {},
             ),
             CardSeguroVidaWidget(
               title: "Assistência funeral de familiares",
@@ -260,6 +268,7 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
                   });
                 },
               ),
+              onTap: () {},
             )
           ],
         ),
