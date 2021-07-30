@@ -313,7 +313,12 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
                 alignment: Alignment.center,
                 child: ButtonNuWidget(
                   text: "Continuar",
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      "/seguro_vida_simular3",
+                    );
+                  },
                 ),
               ),
             ],

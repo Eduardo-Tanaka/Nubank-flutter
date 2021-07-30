@@ -11,6 +11,7 @@ class DetalheWidget extends StatelessWidget {
     required this.subtitle,
   }) : super(key: key);
 
+  // TODO refatorar para todas as páginas utilizarem o mesmo widget (todos tem a mesma estrutura de 3 ou 4 cards)
   @override
   Widget build(BuildContext context) {
     return Column(
