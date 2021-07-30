@@ -43,13 +43,23 @@ class SeguroVidaSimularPage3 extends StatelessWidget {
             iconLeading: Icons.phone_android_outlined,
             title: "Cartão de crédito do Nubank",
             subtitle: "Vencimento da fatura em xx XXX",
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                "/seguro_vida_simular4",
+              );
+            },
           ),
           TileWidget(
             iconLeading: Icons.local_atm_outlined,
             title: "Conta do Nubank",
             subtitle: "Seu saldo atual é de R\$ 2.000,00",
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                "/seguro_vida_simular4",
+              );
+            },
           ),
           Padding(
             padding: const EdgeInsets.all(20),

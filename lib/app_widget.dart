@@ -50,6 +50,7 @@ import 'modules/pix/pix_chaves/pix_chaves_page.dart';
 import 'modules/pix/pix_copia_cola/pix_copia_cola_page.dart';
 import 'modules/seguro/detalhes/seguro_vida_detalhe_funeral_titular_page.dart';
 import 'modules/seguro/seguro_vida_simular_page3.dart';
+import 'modules/seguro/seguro_vida_simular_page4.dart';
 import 'modules/splash/splash_page.dart';
 import 'modules/transferir/qrcode/transferir_qrcode_page.dart';
 import 'modules/transferir/transferir_confirmar_page.dart';
@@ -118,6 +119,7 @@ class AppWidget extends StatelessWidget {
       "/seguro_vida_simular": SeguroVidaSimularPage(),
       "/seguro_vida_simular2": SeguroVidaSimularPage2(),
       "/seguro_vida_simular3": SeguroVidaSimularPage3(),
+      "/seguro_vida_simular4": SeguroVidaSimularPage4(),
       "/transferir": TransferirPage(),
       "/transferir_confirmar": TransferirConfirmarPage(),
       "/transferir_destino": TransferirDestinoPage(),
@@ -169,6 +171,7 @@ class AppWidget extends StatelessWidget {
                 case "/seguro_vida":
                 case "/seguro_vida_simular2":
                 case "/seguro_vida_simular3":
+                case "/seguro_vida_simular4":
                 case "/transferir_destino":
                 case "/qrcode_read":
                   return slideRightLeft(animation, child);

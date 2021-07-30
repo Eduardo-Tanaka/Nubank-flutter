@@ -181,8 +181,9 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
               badge: "íncluído",
               showSwitch: false,
               subtitle1:
+                  "R\$ 5.000,00 de cobertura para prestação do serviço funeral ou reembolso dos custos.",
+              subtitle2:
                   "Há uma carência de 90 dias para morte natural. Para morte acidental, não há carência.",
-              subtitle2: "Os beneficiários são definidos nas próximas etapas.",
               onTap: () {
                 Navigator.pushNamed(
                   context,

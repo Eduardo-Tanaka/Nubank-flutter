@@ -15,7 +15,7 @@ class CardSeguroVidaWidget extends StatelessWidget {
   final List<String>? familiares;
   final SeguroVidaCheckboxWidget? checkbox1;
   final SeguroVidaCheckboxWidget? checkbox2;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   const CardSeguroVidaWidget({
     Key? key,
@@ -96,24 +96,27 @@ class CardSeguroVidaWidget extends StatelessWidget {
                 visible: checkbox2 != null,
                 child: checkbox2 ?? Container(),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16),
-                child: GestureDetector(
-                  onTap: onTap,
-                  child: Row(
-                    children: [
-                      Text(
-                        "Ver detalhes",
-                        style: TextStyles.textNuSmallBold,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8),
-                        child: Icon(
-                          Icons.arrow_forward_outlined,
-                          color: AppColors.primary,
+              Visibility(
+                visible: onTap != null ? true : false,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 16),
+                  child: GestureDetector(
+                    onTap: onTap,
+                    child: Row(
+                      children: [
+                        Text(
+                          "Ver detalhes",
+                          style: TextStyles.textNuSmallBold,
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8),
+                          child: Icon(
+                            Icons.arrow_forward_outlined,
+                            color: AppColors.primary,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
