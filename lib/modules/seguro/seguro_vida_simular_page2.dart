@@ -231,7 +231,12 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
                   }
                 });
               },
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  "/seguro_vida_detalhe_invalidez",
+                );
+              },
             ),
             CardSeguroVidaWidget(
               title: "Assistência funeral de familiares",
