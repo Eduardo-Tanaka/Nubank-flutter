@@ -30,6 +30,7 @@ import 'package:nubank/modules/recarga/recarga_page.dart';
 import 'package:nubank/modules/recarga/recarga_resumo_page.dart';
 import 'package:nubank/modules/recarga/recarga_valor_page.dart';
 import 'package:nubank/modules/receber/receber_page.dart';
+import 'package:nubank/modules/seguro/detalhes/seguro_vida_detalhe_funeral_familiar_page.dart';
 import 'package:nubank/modules/seguro/detalhes/seguro_vida_detalhe_hospitalizacao_page.dart';
 import 'package:nubank/modules/seguro/detalhes/seguro_vida_detalhe_invalidez_page.dart';
 import 'package:nubank/modules/seguro/detalhes/seguro_vida_morte_detalhe_natural_acidental_page.dart';
@@ -110,6 +111,8 @@ class AppWidget extends StatelessWidget {
       "/seguro_vida_detalhe_hospitalizacao":
           SeguroVidaDetalheHospitalizacaoPage(),
       "/seguro_vida_detalhe_invalidez": SeguroVidaDetalheInvalidezPage(),
+      "/seguro_vida_detalhe_funeral_familiar":
+          SeguroVidaDetalheFuneralFamiliarPage(),
       "/seguro_vida_info": SeguroVidaInfoPage(),
       "/seguro_vida_simular": SeguroVidaSimularPage(),
       "/seguro_vida_simular2": SeguroVidaSimularPage2(),
