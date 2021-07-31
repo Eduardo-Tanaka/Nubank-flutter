@@ -319,7 +319,13 @@ class SeguroVidaSimularPage4 extends StatelessWidget {
                           color: AppColors.primary,
                           fontSize: 18,
                         ),
-                        recognizer: TapGestureRecognizer()..onTap = () async {},
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.pushNamed(
+                              context,
+                              "/seguro_vida_funcionamento",
+                            );
+                          },
                       ),
                     ],
                   ),
