@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:nubank/shared/enums/seguro_vida_enum.dart';
+import 'package:nubank/shared/models/seguro_vida.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
@@ -22,6 +24,7 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
   bool familiar1 = false;
   bool familiar2 = false;
   double enabledThumbRadius = 10;
+  List<SeguroVidaEnum> seguros = [];
 
   List<String> familiares = [
     "Cônjuge e filhos",
@@ -203,8 +206,11 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
                 setState(() {
                   if (hospitalizacao) {
                     total = total + 1.38;
+                    seguros.add(SeguroVidaEnum.HOSPITALIZACAO);
                   } else {
                     total = total - 1.38;
+
+                    seguros.remove(SeguroVidaEnum.HOSPITALIZACAO);
                   }
                 });
               },
@@ -227,8 +233,10 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
                 setState(() {
                   if (invalidez) {
                     total = total + 2.63;
+                    seguros.add(SeguroVidaEnum.INVALIDEZ);
                   } else {
                     total = total - 2.63;
+                    seguros.remove(SeguroVidaEnum.INVALIDEZ);
                   }
                 });
               },
@@ -257,8 +265,12 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
                   setState(() {
                     if (familiar1) {
                       total = total + valores[0];
+                      seguros
+                          .add(SeguroVidaEnum.FUNERAL_FAMILIAR_CONJUGE_FILHOS);
                     } else {
                       total = total - valores[0];
+                      seguros.remove(
+                          SeguroVidaEnum.FUNERAL_FAMILIAR_CONJUGE_FILHOS);
                     }
                   });
                 },
@@ -273,8 +285,10 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
                   setState(() {
                     if (familiar2) {
                       total = total + valores[1];
+                      seguros.add(SeguroVidaEnum.FUNERAL_FAMILIAR_PAIS);
                     } else {
                       total = total - valores[1];
+                      seguros.remove(SeguroVidaEnum.FUNERAL_FAMILIAR_PAIS);
                     }
                   });
                 },
@@ -318,6 +332,12 @@ class _SeguroVidaSimularPage2State extends State<SeguroVidaSimularPage2> {
                     Navigator.pushNamed(
                       context,
                       "/seguro_vida_simular3",
+                      arguments: SeguroVida(
+                        valorTotal: total,
+                        cobertura: cobertura,
+                        seguros: seguros,
+                        formaPagamento: null,
+                      ),
                     );
                   },
                 ),

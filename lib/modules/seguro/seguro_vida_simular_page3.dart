@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/shared/enums/forma_pagamento_enum.dart';
+import 'package:nubank/shared/models/seguro_vida.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/tile/tile_widget.dart';
@@ -8,6 +10,9 @@ class SeguroVidaSimularPage3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _seguroVida =
+        ModalRoute.of(context)!.settings.arguments as SeguroVida;
+
     return Scaffold(
       appBar: AppBarWidget(
         value: 0.75,
@@ -47,6 +52,9 @@ class SeguroVidaSimularPage3 extends StatelessWidget {
               Navigator.pushNamed(
                 context,
                 "/seguro_vida_simular4",
+                arguments: _seguroVida.copyWith(
+                  formaPagamento: FormaPagamentoEnum.CARTAO_CREDITO,
+                ),
               );
             },
           ),
@@ -58,6 +66,9 @@ class SeguroVidaSimularPage3 extends StatelessWidget {
               Navigator.pushNamed(
                 context,
                 "/seguro_vida_simular4",
+                arguments: _seguroVida.copyWith(
+                  formaPagamento: FormaPagamentoEnum.CONTA_NUBANK,
+                ),
               );
             },
           ),

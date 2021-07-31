@@ -1,6 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:nubank/shared/enums/forma_pagamento_enum.dart';
+import 'package:nubank/shared/enums/seguro_vida_enum.dart';
+import 'package:nubank/shared/models/seguro_vida.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
@@ -8,11 +11,30 @@ import 'package:nubank/shared/widgets/button_nu/button_nu_widget.dart';
 import 'package:nubank/shared/widgets/card_seguro_vida/card_seguro_vida_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+final DateTime now = DateTime.now();
+final DateFormat formatter = DateFormat('dd/MM/yyyy');
+final String hoje = formatter.format(now);
+double? funeralFamiliar;
+
 class SeguroVidaSimularPage4 extends StatelessWidget {
   const SeguroVidaSimularPage4({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final _seguroVida =
+        ModalRoute.of(context)!.settings.arguments as SeguroVida;
+
+    if (_seguroVida.seguros.contains(SeguroVidaEnum.FUNERAL_FAMILIAR_PAIS) &&
+        _seguroVida.seguros
+            .contains(SeguroVidaEnum.FUNERAL_FAMILIAR_CONJUGE_FILHOS)) {
+      _seguroVida.seguros
+          .remove(SeguroVidaEnum.FUNERAL_FAMILIAR_CONJUGE_FILHOS);
+      funeralFamiliar = SeguroVidaEnum.FUNERAL_FAMILIAR_CONJUGE_FILHOS.value! +
+          SeguroVidaEnum.FUNERAL_FAMILIAR_PAIS.value!;
+    }
+
+    final iof = _seguroVida.valorTotal * 0.38 / 100.0;
+
     return Scaffold(
       appBar: AppBarWidget(
         value: 1,
@@ -36,7 +58,7 @@ class SeguroVidaSimularPage4 extends StatelessWidget {
                     style: TextStyles.textBigBold,
                   ),
                   Text(
-                    "${NumberFormat.currency(locale: "pt_BR", symbol: "R\$").format(12.54)} / mês",
+                    "${NumberFormat.currency(locale: "pt_BR", symbol: "R\$").format(_seguroVida.valorTotal)} / mês",
                     style: TextStyles.textBigBold,
                   ),
                   Padding(
@@ -61,7 +83,7 @@ class SeguroVidaSimularPage4 extends StatelessWidget {
                 style: TextStyles.textBold,
               ),
               trailing: Text(
-                "Conta Nubank",
+                _seguroVida.formaPagamento!.value!,
                 style: TextStyles.textGrey,
               ),
             ),
@@ -77,7 +99,7 @@ class SeguroVidaSimularPage4 extends StatelessWidget {
                 style: TextStyles.textBold,
               ),
               trailing: Text(
-                "dd/MM/yyyy",
+                hoje,
                 style: TextStyles.textGrey,
               ),
             ),
@@ -107,13 +129,15 @@ class SeguroVidaSimularPage4 extends StatelessWidget {
                         style: TextStyles.textBlack,
                       ),
                       Text(
-                        "R\$ 12,54",
+                        NumberFormat.currency(locale: "pt_BR", symbol: "R\$")
+                            .format(8.62),
                         style: TextStyles.text,
                       ),
                     ],
                   ),
                   Text(
-                    "R\$ 75.000,00",
+                    NumberFormat.currency(locale: "pt_BR", symbol: "R\$")
+                        .format(_seguroVida.cobertura),
                     style: TextStyles.textGrey,
                   ),
                 ],
@@ -132,6 +156,54 @@ class SeguroVidaSimularPage4 extends StatelessWidget {
                   "Há uma carência de 90 dias para morte natural. Para morte acidental, não há carência.",
               onTap: null,
             ),
+            Visibility(
+              visible: _seguroVida.seguros.length > 0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 24,
+                    ),
+                    child: Text(
+                      "Coberturas Extras",
+                      style: TextStyles.textGreyBold,
+                    ),
+                  ),
+                  ListView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: _seguroVida.seguros.length,
+                    itemBuilder: (context, index) {
+                      String badgeValue =
+                          NumberFormat.currency(locale: "pt_BR", symbol: "R\$")
+                              .format(_seguroVida.seguros[index].value!);
+                      if (funeralFamiliar != null &&
+                          (_seguroVida.seguros[index] ==
+                                  SeguroVidaEnum.FUNERAL_FAMILIAR_PAIS ||
+                              _seguroVida.seguros[index] ==
+                                  SeguroVidaEnum
+                                      .FUNERAL_FAMILIAR_CONJUGE_FILHOS)) {
+                        badgeValue = NumberFormat.currency(
+                                locale: "pt_BR", symbol: "R\$")
+                            .format(funeralFamiliar);
+                      }
+                      return CardSeguroVidaWidget(
+                        title: _seguroVida.seguros[index].name!,
+                        badge: badgeValue,
+                        showBadgeBackground: false,
+                        showSwitch: false,
+                        subtitle1:
+                            "Caso sofra algum acidente e precise ficar no hospital pelo menos 48h, você recebe uma diária de R\$ 150,00 para usar como quiser.",
+                        subtitle2: "",
+                        onTap: null,
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(20),
               child: Row(
@@ -142,7 +214,8 @@ class SeguroVidaSimularPage4 extends StatelessWidget {
                     style: TextStyles.textGreySmall,
                   ),
                   Text(
-                    "R\$ 12,49",
+                    NumberFormat.currency(locale: "pt_BR", symbol: "R\$")
+                        .format(_seguroVida.valorTotal - iof),
                     style: TextStyles.textGreySmall,
                   ),
                 ],
@@ -161,7 +234,8 @@ class SeguroVidaSimularPage4 extends StatelessWidget {
                     style: TextStyles.textGreySmall,
                   ),
                   Text(
-                    "R\$ 0,05",
+                    NumberFormat.currency(locale: "pt_BR", symbol: "R\$")
+                        .format(iof),
                     style: TextStyles.textGreySmall,
                   ),
                 ],
@@ -180,7 +254,8 @@ class SeguroVidaSimularPage4 extends StatelessWidget {
                     style: TextStyles.textBlack,
                   ),
                   Text(
-                    "R\$ 12,54",
+                    NumberFormat.currency(locale: "pt_BR", symbol: "R\$")
+                        .format(_seguroVida.valorTotal),
                     style: TextStyles.textBlack,
                   ),
                 ],
@@ -194,7 +269,7 @@ class SeguroVidaSimularPage4 extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    "Já está incluso nesse valor a remuneração do Nubank, que é uma taxa de 35% do pagamento mensal líquido, igual a R\$ 4,37",
+                    "Já está incluso nesse valor a remuneração do Nubank, que é uma taxa de 35% do pagamento mensal líquido, igual a ${NumberFormat.currency(locale: "pt_BR", symbol: "R\$").format((_seguroVida.valorTotal - iof) * 0.35)}",
                   ),
                   SizedBox(
                     height: 32,

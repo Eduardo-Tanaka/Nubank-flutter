@@ -7,6 +7,7 @@ import 'package:nubank/shared/widgets/card_seguro_vida/seguro_vida_checkbox_widg
 class CardSeguroVidaWidget extends StatelessWidget {
   final String title;
   final String badge;
+  final bool showBadgeBackground;
   final String subtitle1;
   final String subtitle2;
   final bool? switchValue;
@@ -30,6 +31,7 @@ class CardSeguroVidaWidget extends StatelessWidget {
     this.checkbox1,
     this.checkbox2,
     required this.onTap,
+    this.showBadgeBackground = true,
   }) : super(key: key);
 
   @override
@@ -47,17 +49,20 @@ class CardSeguroVidaWidget extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: TextStyles.textBold,
+                      style: TextStyles.textBlack,
                     ),
                     Visibility(
                       visible: badge.isNotEmpty,
                       child: Row(
                         children: [
                           Container(
-                            color: Colors.grey[200],
+                            color:
+                                showBadgeBackground ? Colors.grey[200] : null,
                             child: Text(
                               badge,
-                              style: TextStyles.textBlackSmall,
+                              style: onTap != null
+                                  ? TextStyles.textBlackSmall
+                                  : TextStyles.textSmall,
                             ),
                           ),
                           Visibility(
