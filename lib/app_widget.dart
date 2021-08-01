@@ -44,6 +44,7 @@ import 'package:nubank/modules/transferir/transferir_destino_page.dart';
 import 'package:nubank/modules/transferir/transferir_page.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 
+import 'modules/investimentos/investimentos_info_page.dart';
 import 'modules/investimentos/investimentos_page.dart';
 import 'modules/pagar/pagar_boleto_page.dart';
 import 'modules/pagar/pagar_modo_pagamento_page.dart';
@@ -92,6 +93,7 @@ class AppWidget extends StatelessWidget {
       "/emprestimo": EmprestimoPage(),
       "/indicar_amigos": IndicarAmigosPage(),
       "/investimentos": InvestimentosPage(),
+      "/investimentos_info": InvestimentosInfoPage(),
       "/limite": LimitePage(),
       "/meus_dados": MeusDadosPage(),
       "/pagar": PagarPage(),
@@ -163,6 +165,7 @@ class AppWidget extends StatelessWidget {
                 case "/ajuda_whatsapp_detalhe":
                 case "/boleto":
                 case "/investimentos":
+                case "/investimentos_info":
                 case "/meus_dados":
                 case "/pagar_boleto":
                 case "/pagar_modo_pagamento":

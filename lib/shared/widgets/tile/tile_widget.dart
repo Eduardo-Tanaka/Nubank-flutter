@@ -6,7 +6,7 @@ class TileWidget extends StatelessWidget {
   final String title;
   final String? subtitle;
   final IconData? iconLeading;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final double topPadding;
   final double bottomPadding;
   final bool ripple;

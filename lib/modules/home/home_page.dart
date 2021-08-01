@@ -315,7 +315,10 @@ class _HomePageState extends State<HomePage> {
                         "A revolução roxa começou. Invista de maneira simples, sem burocracia e 100% digital.",
                     showButton: true,
                     onTap: () {
-                      Navigator.pushNamed(context, "/investimentos");
+                      Navigator.pushNamed(
+                        context,
+                        "/investimentos",
+                      );
                     },
                   ),
                   Divider(

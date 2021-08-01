@@ -48,7 +48,12 @@ class InvestimentosPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButtonWidget(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(
+            context,
+            "/investimentos_info",
+          );
+        },
         enableValue: 1,
         value: 1,
       ),
