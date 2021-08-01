@@ -314,7 +314,9 @@ class _HomePageState extends State<HomePage> {
                     subTitle:
                         "A revolução roxa começou. Invista de maneira simples, sem burocracia e 100% digital.",
                     showButton: true,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, "/investimentos");
+                    },
                   ),
                   Divider(
                     height: 1,
