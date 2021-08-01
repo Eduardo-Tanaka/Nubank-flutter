@@ -40,7 +40,9 @@ class SeguroVidaFuncionamentoPage extends StatelessWidget {
                   style: TextStyles.textGrey,
                   children: [
                     TextSpan(
-                        text: "0800 722 5059", style: TextStyles.textGreyBold),
+                      text: "0800 722 5059",
+                      style: TextStyles.textGreyBold,
+                    ),
                   ],
                 ),
               ),
@@ -60,7 +62,9 @@ class SeguroVidaFuncionamentoPage extends StatelessWidget {
                   style: TextStyles.textGrey,
                   children: [
                     TextSpan(
-                        text: "0800 887 0463", style: TextStyles.textGreyBold),
+                      text: "0800 887 0463",
+                      style: TextStyles.textGreyBold,
+                    ),
                   ],
                 ),
               ),
