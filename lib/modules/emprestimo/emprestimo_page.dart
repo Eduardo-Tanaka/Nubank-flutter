@@ -66,7 +66,12 @@ class EmprestimoPage extends StatelessWidget {
                         height: 28,
                       ),
                       CupertinoButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(
+                            context,
+                            "/emprestimo_info",
+                          );
+                        },
                         padding: EdgeInsets.zero,
                         child: Container(
                           decoration: BoxDecoration(
@@ -83,13 +88,6 @@ class EmprestimoPage extends StatelessWidget {
                             style: TextStyles.textNuSmallBold,
                           ),
                         ),
-                        /*style: TextButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          primary: Colors.white,
-                          side: BorderSide(
-                            color: AppColors.primary,
-                          ),
-                        ),*/
                       ),
                     ],
                   ),
