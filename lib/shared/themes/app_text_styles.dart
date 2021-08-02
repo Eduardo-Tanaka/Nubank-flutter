@@ -129,6 +129,10 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.primary,
   );
+  static final textNu = GoogleFonts.roboto(
+    fontSize: 16,
+    color: AppColors.primary,
+  );
   static final textNuBold = GoogleFonts.roboto(
     fontSize: 18,
     fontWeight: FontWeight.w600,

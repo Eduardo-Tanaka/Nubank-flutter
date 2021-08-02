@@ -300,7 +300,12 @@ class _HomePageState extends State<HomePage> {
                     title: "Empréstimo",
                     subTitle: "Valor disponível de até",
                     info: "R\$ 30.000,00",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        "/emprestimo",
+                      );
+                    },
                   ),
                   Divider(
                     height: 1,
