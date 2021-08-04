@@ -5,14 +5,14 @@ import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/button_nu/button_nu_widget.dart';
 import 'package:nubank/shared/widgets/circle_icon_button/circle_icon_button_widget.dart';
 
-class EmprestimoCalcularPage extends StatefulWidget {
-  const EmprestimoCalcularPage({Key? key}) : super(key: key);
+class EmprestimoObjetivoPage extends StatefulWidget {
+  const EmprestimoObjetivoPage({Key? key}) : super(key: key);
 
   @override
-  _EmprestimoCalcularPageState createState() => _EmprestimoCalcularPageState();
+  _EmprestimoObjetivoPageState createState() => _EmprestimoObjetivoPageState();
 }
 
-class _EmprestimoCalcularPageState extends State<EmprestimoCalcularPage> {
+class _EmprestimoObjetivoPageState extends State<EmprestimoObjetivoPage> {
   final titles = [
     'Contas da casa',
     'Reformas ou consertos',
@@ -117,7 +117,7 @@ class _EmprestimoCalcularPageState extends State<EmprestimoCalcularPage> {
                   if (active != -1) {
                     Navigator.pushNamed(
                       context,
-                      "/emprestimo_calcular",
+                      "/emprestimo_simular",
                     );
                   }
                 },

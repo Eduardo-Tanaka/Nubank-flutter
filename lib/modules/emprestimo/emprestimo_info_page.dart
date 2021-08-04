@@ -155,7 +155,7 @@ class EmprestimoInfoPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(
                     context,
-                    "/emprestimo_calcular",
+                    "/emprestimo_objetivo",
                   );
                 },
               ),

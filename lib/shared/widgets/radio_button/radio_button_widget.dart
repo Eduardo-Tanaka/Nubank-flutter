@@ -9,6 +9,9 @@ class RadioButtonWidget extends StatelessWidget {
   final VoidCallback onTap;
   final String? trailingText;
   final bool showDivider;
+  final String? title;
+  final String? subtitle;
+  final bool isNew;
 
   const RadioButtonWidget({
     Key? key,
@@ -18,6 +21,9 @@ class RadioButtonWidget extends StatelessWidget {
     required this.onTap,
     this.trailingText,
     this.showDivider = true,
+    this.title,
+    this.subtitle,
+    this.isNew = false,
   }) : super(key: key);
 
   @override
@@ -38,17 +44,59 @@ class RadioButtonWidget extends StatelessWidget {
                   onChanged: onChanged,
                 ),
               ),
-              title: Text(
-                value,
-                style: TextStyles.textBold,
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Flexible(
+                    child: Text(
+                      title != null ? title! : value,
+                      style: TextStyles.textBold,
+                      maxLines: 2,
+                    ),
+                  ),
+                  Visibility(
+                    visible: trailingText == null ? false : true,
+                    child: Text(
+                      trailingText ?? "",
+                      style: TextStyles.textGreyBold,
+                    ),
+                  ),
+                  Visibility(
+                    visible: isNew,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 4),
+                      child: Container(
+                        padding: const EdgeInsets.all(2),
+                        decoration: new BoxDecoration(
+                          color: AppColors.primary,
+                          border: Border.all(color: Colors.black, width: 0.0),
+                          borderRadius:
+                              new BorderRadius.all(Radius.elliptical(4, 4)),
+                        ),
+                        child: Text(
+                          "Novo",
+                          style: TextStyles.titleBottomMenu,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
-              trailing: Visibility(
+              subtitle: subtitle != null
+                  ? Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: Text(
+                        subtitle!,
+                      ),
+                    )
+                  : null,
+              /*trailing: Visibility(
                 visible: trailingText == null ? false : true,
                 child: Text(
                   trailingText ?? "",
                   style: TextStyles.textGreyBold,
                 ),
-              ),
+              ),*/
             ),
           ),
           Visibility(
