@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nubank/modules/ajuda/ajuda_detalhe_page.dart';
 import 'package:nubank/modules/ajuda/ajuda_home_page.dart';
 import 'package:nubank/modules/ajuda/ajuda_page.dart';
@@ -16,6 +17,7 @@ import 'package:nubank/modules/depositar/depositar_page.dart';
 import 'package:nubank/modules/doacao/doacao_page.dart';
 import 'package:nubank/modules/emprestimo/emprestimo_objetivo_page.dart';
 import 'package:nubank/modules/emprestimo/emprestimo_page.dart';
+import 'package:nubank/modules/emprestimo/emprestimo_simular_info_page.dart';
 import 'package:nubank/modules/emprestimo/emprestimo_simular_page.dart';
 import 'package:nubank/modules/home/home_page.dart';
 import 'package:nubank/modules/indicar_amigos/indicar_amigos_page.dart';
@@ -97,6 +99,7 @@ class AppWidget extends StatelessWidget {
       "/emprestimo_info": EmprestimoInfoPage(),
       "/emprestimo_objetivo": EmprestimoObjetivoPage(),
       "/emprestimo_simular": EmprestimoSimularPage(),
+      "/emprestimo_simular_info": EmprestimoSimularInfoPage(),
       "/indicar_amigos": IndicarAmigosPage(),
       "/investimentos": InvestimentosPage(),
       "/investimentos_info": InvestimentosInfoPage(),
@@ -143,6 +146,11 @@ class AppWidget extends StatelessWidget {
       "/whatsapp_cadastrar": WhatsappCadastrarPage(),
     };
     return MaterialApp(
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
+      supportedLocales: [const Locale('pt', 'BR')],
       title: 'Nubank',
       theme: ThemeData(
         backgroundColor: AppColors.primary,
@@ -174,6 +182,7 @@ class AppWidget extends StatelessWidget {
                 case "/emprestimo_simular":
                 case "/investimentos":
                 case "/investimentos_info":
+                case "/emprestimo_simular_info":
                 case "/meus_dados":
                 case "/pagar_boleto":
                 case "/pagar_modo_pagamento":

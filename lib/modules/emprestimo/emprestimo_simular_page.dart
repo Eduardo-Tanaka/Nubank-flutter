@@ -87,7 +87,7 @@ class _EmprestimoSimularPageState extends State<EmprestimoSimularPage> {
                 onPressed: () {
                   Navigator.pushNamed(
                     context,
-                    "/emprestimo_calcular",
+                    "/emprestimo_simular_info",
                   );
                 },
               ),
