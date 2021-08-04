@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
+import 'package:nubank/shared/widgets/text/text_new_widget.dart';
 
 class RadioButtonWidget extends StatelessWidget {
   final groupValue;
@@ -63,22 +64,7 @@ class RadioButtonWidget extends StatelessWidget {
                   ),
                   Visibility(
                     visible: isNew,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 4),
-                      child: Container(
-                        padding: const EdgeInsets.all(2),
-                        decoration: new BoxDecoration(
-                          color: AppColors.primary,
-                          border: Border.all(color: Colors.black, width: 0.0),
-                          borderRadius:
-                              new BorderRadius.all(Radius.elliptical(4, 4)),
-                        ),
-                        child: Text(
-                          "Novo",
-                          style: TextStyles.titleBottomMenu,
-                        ),
-                      ),
-                    ),
+                    child: TextNewWidget(),
                   )
                 ],
               ),
