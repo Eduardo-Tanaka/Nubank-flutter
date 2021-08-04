@@ -152,7 +152,12 @@ class EmprestimoInfoPage extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: ButtonNuWidget(
                 text: "Calcular empréstimo",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    "/emprestimo_calcular",
+                  );
+                },
               ),
             ),
           ],

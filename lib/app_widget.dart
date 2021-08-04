@@ -14,6 +14,7 @@ import 'package:nubank/modules/cobrar/cobrar_page.dart';
 import 'package:nubank/modules/configuracao/configuracao_page.dart';
 import 'package:nubank/modules/depositar/depositar_page.dart';
 import 'package:nubank/modules/doacao/doacao_page.dart';
+import 'package:nubank/modules/emprestimo/emprestimo_calcular_page.dart';
 import 'package:nubank/modules/emprestimo/emprestimo_page.dart';
 import 'package:nubank/modules/home/home_page.dart';
 import 'package:nubank/modules/indicar_amigos/indicar_amigos_page.dart';
@@ -92,6 +93,7 @@ class AppWidget extends StatelessWidget {
       "/depositar": DepositarPage(),
       "/doacao": DoacaoPage(),
       "/emprestimo": EmprestimoPage(),
+      "/emprestimo_calcular": EmprestimoCalcularPage(),
       "/emprestimo_info": EmprestimoInfoPage(),
       "/indicar_amigos": IndicarAmigosPage(),
       "/investimentos": InvestimentosPage(),
@@ -166,6 +168,7 @@ class AppWidget extends StatelessWidget {
                 case "/ajuda_pix_detalhe":
                 case "/ajuda_whatsapp_detalhe":
                 case "/boleto":
+                case "/emprestimo_calcular":
                 case "/investimentos":
                 case "/investimentos_info":
                 case "/meus_dados":
