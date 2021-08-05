@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:nubank/shared/models/ajuda.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/button_ajuda/button_ajuda_widget.dart';
+import 'package:nubank/shared/widgets/tile_ajuda/tile_ajuda_shimmer_widget.dart';
 import 'package:nubank/shared/widgets/tile_ajuda/tile_ajuda_widget.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:shimmer/shimmer.dart';
 
 class AjudaDetalhePage extends StatefulWidget {
   const AjudaDetalhePage({Key? key}) : super(key: key);
@@ -42,15 +44,30 @@ class _AjudaDetalhePageState extends State<AjudaDetalhePage> {
       ),
       body: Container(
         height: bodyHeight,
-        child: TileAjudaWidget(
-          title: args.title,
-          description: args.description,
-          expandSubtitle: true,
-          onTap: () {
-            setState(() {
-              showFeedback = true;
-              bodyHeight = MediaQuery.of(context).size.height - 80 - 140;
-            });
+        child: FutureBuilder(
+          future: loadAjuda(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              return TileAjudaWidget(
+                title: args.title,
+                description: args.description,
+                expandSubtitle: true,
+                onTap: () {
+                  setState(() {
+                    showFeedback = true;
+                    bodyHeight = MediaQuery.of(context).size.height - 80 - 140;
+                  });
+                },
+              );
+            } else {
+              return Shimmer.fromColors(
+                baseColor: Colors.grey[300]!,
+                highlightColor: Colors.grey[100]!,
+                child: TileAjudaShimmerWidget(
+                  expandSubtitle: true,
+                ),
+              );
+            }
           },
         ),
       ),
@@ -85,5 +102,9 @@ class _AjudaDetalhePageState extends State<AjudaDetalhePage> {
               ),
       ),
     );
+  }
+
+  Future loadAjuda() {
+    return Future.delayed(Duration(seconds: 1));
   }
 }
