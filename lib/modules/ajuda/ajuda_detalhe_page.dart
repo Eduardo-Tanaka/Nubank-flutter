@@ -37,7 +37,7 @@ class _AjudaDetalhePageState extends State<AjudaDetalhePage> {
             (value) => setState(() {
               showFeedback = true;
               // appbar + appstatus + bottomNavigationBar
-              bodyHeight = MediaQuery.of(context).size.height - 80 - 140;
+              bodyHeight = MediaQuery.of(context).size.height - 80 - 160;
             }),
           );
         },
@@ -55,7 +55,7 @@ class _AjudaDetalhePageState extends State<AjudaDetalhePage> {
                 onTap: () {
                   setState(() {
                     showFeedback = true;
-                    bodyHeight = MediaQuery.of(context).size.height - 80 - 140;
+                    bodyHeight = MediaQuery.of(context).size.height - 80 - 160;
                   });
                 },
               );

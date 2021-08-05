@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Posso fazer um empréstimo pessoal?",
+    "description": "Você consegue verificar se já tem a função liberada dentro do seu aplicativo mesmo. Caso não tenha a área 'Empréstimo' entre os produtos na página principal do app, é porque ainda não foi liberado para você.\nEssa liberação é feita aos poucos e com base em análises constantes. Assim, conseguimos fazer melhorias constantes e oferecer a melhor opção conforme vamos recebendo sugestões de quem já usa o produto.\nAh! Se o botão estiver habilitado, você poderá entrar e verificar se há uma proposta de valor e taxa de juros liberada para você. Se não houver nenhuma proposta, você poderá criar um aviso para que o aplicativo mande uma notificação para você, assim que for liberada."
+  },
+  {
+    "title": "Em quanto tempo posso começar a pagar meu empréstimo pessoal?",
+    "description": "Durante a simulação, você poderá escolher a data para o primeiro pagamento de seu empréstimo. Cada cliente tem um prazo inicial personalizado.\nPara conferir as suas condições, é só fazer uma simulação no app, clicando no botão Novo Empréstimo que fica dentro do painel da sua conta e da função Empréstimos ou em Simular Empréstimo no menu principal do seu app. Se quiser saber mais, toque aqui"
+  },
+  {
+    "title": "O débito automático do meu empréstimo foi desativado, como pago a parcela?",
+    "description": "O débito automático do empréstimo pessoal foi desativado preventivamente para clientes que receberam o Auxílio Emergencial do Governo pela conta do Nubank. Assim, só poderá ser descontado o valor do auxílio com a permissão explícita dos clientes.\nDesta forma, no dia do vencimento da parcela, é necessário realizar o pagamento de forma manual.\nPara pagar a parcela manualmente, basta seguir os passos:\n\nAcesse a área de Empréstimos no menu inferior, clicando no quadradinho roxo: 'Empréstimos' ou a partir de dentro da área da sua conta do Nubank;\nClique no contrato ativo;\nToque na opção 'Antecipar', selecione a parcela do dia do vencimento e clique em Pagar'.\nInsira sua senha de 4 dígitos para confirmar o procedimento.\n\nToda vez que você receber novas parcelas do Auxílio na sua Conta do Nubank, o débito automático será desativado automaticamente. Se você desejar re-ativar o débito automático assim mesmo, basta entrar em contato conosco em um de nossos canais de atendimento (Chat, Telefone ou E-mail), voltando à tela anterior do 'Me Ajuda'."
+  },
+  {
+    "title": "Qual a taxa de juros do meu empréstimo pessoal?",
+    "description": "As taxas de juros do empréstimo são personalizadas para cada cliente e podem variar de acordo com o mês ou o número de parcelas escolhido na simulação. Para conferir a taxa exata, é só fazer uma simulação no app, clicando no botão Empréstimos que fica dentro do painel da sua conta ou em Empréstimo no menu principal do seu app."
+  },
+  {
+    "title": "Como antecipar parcelas do empréstimo?",
+    "description": "Você pode antecipar parcelas pelo app mesmo. Acesse a tela de gerenciamento do seu empréstimo pela sua conta e clique em 'Antecipar últimas'. Com essa função, você antecipa a última parcela do seu empréstimo, já que essa é a que te dá maior desconto. Mas pode ser que você precise pagar duas parcelas no mesmo mês, ok?"
+  },
+  {
+    "title": "Em quanto tempo e onde o valor do empréstimo fica disponível?",
+    "description": "O dinheiro do empréstimo cai na hora em sua conta do Nubank. Isso significa que, assim que o valor de seu empréstimo for aprovado, você pode começar a usá-lo acessando a sua conta, pela tela inicial do app. Em alguns casos, antes da aprovação, pode ser necessário o envio de informações adicionais por questões de segurança. \nCom o dinheiro na conta do Nubank, você pode fazer pagamentos direto pela conta do Nubank, e também pode sacar, fazer uma transferência ou usar a função débito. Veja mais detalhes aqui."
+  },
+  {
+    "title": "O valor disponibilizado para empréstimo e as taxas de juros não são valores fixos. Por que isso acontece?",
+    "description": "Hoje, a nossa análise de crédito faz um estudo do seu perfil em que são considerados os seguintes fatores:\n\nFatores internos: São todas as movimentações que você faz dentro dos produtos do Nubank: Cartão de crédito, Conta do Nubank. Incluindo consumos e pagamentos;\nFatores externos: Informações públicas de crédito e consumo do seu perfil no mercado.\n\nCaso haja alguma mudança nesses fatores, a oferta é recalculada, adaptando o valor e também a taxa de juros para a melhor opção disponível para você naquele momento. É por isso que dizemos que os valores não são fixos e podem mudar de acordo com o estudo feito do seu perfil."
+  },
+  {
+    "title": "Posso cancelar meu empréstimo?",
+    "description": "Você tem até 7 dias corridos depois da contratação para cancelar a operação. Para fazer isso, você precisará ter disponível na sua conta o valor emprestado mais o IOF da operação. Para pedir o cancelamento, é só entrar em contato conosco. Entenda melhor como funciona o empréstimo do Nubank aqui."
+  },
+  {
+    "title": "Como faço para simular um empréstimo pelo app?",
+    "description": "Para simular um empréstimo, é necessário ter uma proposta de empréstimo disponível para você. Você consegue verificar se há uma proposta e já simular tocando na área'Empréstimo' da página principal do seu app;\nEm seguida você verá se tem o valor liberado e o botão Novo Empréstimo;\nTocando nele, você definirá o valor que quer contratar, a data de início do pagamento e o número de parcelas que deseja. Todas essas condições são personalizadas para cada perfil.\nDepois disso, você poderá avançar para visualizar todos os custos e taxas detalhados que serão aplicados em seu contrato. Após digitar sua senha de 4 dígitos seu empréstimo está solicitado! Antes da aprovação, pode ser que solicitemos mais algumas informações para melhor avaliarmos a sua solicitação. Assim que aprovado, o valor contratado será disponibilizado em sua conta do Nubank em alguns instantes."
+  },
+  {
+    "title": "Já finalizei o pagamento de meu empréstimo, mas não consigo pedir outro. Por quê?",
+    "description": "Após a quitação de seu empréstimo, a disponibilização de novos valores depende de análises de crédito internas que são realizadas e atualizadas todos os dias. Estas análises também nos ajudam a criar ofertas mais personalizadas para cada um de nossos clientes.\nMantenha seu app sempre atualizado e não se preocupe que, assim que um novo empréstimo for liberado para você, você receberá uma notificação pelo app."
+  },
+  {
+    "title": "Meu pedido de aumento de limite pelo app foi recusado. O que eu faço?",
+    "description": "A opção para solicitar um aumento de limite através do aplicativo ficará sempre a sua disposição para fazer novas solicitações de aumento, mas após receber uma negativa, orientamos que aguarde pelo menos o próximo ciclo de fatura para fazer novos pedidos de aumento.\nIsso porque, com as informações de novos gastos e pagamentos em dia, as chances de receber um aumento é cada vez maior.\nOu seja, quanto mais informações nós tivermos sobre você, melhor e mais precisa será a análise.\nVale lembrar: mesmo que você não peça mais aumentos de limites pelo aplicativo, nosso sistema continua verificando a possibilidade de aumento de forma automática. Assim que for possível aumentar o seu limite, te avisaremos por e-mail e seu novo limite atualizará no mesmo instante também."
+  },
+  {
+    "title": "Como pago as parcelas dos meus empréstimos?",
+    "description": "A principal forma de pagamento das parcelas é o débito automático na sua conta do Nubank.\nPara isso, é importante que no dia de pagamento você tenha o valor da parcela disponível em sua conta. No final do dia, a parcela estará paga e você receberá uma confirmação. Caso o valor da parcela não esteja completo na sua conta até o fim do dia, você ficará em atraso. Nesse caso, será preciso transferir o valor da parcela, juntamente com o valor dos juros, e confirmar o pagamento na tela de gerenciamento do seu empréstimo.\nSe você preferir pagar uma parcela utilizando boleto, basta entrar em contato em nossos canais de atendimento para gerarmos o boleto da parcela."
+  },
+  {
+    "title": "Em quantas parcelas eu posso pagar meu empréstimo pessoal?",
+    "description": "Cada cliente tem uma condição personalizada, por isso durante a simulação você poderá verificar o número de parcelas disponível para seu empréstimo e escolher a quantidade que funcione melhor para você.\nPara conferir as suas condições, é só fazer uma simulação no app, clicando no botão Empréstimo que fica dentro do painel do seu aplicativo ou na função \"Empréstimos\" na área de \"Conta\". Clique em Simular Empréstimo para saber as suas condições. Se quiser saber mais, toque aqui"
+  },
+  {
+    "title": "Posso fazer uma portabilidade do meu empréstimo para outra instituição?",
+    "description": "Depois de contratação, você pode fazer a portabilidade do seu empréstimo para outra instituição financeira a qualquer momento. Pra fazer isso, basta entrar em contato com a instituição para onde você quer fazer a transferência."
+  }
+]

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nubank/shared/models/ajuda.dart';
+import 'package:nubank/shared/models/ajuda_params.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
@@ -16,7 +17,16 @@ class EmprestimoPage extends StatelessWidget {
         appBar: AppBarWidget(
           icon: Icons.keyboard_backspace_outlined,
           showTrailingIcon: true,
-          onPressedTrailing: () {},
+          onPressedTrailing: () {
+            Navigator.pushNamed(
+              context,
+              "/ajuda_home",
+              arguments: AjudaParams(
+                title: "Empréstimo Pessoal",
+                jsonFile: "emprestimo.json",
+              ),
+            );
+          },
         ),
         body: SingleChildScrollView(
           physics:
@@ -56,7 +66,8 @@ class EmprestimoPage extends StatelessWidget {
                               superTitle: "Empréstimo Pessoal",
                               title:
                                   "O valor disponibilizado para empréstimo e as taxas de juros não são valores fixos. Por que isso acontece?",
-                              description: "sdfs",
+                              description:
+                                  "Hoje, a nossa análise de crédito faz um estudo do seu perfil em que são considerados os seguintes fatores:\n\nFatores internos: São todas as movimentações que você faz dentro dos produtos do Nubank: Cartão de crédito, Conta do Nubank. Incluindo consumos e pagamentos;\nFatores externos: Informações públicas de crédito e consumo do seu perfil no mercado.\n\nCaso haja alguma mudança nesses fatores, a oferta é recalculada, adaptando o valor e também a taxa de juros para a melhor opção disponível para você naquele momento. É por isso que dizemos que os valores não são fixos e podem mudar de acordo com o estudo feito do seu perfil.",
                             ),
                           );
                         },

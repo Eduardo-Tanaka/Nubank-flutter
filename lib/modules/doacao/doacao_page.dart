@@ -58,8 +58,8 @@ class DoacaoPage extends StatelessWidget {
                               context,
                               "/ajuda_home",
                               arguments: AjudaParams(
-                                title: "Seguro de vida",
-                                jsonFile: "seguro_vida.json",
+                                title: "Doações",
+                                jsonFile: "doacao.json",
                               ),
                             );
                           },
