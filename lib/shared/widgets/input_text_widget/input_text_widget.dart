@@ -16,6 +16,7 @@ class InputTextWidget extends StatelessWidget {
   final bool enabled;
   final VoidCallback? onTap;
   final bool showDivider;
+  final bool hasError;
 
   const InputTextWidget({
     Key? key,
@@ -31,6 +32,7 @@ class InputTextWidget extends StatelessWidget {
     this.enabled = true,
     this.onTap,
     this.showDivider = true,
+    this.hasError = false,
   }) : super(key: key);
 
   @override
@@ -48,6 +50,8 @@ class InputTextWidget extends StatelessWidget {
                 selectionColor: Colors.black,
                 selectionHandleColor: Colors.black,
               ),
+              primaryColor: Colors.orange,
+              primaryColorDark: Colors.orange,
             ),
             child: TextFormField(
               enabled: enabled,
@@ -63,19 +67,41 @@ class InputTextWidget extends StatelessWidget {
               style: TextStyles.textBigBold,
               textInputAction: TextInputAction.next,
               decoration: InputDecoration(
+                suffixIcon: Visibility(
+                  visible: hasError,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Icon(
+                      Icons.error_outline,
+                      color: Colors.red,
+                    ),
+                  ),
+                ),
                 hintText: hint,
                 hintStyle: TextStyles.textCardGreyLight,
                 contentPadding: EdgeInsets.zero,
                 labelText: label,
-                border: InputBorder.none,
+                border: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: showDivider ? Colors.grey : Colors.transparent,
+                    width: 0.0,
+                  ),
+                ),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: showDivider ? Colors.grey : Colors.transparent,
+                    width: 0.0,
+                  ),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: showDivider ? Colors.grey : Colors.transparent,
+                    width: 0.0,
+                  ),
+                ),
+                errorStyle: TextStyles.textSmallBoldDanger,
+                focusColor: Colors.yellow,
               ),
-            ),
-          ),
-          Visibility(
-            visible: showDivider,
-            child: Divider(
-              height: 1,
-              thickness: 1,
             ),
           ),
         ],

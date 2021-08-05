@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'package:nubank/shared/themes/app_colors.dart';
 
 class FloatingActionButtonWidget extends StatelessWidget {
   final VoidCallback onPressed;
   final dynamic value;
   final int enableValue;
+  final int? enableValueMax;
   final IconData? icon;
 
   const FloatingActionButtonWidget({
@@ -12,6 +14,7 @@ class FloatingActionButtonWidget extends StatelessWidget {
     required this.onPressed,
     this.value,
     this.enableValue = 0,
+    this.enableValueMax,
     this.icon,
   }) : super(key: key);
 
@@ -23,7 +26,13 @@ class FloatingActionButtonWidget extends StatelessWidget {
     } else if (value is int) {
       isDisabled = value != enableValue ? true : false;
     } else if (value is double) {
-      isDisabled = value == enableValue ? true : false;
+      isDisabled = value < enableValue
+          ? true
+          : (enableValueMax != null
+              ? value > enableValueMax
+                  ? true
+                  : false
+              : false);
     }
     return FloatingActionButton(
       onPressed: onPressed,

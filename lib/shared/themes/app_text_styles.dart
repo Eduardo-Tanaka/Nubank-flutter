@@ -107,6 +107,11 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: Colors.green,
   );
+  static final textSmallBoldDanger = GoogleFonts.roboto(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: Colors.red,
+  );
   static final textDanger = GoogleFonts.roboto(
     fontSize: 18,
     color: Colors.red,

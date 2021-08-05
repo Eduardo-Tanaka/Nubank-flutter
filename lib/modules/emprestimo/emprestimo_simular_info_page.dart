@@ -10,14 +10,21 @@ double emprestimo = 100;
 final DateTime now = DateTime.now();
 final DateFormat formatter = DateFormat("dd 'de' MMMM", 'pt_BR');
 
-class EmprestimoSimularInfoPage extends StatelessWidget {
+class EmprestimoSimularInfoPage extends StatefulWidget {
   const EmprestimoSimularInfoPage({Key? key}) : super(key: key);
 
+  @override
+  _EmprestimoSimularInfoPageState createState() =>
+      _EmprestimoSimularInfoPageState();
+}
+
+class _EmprestimoSimularInfoPageState extends State<EmprestimoSimularInfoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarWidget(
         icon: Icons.chevron_left,
+        showTrailingIcon: true,
       ),
       body: ListView(
         physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
@@ -26,29 +33,41 @@ class EmprestimoSimularInfoPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text(
               "Simular empréstimo de",
-              style: TextStyles.textBigBold,
+              style: TextStyles.titleBlackBold,
             ),
           ),
           SizedBox(
             height: 8,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              children: [
-                Text(
-                  NumberFormat.currency(locale: "pt_BR", symbol: "R\$")
-                      .format(emprestimo),
-                  style: TextStyles.textNuBigBold,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  child: Icon(
-                    Icons.edit_outlined,
-                    color: AppColors.background,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                "/emprestimo_simular_valor",
+                arguments: emprestimo,
+              ).then((value) {
+                emprestimo = value as double;
+                setState(() {});
+              });
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                children: [
+                  Text(
+                    NumberFormat.currency(locale: "pt_BR", symbol: "R\$")
+                        .format(emprestimo),
+                    style: TextStyles.textNuBigBold,
                   ),
-                )
-              ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    child: Icon(
+                      Icons.edit_outlined,
+                      color: AppColors.background,
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
           SizedBox(

@@ -19,6 +19,7 @@ import 'package:nubank/modules/emprestimo/emprestimo_objetivo_page.dart';
 import 'package:nubank/modules/emprestimo/emprestimo_page.dart';
 import 'package:nubank/modules/emprestimo/emprestimo_simular_info_page.dart';
 import 'package:nubank/modules/emprestimo/emprestimo_simular_page.dart';
+import 'package:nubank/modules/emprestimo/emprestimo_simular_valor_page.dart';
 import 'package:nubank/modules/home/home_page.dart';
 import 'package:nubank/modules/indicar_amigos/indicar_amigos_page.dart';
 import 'package:nubank/modules/limite/limite_page.dart';
@@ -100,6 +101,7 @@ class AppWidget extends StatelessWidget {
       "/emprestimo_objetivo": EmprestimoObjetivoPage(),
       "/emprestimo_simular": EmprestimoSimularPage(),
       "/emprestimo_simular_info": EmprestimoSimularInfoPage(),
+      "/emprestimo_simular_valor": EmprestimoSimularValorPage(),
       "/indicar_amigos": IndicarAmigosPage(),
       "/investimentos": InvestimentosPage(),
       "/investimentos_info": InvestimentosInfoPage(),
@@ -180,9 +182,9 @@ class AppWidget extends StatelessWidget {
                 case "/boleto":
                 case "/emprestimo_objetivo":
                 case "/emprestimo_simular":
+                case "/emprestimo_simular_info":
                 case "/investimentos":
                 case "/investimentos_info":
-                case "/emprestimo_simular_info":
                 case "/meus_dados":
                 case "/pagar_boleto":
                 case "/pagar_modo_pagamento":
