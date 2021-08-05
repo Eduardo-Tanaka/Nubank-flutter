@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:nubank/shared/models/emprestimo.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
@@ -115,9 +117,20 @@ class _EmprestimoObjetivoPageState extends State<EmprestimoObjetivoPage> {
                 textColor: active == -1 ? Colors.black26 : Colors.white,
                 onPressed: () {
                   if (active != -1) {
+                    final DateTime now = DateTime.now();
+                    final DateFormat formatter =
+                        DateFormat("dd 'de' MMMM", 'pt_BR');
+                    formatter.format(now.add(Duration(days: 30)));
                     Navigator.pushNamed(
                       context,
                       "/emprestimo_simular",
+                      arguments: Emprestimo(
+                        data: null,
+                        objetivo: titles[active],
+                        parcelas: 12,
+                        tipo: null,
+                        valor: 100,
+                      ),
                     );
                   }
                 },

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/shared/models/emprestimo.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/button_nu/button_nu_widget.dart';
+import 'package:nubank/shared/widgets/floating_action_button/floating_action_button_widget.dart';
 import 'package:nubank/shared/widgets/radio_button/radio_button_widget.dart';
 
 class EmprestimoSimularPage extends StatefulWidget {
@@ -12,7 +14,20 @@ class EmprestimoSimularPage extends StatefulWidget {
 }
 
 class _EmprestimoSimularPageState extends State<EmprestimoSimularPage> {
-  String? groupValue;
+  String groupValue = 'pessoal';
+  Emprestimo? emprestimo;
+  bool edit = false;
+
+  @override
+  void didChangeDependencies() {
+    emprestimo = ModalRoute.of(context)!.settings.arguments as Emprestimo;
+    if (emprestimo?.tipo != null) {
+      groupValue = emprestimo!.tipo!;
+      edit = true;
+    }
+
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,18 +95,56 @@ class _EmprestimoSimularPageState extends State<EmprestimoSimularPage> {
               height: 1,
               thickness: 1,
             ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: ButtonNuWidget(
-                text: "Simular empréstimo",
-                onPressed: () {
-                  Navigator.pushNamed(
-                    context,
-                    "/emprestimo_simular_info",
-                  );
-                },
-              ),
-            ),
+            edit
+                ? Padding(
+                    padding: const EdgeInsets.all(18),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Taxa de ${groupValue == 'portabilidade' ? '2,76%' : '3,25%'} ao mês",
+                              style: TextStyles.textBold,
+                            ),
+                            Visibility(
+                              visible: groupValue == 'portabilidade',
+                              child: Text(
+                                "Desconto de xxxx",
+                                style: TextStyles.textMoneyGreen,
+                              ),
+                            ),
+                          ],
+                        ),
+                        FloatingActionButtonWidget(
+                          onPressed: () {
+                            Navigator.pop(
+                              context,
+                              groupValue,
+                            );
+                          },
+                          value: 1,
+                          enableValue: 1,
+                        ),
+                      ],
+                    ),
+                  )
+                : Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: ButtonNuWidget(
+                      text: "Simular empréstimo",
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          "/emprestimo_simular_info",
+                          arguments: emprestimo!.copyWith(tipo: groupValue),
+                        );
+                      },
+                    ),
+                  ),
           ],
         ),
       ),

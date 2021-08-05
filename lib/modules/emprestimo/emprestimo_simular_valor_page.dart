@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
+import 'package:nubank/shared/models/emprestimo.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/floating_action_button/floating_action_button_widget.dart';
@@ -21,12 +22,13 @@ class _EmprestimoSimularValorPageState
   );
   final _form = GlobalKey<FormState>(); //for storing form state.
   bool hasError = true;
+  Emprestimo? emprestimo;
 
   @override
   void didChangeDependencies() {
-    final valor = ModalRoute.of(context)!.settings.arguments as double;
+    emprestimo = ModalRoute.of(context)!.settings.arguments as Emprestimo;
 
-    moneyInputTextController.text = valor.toStringAsFixed(2);
+    moneyInputTextController.text = emprestimo!.valor!.toStringAsFixed(2);
     super.didChangeDependencies();
   }
 
@@ -72,7 +74,10 @@ class _EmprestimoSimularValorPageState
       ),
       floatingActionButton: FloatingActionButtonWidget(
         onPressed: () {
-          Navigator.pop(context, moneyInputTextController.numberValue);
+          Navigator.pop(
+            context,
+            moneyInputTextController.numberValue,
+          );
         },
         value: moneyInputTextController.numberValue,
         enableValue: 30,

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:nubank/shared/models/emprestimo.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/button_nu/button_nu_widget.dart';
 import 'package:nubank/shared/widgets/tile/tile_resumo_widget.dart';
 
-double emprestimo = 100;
 final DateTime now = DateTime.now();
 final DateFormat formatter = DateFormat("dd 'de' MMMM", 'pt_BR');
 
@@ -19,6 +19,15 @@ class EmprestimoSimularInfoPage extends StatefulWidget {
 }
 
 class _EmprestimoSimularInfoPageState extends State<EmprestimoSimularInfoPage> {
+  Emprestimo? emprestimo;
+  @override
+  void didChangeDependencies() {
+    emprestimo = ModalRoute.of(context)!.settings.arguments as Emprestimo;
+    print('qq $emprestimo');
+
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +55,7 @@ class _EmprestimoSimularInfoPageState extends State<EmprestimoSimularInfoPage> {
                 "/emprestimo_simular_valor",
                 arguments: emprestimo,
               ).then((value) {
-                emprestimo = value as double;
+                emprestimo = emprestimo!.copyWith(valor: value as double);
                 setState(() {});
               });
             },
@@ -56,7 +65,7 @@ class _EmprestimoSimularInfoPageState extends State<EmprestimoSimularInfoPage> {
                 children: [
                   Text(
                     NumberFormat.currency(locale: "pt_BR", symbol: "R\$")
-                        .format(emprestimo),
+                        .format(emprestimo!.valor),
                     style: TextStyles.textNuBigBold,
                   ),
                   Padding(
@@ -75,8 +84,17 @@ class _EmprestimoSimularInfoPageState extends State<EmprestimoSimularInfoPage> {
           ),
           TileResumoWidget(
             title: "Escolha o tipo de empréstimo",
-            subtitle: "Empréstimo pessoal",
-            onTap: () {},
+            subtitle: emprestimo!.tipo!,
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                "/emprestimo_simular",
+                arguments: emprestimo,
+              ).then((value) {
+                emprestimo = emprestimo!.copyWith(tipo: value as String);
+                setState(() {});
+              });
+            },
           ),
           TileResumoWidget(
             title: "Escolha o número de parcelas",
@@ -85,7 +103,7 @@ class _EmprestimoSimularInfoPageState extends State<EmprestimoSimularInfoPage> {
             onTap: () {},
           ),
           TileResumoWidget(
-            title: "Escolha o tipo de empréstimo",
+            title: "Escolha a data da primeira parcela",
             subtitle: formatter.format(now.add(Duration(days: 30))),
             onTap: () {},
           ),
