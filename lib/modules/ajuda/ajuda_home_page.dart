@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:nubank/shared/models/ajuda.dart';
 import 'package:nubank/shared/models/ajuda_params.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
+import 'package:nubank/shared/widgets/tile_ajuda/tile_ajuda_shimmer_widget.dart';
 import 'package:nubank/shared/widgets/tile_ajuda/tile_ajuda_widget.dart';
+import 'package:shimmer/shimmer.dart';
 
 class AjudaHomePage extends StatelessWidget {
   const AjudaHomePage({Key? key}) : super(key: key);
@@ -62,8 +64,31 @@ class AjudaHomePage extends StatelessWidget {
               },
             );
           } else {
-            return Center(
-              child: CircularProgressIndicator(),
+            return Shimmer.fromColors(
+              baseColor: Colors.grey[300]!,
+              highlightColor: Colors.grey[100]!,
+              child: ListView.separated(
+                itemCount: 10,
+                itemBuilder: (context, index) {
+                  if (index == 10) {
+                    return Divider(
+                      height: 0.4,
+                    );
+                  } else {
+                    return Column(
+                      children: [
+                        TileAjudaShimmerWidget(),
+                      ],
+                    );
+                  }
+                },
+                separatorBuilder: (context, index) {
+                  return Divider(
+                    height: 1,
+                    thickness: 1,
+                  );
+                },
+              ),
             );
           }
         },
@@ -72,7 +97,7 @@ class AjudaHomePage extends StatelessWidget {
   }
 
   Future<String> loadAsset(BuildContext context, String jsonFile) {
-    return Future.delayed(Duration(seconds: 2)).then(
+    return Future.delayed(Duration(seconds: 1)).then(
       (value) => DefaultAssetBundle.of(context).loadString(
         "assets/ajuda/$jsonFile",
       ),
