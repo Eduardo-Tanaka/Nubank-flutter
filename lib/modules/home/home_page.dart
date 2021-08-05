@@ -22,11 +22,11 @@ class _HomePageState extends State<HomePage> {
     "Pagar",
     "Transferir",
     "Depositar",
-    "Empréstimos",
+    "Pegar\nemprestado",
     "Recarga de\ncelular",
     "Cobrar",
     "Doação",
-    "Me ajuda",
+    "Encontrar \natalhos",
   ];
   final icons = [
     FontAwesomeIcons.asterisk,

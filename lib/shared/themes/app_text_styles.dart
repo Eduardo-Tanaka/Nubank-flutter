@@ -143,6 +143,11 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.primary,
   );
+  static final textNuTitleBold = GoogleFonts.roboto(
+    fontSize: 22,
+    fontWeight: FontWeight.w600,
+    color: AppColors.primary,
+  );
   static final textNuBigBold = GoogleFonts.roboto(
     fontSize: 30,
     fontWeight: FontWeight.w600,

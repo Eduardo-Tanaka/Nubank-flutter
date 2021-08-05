@@ -22,8 +22,7 @@ class AjudaHomePage extends StatelessWidget {
         onPressedTrailing: () {},
       ),
       body: FutureBuilder<String>(
-        future: DefaultAssetBundle.of(context)
-            .loadString("assets/ajuda/${args.jsonFile}"),
+        future: loadAsset(context, args.jsonFile),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             var list = json.decode(snapshot.data.toString());
@@ -68,6 +67,14 @@ class AjudaHomePage extends StatelessWidget {
             );
           }
         },
+      ),
+    );
+  }
+
+  Future<String> loadAsset(BuildContext context, String jsonFile) {
+    return Future.delayed(Duration(seconds: 2)).then(
+      (value) => DefaultAssetBundle.of(context).loadString(
+        "assets/ajuda/$jsonFile",
       ),
     );
   }
