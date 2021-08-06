@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/shared/models/ajuda_params.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
@@ -16,7 +17,14 @@ class WhatsappCadastrarPage extends StatelessWidget {
         backgroundColor: AppColors.primary,
         showTrailingIcon: true,
         onPressedTrailing: () {
-          Navigator.pushNamed(context, "/ajuda_whatsapp_home");
+          Navigator.pushNamed(
+            context,
+            "/ajuda_home",
+            arguments: AjudaParams(
+              title: "Pagamentos no WhatsApp",
+              jsonFile: "whatsapp.json",
+            ),
+          );
         },
       ),
       body: NotificationListener<OverscrollIndicatorNotification>(

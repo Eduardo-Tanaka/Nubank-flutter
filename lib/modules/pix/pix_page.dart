@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:nubank/shared/models/ajuda_params.dart';
 import 'package:nubank/shared/themes/app_images.dart';
 import 'package:nubank/shared/widgets/circle_icon_button/circle_icon_button_widget.dart';
 import 'package:nubank/shared/widgets/tile_pix/tile_pix_widget.dart';
@@ -137,7 +138,14 @@ class PixPage extends StatelessWidget {
               title: "Me ajuda",
               iconLeading: Icons.help_outline,
               onTap: () {
-                Navigator.pushNamed(context, "/ajuda_pix_home");
+                Navigator.pushNamed(
+                  context,
+                  "/ajuda_home",
+                  arguments: AjudaParams(
+                    title: "Pix",
+                    jsonFile: "pix.json",
+                  ),
+                );
               },
             ),
           ],

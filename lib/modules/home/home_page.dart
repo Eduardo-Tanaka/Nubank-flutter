@@ -194,25 +194,50 @@ class _HomePageState extends State<HomePage> {
                         itemBuilder: (context, position) {
                           return Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 4),
-                            child: Column(
+                            child: Stack(
                               children: [
-                                CircleIconButtonWidget(
-                                  icon: icons[position],
-                                  onPressed: () {
-                                    Navigator.pushNamed(
-                                      context,
-                                      routes[position],
-                                    );
-                                  },
-                                  background: Colors.grey[200],
-                                  color: Colors.black,
-                                  padding: 20,
+                                Column(
+                                  children: [
+                                    CircleIconButtonWidget(
+                                      icon: icons[position],
+                                      onPressed: () {
+                                        Navigator.pushNamed(
+                                          context,
+                                          routes[position],
+                                        );
+                                      },
+                                      background: Colors.grey[200],
+                                      color: Colors.black,
+                                      padding: 20,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 16),
+                                      child: Text(
+                                        titles[position],
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 16),
-                                  child: Text(
-                                    titles[position],
-                                    textAlign: TextAlign.center,
+                                Visibility(
+                                  visible: position == titles.length - 1,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 17, top: 50),
+                                    child: Container(
+                                      padding: const EdgeInsets.all(2),
+                                      decoration: new BoxDecoration(
+                                        color: AppColors.primary,
+                                        border: Border.all(
+                                            color: Colors.black, width: 0.0),
+                                        borderRadius: new BorderRadius.all(
+                                            Radius.elliptical(4, 4)),
+                                      ),
+                                      child: Text(
+                                        "Dica",
+                                        style: TextStyles.titleBottomMenu,
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ],

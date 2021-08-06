@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:nubank/shared/models/ajuda.dart';
 import 'package:nubank/shared/models/ajuda_params.dart';
+import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/tile_ajuda/tile_ajuda_shimmer_widget.dart';
 import 'package:nubank/shared/widgets/tile_ajuda/tile_ajuda_widget.dart';
@@ -15,20 +16,20 @@ class AjudaHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments as AjudaParams;
 
-    return Scaffold(
-      appBar: AppBarWidget(
-        icon: Icons.navigate_before,
-        title: args.title,
-        showTrailingIcon: true,
-        trailingIcon: Icons.search,
-        onPressedTrailing: () {},
-      ),
-      body: FutureBuilder<String>(
-        future: loadAsset(context, args.jsonFile),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            var list = json.decode(snapshot.data.toString());
-            return ListView.separated(
+    return FutureBuilder(
+      future: loadAsset(context, args.jsonFile),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          var list = json.decode(snapshot.data.toString());
+          return Scaffold(
+            appBar: AppBarWidget(
+              icon: Icons.navigate_before,
+              title: args.title,
+              showTrailingIcon: true,
+              trailingIcon: Icons.search,
+              onPressedTrailing: () {},
+            ),
+            body: ListView.separated(
               physics: BouncingScrollPhysics(),
               itemCount: list.length + 1,
               itemBuilder: (context, index) {
@@ -62,9 +63,28 @@ class AjudaHomePage extends StatelessWidget {
                   thickness: 1,
                 );
               },
-            );
-          } else {
-            return Shimmer.fromColors(
+            ),
+          );
+        } else {
+          return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.white,
+              elevation: 0,
+              centerTitle: true,
+              title: Shimmer.fromColors(
+                baseColor: Colors.grey[300]!,
+                highlightColor: Colors.grey[100]!,
+                child: Container(
+                  width: 100,
+                  color: Colors.white,
+                  child: Text(
+                    "",
+                    style: TextStyles.textBlack,
+                  ),
+                ),
+              ),
+            ),
+            body: Shimmer.fromColors(
               baseColor: Colors.grey[300]!,
               highlightColor: Colors.grey[100]!,
               child: ListView.separated(
@@ -89,10 +109,10 @@ class AjudaHomePage extends StatelessWidget {
                   );
                 },
               ),
-            );
-          }
-        },
-      ),
+            ),
+          );
+        }
+      },
     );
   }
 

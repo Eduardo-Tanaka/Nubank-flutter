@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/modules/pix/pix_chaves/pix_chave_modal_widget.dart';
 import 'package:nubank/modules/pix/pix_chaves/pix_registrar_chave_modal_widget.dart';
+import 'package:nubank/shared/models/ajuda_params.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
@@ -16,7 +17,14 @@ class PixChavesPage extends StatelessWidget {
         icon: Icons.navigate_before,
         showTrailingIcon: true,
         onPressedTrailing: () {
-          Navigator.pushNamed(context, "/ajuda_pix_home");
+          Navigator.pushNamed(
+            context,
+            "/ajuda_home",
+            arguments: AjudaParams(
+              title: "Pix",
+              jsonFile: "pix.json",
+            ),
+          );
         },
       ),
       body: SingleChildScrollView(
