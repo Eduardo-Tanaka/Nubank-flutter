@@ -94,7 +94,7 @@ class DoacaoValorPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(
                         context,
-                        "/doacao_valor",
+                        "/doacao_confirmar",
                       );
                     },
                   );

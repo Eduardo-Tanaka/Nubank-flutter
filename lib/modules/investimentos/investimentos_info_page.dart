@@ -113,7 +113,7 @@ class InvestimentosInfoPage extends StatelessWidget {
                   Navigator.pushNamedAndRemoveUntil(
                     context,
                     "/home",
-                    (route) => route.isFirst,
+                    (route) => false,
                   );
                 } else {
                   final String _url =
