@@ -27,12 +27,7 @@ class AjudaDetalhe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double? bodyHeight;
-
     final args = ModalRoute.of(context)!.settings.arguments as Ajuda;
-    if (bodyHeight == null) {
-      bodyHeight = MediaQuery.of(context).size.height - 80;
-    }
 
     return Scaffold(
       appBar: AppBarWidget(
@@ -47,40 +42,33 @@ class AjudaDetalhe extends StatelessWidget {
           );
         },
       ),
-      body: BlocBuilder<AjudaCubit, bool>(
-        builder: (context, state) {
-          return Container(
-            height: state
-                ? MediaQuery.of(context).size.height - 80 - 136
-                : MediaQuery.of(context).size.height,
-            child: FutureBuilder(
-              future: loadAjuda(),
-              builder: (ctx, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done || state) {
-                  return Padding(
-                    padding: EdgeInsets.only(bottom: state ? 4 : 20),
-                    child: TileAjudaWidget(
-                      title: args.title,
-                      description: args.description,
-                      expandSubtitle: true,
-                      onTap: () {
-                        ctx.read<AjudaCubit>().showBottom();
-                      },
-                    ),
-                  );
-                } else {
-                  return Shimmer.fromColors(
-                    baseColor: Colors.grey[300]!,
-                    highlightColor: Colors.grey[100]!,
-                    child: TileAjudaShimmerWidget(
-                      expandSubtitle: true,
-                    ),
-                  );
-                }
-              },
-            ),
-          );
-        },
+      body: Container(
+        child: FutureBuilder(
+          future: loadAjuda(),
+          builder: (ctx, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 2),
+                child: TileAjudaWidget(
+                  title: args.title,
+                  description: args.description,
+                  expandSubtitle: true,
+                  onTap: () {
+                    ctx.read<AjudaCubit>().showBottom();
+                  },
+                ),
+              );
+            } else {
+              return Shimmer.fromColors(
+                baseColor: Colors.grey[300]!,
+                highlightColor: Colors.grey[100]!,
+                child: TileAjudaShimmerWidget(
+                  expandSubtitle: true,
+                ),
+              );
+            }
+          },
+        ),
       ),
       bottomNavigationBar: BlocBuilder<AjudaCubit, bool>(
         builder: (context, state) {

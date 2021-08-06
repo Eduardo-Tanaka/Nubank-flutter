@@ -35,11 +35,12 @@ class TileAjudaWidget extends StatelessWidget {
             padding: expandSubtitle
                 ? const EdgeInsets.only(
                     top: 12,
-                    bottom: 48,
+                    bottom: 72,
                   )
                 : const EdgeInsets.symmetric(vertical: 8),
             child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics()),
               child: Column(
                 children: [
                   Text(

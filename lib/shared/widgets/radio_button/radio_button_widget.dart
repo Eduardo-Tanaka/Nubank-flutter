@@ -13,6 +13,7 @@ class RadioButtonWidget extends StatelessWidget {
   final String? title;
   final String? subtitle;
   final bool isNew;
+  final double verticalPadding;
 
   const RadioButtonWidget({
     Key? key,
@@ -25,6 +26,7 @@ class RadioButtonWidget extends StatelessWidget {
     this.title,
     this.subtitle,
     this.isNew = false,
+    this.verticalPadding = 12,
   }) : super(key: key);
 
   @override
@@ -34,7 +36,9 @@ class RadioButtonWidget extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12),
+            padding: EdgeInsets.symmetric(
+              vertical: verticalPadding,
+            ),
             child: ListTile(
               leading: Transform.scale(
                 scale: 1.4,
@@ -76,13 +80,6 @@ class RadioButtonWidget extends StatelessWidget {
                       ),
                     )
                   : null,
-              /*trailing: Visibility(
-                visible: trailingText == null ? false : true,
-                child: Text(
-                  trailingText ?? "",
-                  style: TextStyles.textGreyBold,
-                ),
-              ),*/
             ),
           ),
           Visibility(

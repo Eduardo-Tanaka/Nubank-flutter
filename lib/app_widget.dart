@@ -14,6 +14,7 @@ import 'package:nubank/modules/cartao_virtual/cartao_virtual_page.dart';
 import 'package:nubank/modules/cobrar/cobrar_page.dart';
 import 'package:nubank/modules/configuracao/configuracao_page.dart';
 import 'package:nubank/modules/depositar/depositar_page.dart';
+import 'package:nubank/modules/doacao/doacao_instituicao_page.dart';
 import 'package:nubank/modules/doacao/doacao_page.dart';
 import 'package:nubank/modules/emprestimo/emprestimo_objetivo_page.dart';
 import 'package:nubank/modules/emprestimo/emprestimo_page.dart';
@@ -96,6 +97,7 @@ class AppWidget extends StatelessWidget {
       "/cobrar": CobrarPage(),
       "/depositar": DepositarPage(),
       "/doacao": DoacaoPage(),
+      "/doacao_instituicao": DoacaoInstituicaoPage(),
       "/emprestimo": EmprestimoPage(),
       "/emprestimo_info": EmprestimoInfoPage(),
       "/emprestimo_objetivo": EmprestimoObjetivoPage(),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:nubank/shared/models/ajuda_params.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
+import 'package:nubank/shared/widgets/button_nu/button_nu_rectangle_widget.dart';
 
 class DoacaoPage extends StatelessWidget {
   const DoacaoPage({Key? key}) : super(key: key);
@@ -71,30 +72,14 @@ class DoacaoPage extends StatelessWidget {
                         SizedBox(
                           height: 24,
                         ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "QUERO DOAR",
-                                style: TextStyles.textNuSmallBold,
-                              ),
-                            ],
-                          ),
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.all(20),
-                            primary: Colors.black87,
-                            shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(4),
-                              ),
-                              side: BorderSide(
-                                color: Color(0xFF820ad1),
-                                style: BorderStyle.solid,
-                              ),
-                            ),
-                          ),
+                        ButtonNuRectangleWidget(
+                          text: "QUERO DOAR",
+                          onPressed: () {
+                            Navigator.pushNamed(
+                              context,
+                              "/doacao_instituicao",
+                            );
+                          },
                         ),
                       ],
                     )
