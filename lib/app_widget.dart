@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nubank/modules/ajuda/ajuda_detalhe_page.dart';
 import 'package:nubank/modules/ajuda/ajuda_home_page.dart';
@@ -14,8 +15,10 @@ import 'package:nubank/modules/cartao_virtual/cartao_virtual_page.dart';
 import 'package:nubank/modules/cobrar/cobrar_page.dart';
 import 'package:nubank/modules/configuracao/configuracao_page.dart';
 import 'package:nubank/modules/depositar/depositar_page.dart';
+import 'package:nubank/modules/doacao/cubit/doacao_cubit.dart';
 import 'package:nubank/modules/doacao/doacao_instituicao_page.dart';
 import 'package:nubank/modules/doacao/doacao_page.dart';
+import 'package:nubank/modules/doacao/doacao_valor_page.dart';
 import 'package:nubank/modules/emprestimo/emprestimo_objetivo_page.dart';
 import 'package:nubank/modules/emprestimo/emprestimo_page.dart';
 import 'package:nubank/modules/emprestimo/emprestimo_simular_info_page.dart';
@@ -98,6 +101,7 @@ class AppWidget extends StatelessWidget {
       "/depositar": DepositarPage(),
       "/doacao": DoacaoPage(),
       "/doacao_instituicao": DoacaoInstituicaoPage(),
+      "/doacao_valor": DoacaoValorPage(),
       "/emprestimo": EmprestimoPage(),
       "/emprestimo_info": EmprestimoInfoPage(),
       "/emprestimo_objetivo": EmprestimoObjetivoPage(),
@@ -149,70 +153,83 @@ class AppWidget extends StatelessWidget {
       "/qrcode_read": QrcodeReadPage(),
       "/whatsapp_cadastrar": WhatsappCadastrarPage(),
     };
-    return MaterialApp(
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<DoacaoCubit>(
+          create: (BuildContext context) => DoacaoCubit(),
+        ),
       ],
-      supportedLocales: [const Locale('pt', 'BR')],
-      title: 'Nubank',
-      theme: ThemeData(
-        backgroundColor: AppColors.primary,
-        scaffoldBackgroundColor: Colors.white,
-        textSelectionTheme: TextSelectionThemeData(
-          cursorColor: AppColors.background,
-          selectionColor: AppColors.background,
-          selectionHandleColor: AppColors.background,
+      child: WillPopScope(
+        onWillPop: () async {
+          Navigator.pop(context);
+          return false;
+        },
+        child: MaterialApp(
+          localizationsDelegates: [
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate
+          ],
+          supportedLocales: [const Locale('pt', 'BR')],
+          title: 'Nubank',
+          theme: ThemeData(
+            backgroundColor: AppColors.primary,
+            scaffoldBackgroundColor: Colors.white,
+            textSelectionTheme: TextSelectionThemeData(
+              cursorColor: AppColors.background,
+              selectionColor: AppColors.background,
+              selectionHandleColor: AppColors.background,
+            ),
+          ),
+          initialRoute: "/splash",
+          routes: {
+            "/configuracao": (context) => ConfiguracaoPage(),
+          },
+          onGenerateRoute: (settings) {
+            return PageRouteBuilder(
+                transitionDuration: Duration(milliseconds: 400),
+                settings: settings,
+                pageBuilder: (context, animation, secondaryAnimation) =>
+                    routes[settings.name] ?? HomePage(),
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  switch (settings.name) {
+                    case "/ajuda_detalhe":
+                    case "/ajuda_pix_detalhe":
+                    case "/ajuda_whatsapp_detalhe":
+                    case "/boleto":
+                    case "/emprestimo_objetivo":
+                    case "/emprestimo_simular":
+                    case "/emprestimo_simular_info":
+                    case "/investimentos":
+                    case "/investimentos_info":
+                    case "/meus_dados":
+                    case "/pagar_boleto":
+                    case "/pagar_modo_pagamento":
+                    case "/pix_copia_cola":
+                    case "/pix_chaves":
+                    case "/pix_registrar_chave":
+                    case "/pix_registrar_chave_input":
+                    case "/recarga_operadora":
+                    case "/recarga_forma_pagamento":
+                    case "/recarga_valor":
+                    case "/recarga_resumo":
+                    case "/receber":
+                    case "/seguro_vida":
+                    case "/seguro_vida_funcionamento":
+                    case "/seguro_vida_simular2":
+                    case "/seguro_vida_simular3":
+                    case "/seguro_vida_simular4":
+                    case "/seguro_vida_termos":
+                    case "/transferir_destino":
+                    case "/qrcode_read":
+                      return slideRightLeft(animation, child);
+                    default:
+                      return slideBottomTop(animation, child);
+                  }
+                });
+          },
         ),
       ),
-      initialRoute: "/splash",
-      routes: {
-        "/configuracao": (context) => ConfiguracaoPage(),
-      },
-      onGenerateRoute: (settings) {
-        return PageRouteBuilder(
-            transitionDuration: Duration(milliseconds: 400),
-            settings: settings,
-            pageBuilder: (context, animation, secondaryAnimation) =>
-                routes[settings.name] ?? HomePage(),
-            transitionsBuilder:
-                (context, animation, secondaryAnimation, child) {
-              switch (settings.name) {
-                case "/ajuda_detalhe":
-                case "/ajuda_pix_detalhe":
-                case "/ajuda_whatsapp_detalhe":
-                case "/boleto":
-                case "/emprestimo_objetivo":
-                case "/emprestimo_simular":
-                case "/emprestimo_simular_info":
-                case "/investimentos":
-                case "/investimentos_info":
-                case "/meus_dados":
-                case "/pagar_boleto":
-                case "/pagar_modo_pagamento":
-                case "/pix_copia_cola":
-                case "/pix_chaves":
-                case "/pix_registrar_chave":
-                case "/pix_registrar_chave_input":
-                case "/recarga_operadora":
-                case "/recarga_forma_pagamento":
-                case "/recarga_valor":
-                case "/recarga_resumo":
-                case "/receber":
-                case "/seguro_vida":
-                case "/seguro_vida_funcionamento":
-                case "/seguro_vida_simular2":
-                case "/seguro_vida_simular3":
-                case "/seguro_vida_simular4":
-                case "/seguro_vida_termos":
-                case "/transferir_destino":
-                case "/qrcode_read":
-                  return slideRightLeft(animation, child);
-                default:
-                  return slideBottomTop(animation, child);
-              }
-            });
-      },
     );
   }
 
