@@ -44,6 +44,8 @@ dependencies:
   url_launcher: ^6.0.9
   device_apps: ^2.1.1
   shimmer: ^2.0.0
+  bloc: ^7.0.0
+  flutter_bloc: ^7.1.0
   
 dev_dependencies:
   flutter_test:
