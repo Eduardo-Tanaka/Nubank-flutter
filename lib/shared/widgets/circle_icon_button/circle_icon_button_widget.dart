@@ -21,22 +21,46 @@ class CircleIconButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      child: Icon(
-        icon,
-        color: color == null ? Colors.white : color,
-        size: iconSize,
-      ),
-      style: ElevatedButton.styleFrom(
-        primary:
-            background == null ? AppColors.circleButtonBackground : background,
-        onPrimary: Colors.black45,
-        shape: CircleBorder(),
-        padding: EdgeInsets.all(padding),
-        elevation: 0,
-        minimumSize: Size(8, 8),
-      ),
-    );
+    return onPressed != null
+        ? ElevatedButton(
+            onPressed: onPressed,
+            child: Icon(
+              icon,
+              color: color == null ? Colors.white : color,
+              size: iconSize,
+            ),
+            style: ElevatedButton.styleFrom(
+              primary: background == null
+                  ? AppColors.circleButtonBackground
+                  : background,
+              onPrimary: Colors.black45,
+              shape: CircleBorder(),
+              padding: EdgeInsets.all(padding),
+              elevation: 0,
+              minimumSize: Size(8, 8),
+            ),
+          )
+        : Container(
+            padding: EdgeInsets.all(padding),
+            child: Icon(
+              icon,
+              color: color == null ? Colors.white : color,
+              size: iconSize,
+            ),
+            decoration: BoxDecoration(
+              color: background == null
+                  ? AppColors.circleButtonBackground
+                  : background,
+              border: Border.all(
+                color: background == null
+                    ? AppColors.circleButtonBackground
+                    : background!,
+              ),
+              shape: BoxShape.circle,
+              /*borderRadius: BorderRadius.all(
+                Radius.circular(iconSize),
+              ),*/
+            ),
+          );
   }
 }

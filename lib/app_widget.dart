@@ -169,9 +169,9 @@ class AppWidget extends StatelessWidget {
             backgroundColor: AppColors.primary,
             scaffoldBackgroundColor: Colors.white,
             textSelectionTheme: TextSelectionThemeData(
-              cursorColor: AppColors.background,
-              selectionColor: AppColors.background,
-              selectionHandleColor: AppColors.background,
+              cursorColor: AppColors.primary,
+              selectionColor: AppColors.primary,
+              selectionHandleColor: AppColors.primary,
             ),
           ),
           initialRoute: "/splash",

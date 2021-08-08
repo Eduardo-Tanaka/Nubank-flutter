@@ -37,6 +37,7 @@ class InvestimentosInfoPage extends StatelessWidget {
                     icon: Icons.local_atm_outlined,
                     color: Colors.black,
                     onPressed: null,
+                    background: Colors.grey[200],
                     padding: 8,
                   ),
                   title: Text(
@@ -58,6 +59,7 @@ class InvestimentosInfoPage extends StatelessWidget {
                     icon: Icons.phone_android_outlined,
                     color: Colors.black,
                     onPressed: null,
+                    background: Colors.grey[200],
                     padding: 8,
                   ),
                   title: Text(
@@ -80,6 +82,7 @@ class InvestimentosInfoPage extends StatelessWidget {
                     color: Colors.black,
                     onPressed: null,
                     padding: 8,
+                    background: Colors.grey[200],
                   ),
                   title: Text(
                     "O investimento certo para você",

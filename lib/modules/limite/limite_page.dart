@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
-import 'package:nubank/shared/themes/app_images.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/floating_action_button/floating_action_button_widget.dart';
@@ -49,7 +48,7 @@ class _LimitePageState extends State<LimitePage> {
     moneyInputTextController.text = limite.toString();
     moneyInputDisponivelTextController.text = (limite - gasto).toString();
 
-    load(AppImages.ic_add_user, 40, 40).then((image) {
+    /*load(AppImages.ic_add_user, 40, 40).then((image) {
       setState(() {
         customImage = image;
       });
@@ -58,7 +57,7 @@ class _LimitePageState extends State<LimitePage> {
       setState(() {
         customImage2 = image;
       });
-    });
+    });*/
   }
 
   @override
@@ -134,7 +133,7 @@ class _LimitePageState extends State<LimitePage> {
                   activeTrackColor: Colors.green,
                   inactiveTrackColor: Colors.green[100],
                   overlayColor: Colors.transparent,
-                  thumbColor: AppColors.background,
+                  thumbColor: AppColors.primary,
                   thumbShape: CustomThumbShape(customImage),
                   trackShape: CustomTrackShape(),
                 ),
@@ -174,7 +173,7 @@ class _LimitePageState extends State<LimitePage> {
                   ],
                 ),
                 style: TextButton.styleFrom(
-                  backgroundColor: AppColors.background,
+                  backgroundColor: AppColors.primary,
                   padding: EdgeInsets.all(16),
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(

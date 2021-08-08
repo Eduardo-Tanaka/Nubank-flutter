@@ -72,7 +72,7 @@ class _EmprestimoSimularInfoPageState extends State<EmprestimoSimularInfoPage> {
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                     child: Icon(
                       Icons.edit_outlined,
-                      color: AppColors.background,
+                      color: AppColors.primary,
                     ),
                   )
                 ],

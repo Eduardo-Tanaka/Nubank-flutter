@@ -32,8 +32,14 @@ class _TransferirPageState extends State<TransferirPage> {
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.qr_code, color: AppColors.background),
-            onPressed: () => Navigator.pushNamed(context, "/transferir_qrcode"),
+            icon: Icon(
+              Icons.qr_code,
+              color: AppColors.primary,
+            ),
+            onPressed: () => Navigator.pushNamed(
+              context,
+              "/transferir_qrcode",
+            ),
           ),
         ],
       ),

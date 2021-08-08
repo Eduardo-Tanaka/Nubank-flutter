@@ -28,10 +28,6 @@ class ButtonAjudaWidget extends StatelessWidget {
           backgroundColor: danger ? Colors.red : Colors.grey[200],
           primary: Colors.grey[600],
           minimumSize: Size(150, 40),
-          /*padding: EdgeInsets.symmetric(
-            vertical: 16,
-            horizontal: 60,
-          ),*/
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(32),

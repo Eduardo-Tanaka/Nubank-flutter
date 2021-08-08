@@ -55,7 +55,7 @@ class InputTextWidget extends StatelessWidget {
             ),
             child: TextFormField(
               enabled: enabled,
-              cursorColor: AppColors.background,
+              cursorColor: AppColors.primary,
               autofocus: autoFocus,
               keyboardType: textInputType,
               textAlign: TextAlign.left,

@@ -33,7 +33,7 @@ class ButtonMessageWidget extends StatelessWidget {
           children: [
             Icon(
               Icons.comment_outlined,
-              color: AppColors.background,
+              color: AppColors.primary,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 8),

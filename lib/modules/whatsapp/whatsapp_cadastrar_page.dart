@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/shared/models/ajuda_params.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
+import 'package:nubank/shared/themes/app_images.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/button_nu/button_nu_widget.dart';
@@ -55,9 +56,7 @@ class WhatsappCadastrarPage extends StatelessWidget {
                           horizontal: 20,
                           vertical: 24,
                         ),
-                        child: Placeholder(
-                          fallbackHeight: 300,
-                        ),
+                        child: Image.asset(AppImages.whatsapp, height: 300),
                       ),
                       CardWhatsappWidget(
                         icon: Icons.emoji_emotions_outlined,

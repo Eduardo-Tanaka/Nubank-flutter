@@ -107,7 +107,7 @@ class PixRegistrarChavePage extends StatelessWidget {
                       ],
                     ),
                     style: TextButton.styleFrom(
-                      backgroundColor: AppColors.background,
+                      backgroundColor: AppColors.primary,
                       padding: EdgeInsets.all(16),
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(

@@ -67,7 +67,11 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/ajuda/
-
+    
+  fonts:
+    - family:  CustomFontApp
+      fonts:
+        - asset: fonts/CustomFontApp.ttf
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

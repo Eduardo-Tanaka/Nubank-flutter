@@ -61,7 +61,7 @@ class PixChavesPage extends StatelessWidget {
                 ),
                 trailing: Icon(
                   Icons.add,
-                  color: AppColors.background,
+                  color: AppColors.primary,
                 ),
                 onTap: () {
                   showModalBottomSheet(

@@ -92,7 +92,7 @@ class _RecargaResumoPageState extends State<RecargaResumoPage> {
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Icon(
                           Icons.edit_outlined,
-                          color: AppColors.background,
+                          color: AppColors.primary,
                         ),
                       )
                     ],
@@ -149,7 +149,7 @@ class _RecargaResumoPageState extends State<RecargaResumoPage> {
                       style: TextStyles.textBold,
                     ),
                     trailing: Switch(
-                      activeColor: AppColors.background,
+                      activeColor: AppColors.primary,
                       value: lembrete,
                       onChanged: (value) {
                         setState(() {

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/button_nu/button_nu_widget.dart';
 import 'package:nubank/shared/widgets/circle_icon_button/circle_icon_button_widget.dart';
+
+import '../../custom_font_app_icons.dart';
 
 final icons = [
   Icons.help_outline_outlined,
@@ -105,9 +108,10 @@ class PerfilPage extends StatelessWidget {
                               bottom: 20,
                             ),
                             child: CircleIconButtonWidget(
-                              icon: Icons.person_outline,
+                              icon: CustomFontApp.user,
                               padding: 14,
-                              onPressed: () {},
+                              onPressed: null,
+                              background: AppColors.primary,
                             ),
                           ),
                           Text(
@@ -122,52 +126,58 @@ class PerfilPage extends StatelessWidget {
                           bottom: 4,
                         ),
                         child: Text(
-                          "Agência xxxx - Conta xxxxxx-x",
+                          "Agência 0001 - Conta xxxxxx-x",
                           style: TextStyles.textBlackSmall,
                         ),
                       ),
                       Text(
-                        "Banco 0260 - Nu Pagamentos S.A",
+                        "Banco 0260 - Nu Pagamentos S.A - Instituição de Pagamento",
                         style: TextStyles.textBlackSmall,
                       ),
                     ],
                   ),
                 ),
               ),
-              Container(
-                color: Colors.white,
-                child: ListView.separated(
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: icons.length,
-                  itemBuilder: (context, position) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ListTile(
-                        leading: Icon(
-                          icons[position],
-                          color: Colors.black,
+              ListView.separated(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: icons.length,
+                itemBuilder: (context, position) {
+                  return Material(
+                    color: Colors.white,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, routes[position]);
+                      },
+                      child: Container(
+                        child: ListTile(
+                          contentPadding: const EdgeInsets.symmetric(
+                            vertical: 8,
+                            horizontal: 20,
+                          ),
+                          leading: Icon(
+                            icons[position],
+                            color: Colors.black,
+                          ),
+                          title: Text(
+                            title[position],
+                            style: TextStyles.textBlack,
+                          ),
+                          trailing: Icon(
+                            Icons.chevron_right_outlined,
+                          ),
+                          onTap: null,
                         ),
-                        title: Text(
-                          title[position],
-                          style: TextStyles.textBlack,
-                        ),
-                        trailing: Icon(
-                          Icons.chevron_right_outlined,
-                        ),
-                        onTap: () {
-                          Navigator.pushNamed(context, routes[position]);
-                        },
                       ),
-                    );
-                  },
-                  separatorBuilder: (context, position) {
-                    return Divider(
-                      height: 1,
-                      thickness: 1,
-                    );
-                  },
-                ),
+                    ),
+                  );
+                },
+                separatorBuilder: (context, position) {
+                  return Divider(
+                    height: 1,
+                    thickness: 1,
+                  );
+                },
               ),
               Divider(
                 height: 1,

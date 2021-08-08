@@ -43,7 +43,7 @@ class RadioButtonWidget extends StatelessWidget {
               leading: Transform.scale(
                 scale: 1.4,
                 child: Radio(
-                  activeColor: AppColors.background,
+                  activeColor: AppColors.primary,
                   value: value,
                   groupValue: groupValue,
                   onChanged: onChanged,

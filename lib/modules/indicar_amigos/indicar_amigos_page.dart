@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/shared/themes/app_images.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 
 class IndicarAmigosPage extends StatelessWidget {
@@ -44,8 +45,9 @@ class IndicarAmigosPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 24),
-              child: Placeholder(
-                fallbackHeight: 300,
+              child: Image.asset(
+                AppImages.indicar,
+                height: 300,
               ),
             )
           ],

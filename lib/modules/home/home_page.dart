@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/circle_icon_button/circle_icon_button_widget.dart';
@@ -7,6 +6,8 @@ import 'package:nubank/shared/widgets/home_card/home_card_descubra_widget.dart';
 import 'package:nubank/shared/widgets/home_card/home_card_icon_widget.dart';
 import 'package:nubank/shared/widgets/home_card/home_card_text_widget.dart';
 import 'package:nubank/shared/widgets/home_card/home_card_widget.dart';
+
+import '../../custom_font_app_icons.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -29,13 +30,13 @@ class _HomePageState extends State<HomePage> {
     "Encontrar \natalhos",
   ];
   final icons = [
-    FontAwesomeIcons.asterisk,
-    FontAwesomeIcons.barcode,
-    Icons.arrow_upward,
-    Icons.arrow_downward,
-    FontAwesomeIcons.handHoldingUsd,
-    FontAwesomeIcons.mobileAlt,
-    FontAwesomeIcons.commentDollar,
+    CustomFontApp.pix,
+    CustomFontApp.barcode,
+    CustomFontApp.cash_plus,
+    CustomFontApp.cash_minus,
+    CustomFontApp.personal_loan,
+    CustomFontApp.recharge_phone,
+    CustomFontApp.cobrar,
     Icons.favorite_border_outlined,
     Icons.help_outline,
   ];
@@ -101,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               CircleIconButtonWidget(
-                                icon: Icons.person_outline,
+                                icon: CustomFontApp.user,
                                 padding: 14,
                                 onPressed: () {
                                   Navigator.pushNamed(context, "/perfil");
@@ -133,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                                     },
                                   ),
                                   CircleIconButtonWidget(
-                                    icon: Icons.forward_to_inbox_outlined,
+                                    icon: CustomFontApp.email_plus_outline,
                                     padding: 8,
                                     background: AppColors.primary,
                                     onPressed: () {
@@ -148,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 12),
+                            padding: const EdgeInsets.only(left: 8),
                             child: Text(
                               "Olá, Eduardo",
                               style: TextStyles.titleHome,
@@ -255,7 +256,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: HomeCardIconWidget(
                       text: "Meus cartões",
-                      icon: Icons.phone_android_outlined,
+                      icon: CustomFontApp.phone,
                       isVisible: isVisible,
                       onPressed: () {},
                     ),
@@ -294,7 +295,7 @@ class _HomePageState extends State<HomePage> {
                   HomeCardWidget(
                     isVisible: isVisible,
                     isVisibleInfo: true,
-                    icon: Icons.phone_android_outlined,
+                    icon: CustomFontApp.phone,
                     title: "Cartão de crédito",
                     subTitle: "Fatura atual",
                     value: "R\$ 5.000,00",
@@ -321,7 +322,7 @@ class _HomePageState extends State<HomePage> {
                   HomeCardWidget(
                     isVisible: isVisible,
                     isVisibleInfo: isVisible,
-                    icon: FontAwesomeIcons.handHoldingUsd,
+                    icon: CustomFontApp.personal_loan,
                     title: "Empréstimo",
                     subTitle: "Valor disponível de até",
                     info: "R\$ 30.000,00",

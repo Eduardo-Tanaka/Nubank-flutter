@@ -51,7 +51,7 @@ class _TextMoneyEditWidgetState extends State<TextMoneyEditWidget> {
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Icon(
                 Icons.edit_outlined,
-                color: AppColors.background,
+                color: AppColors.primary,
               ),
             )
           ],

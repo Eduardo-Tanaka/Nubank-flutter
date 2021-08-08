@@ -45,7 +45,7 @@ class FloatingActionButtonWidget extends StatelessWidget {
                 : Colors.white,
         size: 24,
       ),
-      backgroundColor: isDisabled ? Colors.grey[200] : AppColors.background,
+      backgroundColor: isDisabled ? Colors.grey[200] : AppColors.primary,
     );
   }
 }

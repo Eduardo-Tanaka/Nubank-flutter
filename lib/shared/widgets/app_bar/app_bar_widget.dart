@@ -79,7 +79,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
       return Container(
         width: linearProgressWidth,
         child: LinearProgressIndicator(
-          color: AppColors.background,
+          color: AppColors.primary,
           backgroundColor: Colors.grey[100],
           value: value,
         ),

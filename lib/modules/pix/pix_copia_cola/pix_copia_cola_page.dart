@@ -29,7 +29,7 @@ class PixCopiaColaPage extends StatelessWidget {
             ),
             TextFormField(
               autofocus: true,
-              cursorColor: AppColors.background,
+              cursorColor: AppColors.primary,
               style: TextStyles.textCardGrey,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.zero,

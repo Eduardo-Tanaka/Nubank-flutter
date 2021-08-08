@@ -13,7 +13,7 @@ class SplashPage extends StatelessWidget {
           context, MaterialPageRoute(builder: (context) => HomePage()));
     });
     return Container(
-      color: AppColors.background,
+      color: AppColors.primary,
       child: Center(
         child: Image.asset(
           AppImages.icon,

@@ -66,7 +66,7 @@ class BloquearCartaoPage extends StatelessWidget {
                       onPressed: () {},
                       child: Text("BLOQUEAR"),
                       style: OutlinedButton.styleFrom(
-                        primary: AppColors.background,
+                        primary: AppColors.primary,
                         padding: const EdgeInsets.all(20),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(0),
