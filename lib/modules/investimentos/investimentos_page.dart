@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/shared/themes/app_images.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/floating_action_button/floating_action_button_widget.dart';
@@ -19,8 +20,9 @@ class InvestimentosPage extends StatelessWidget {
           children: [
             SizedBox(
               width: 200,
-              child: Placeholder(
-                fallbackHeight: 200,
+              height: 200,
+              child: Image.asset(
+                AppImages.investimento,
               ),
             ),
             SizedBox(

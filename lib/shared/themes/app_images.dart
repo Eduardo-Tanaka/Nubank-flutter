@@ -1,7 +1,9 @@
 class AppImages {
   static const logo = "assets/images/nubank-logo.png";
   static const icon = "assets/images/nubank-icon.png";
+  static const investimento = "assets/images/investimento.png";
   static const pix_page = "assets/images/send_money.png";
+  static const seguro_vida = "assets/images/seguro.png";
 
   static const ic_pix = "assets/icons/ic_pix.png";
   static const ic_code = "assets/icons/ic_code.png";

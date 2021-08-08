@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/shared/models/ajuda_params.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
+import 'package:nubank/shared/themes/app_images.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/button_nu/button_nu_widget.dart';
 import 'package:nubank/shared/widgets/card_whatsapp/card_whatsapp_widget.dart';
@@ -40,6 +41,10 @@ class _SeguroVidaPageState extends State<SeguroVidaPage> {
           physics: physics,
           child: Stack(
             children: [
+              Image.asset(
+                AppImages.seguro_vida,
+                height: 200,
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -79,8 +84,8 @@ class _SeguroVidaPageState extends State<SeguroVidaPage> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Placeholder(
-                    fallbackHeight: 200,
+                  SizedBox(
+                    height: 200,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
