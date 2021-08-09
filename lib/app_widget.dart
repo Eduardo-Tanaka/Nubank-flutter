@@ -9,7 +9,7 @@ import 'package:nubank/modules/bloquear/bloquear_cartao_page.dart';
 import 'package:nubank/modules/boleto/boleto_page.dart';
 import 'package:nubank/modules/cartao_virtual/cartao_virtual_page.dart';
 import 'package:nubank/modules/cobrar/cobrar_page.dart';
-import 'package:nubank/modules/configuracao/configuracao_page.dart';
+import 'package:nubank/modules/configuracao/configurar_app_page.dart';
 import 'package:nubank/modules/depositar/depositar_page.dart';
 import 'package:nubank/modules/doacao/cubit/doacao_cubit.dart';
 import 'package:nubank/modules/doacao/doacao_confirmar_page.dart';
@@ -92,6 +92,7 @@ class AppWidget extends StatelessWidget {
       "/boleto": BoletoPage(),
       "/cartao_virtual": CartaoVirtualPage(),
       "/cobrar": CobrarPage(),
+      "/configurar_app": ConfigurarAppPage(),
       "/depositar": DepositarPage(),
       "/doacao": DoacaoPage(),
       "/doacao_confirmar": DoacaoConfirmarPage(),
@@ -177,9 +178,6 @@ class AppWidget extends StatelessWidget {
             ),
           ),
           initialRoute: "/splash",
-          routes: {
-            "/configuracao": (context) => ConfiguracaoPage(),
-          },
           onGenerateRoute: (settings) {
             return PageRouteBuilder(
                 transitionDuration: Duration(milliseconds: 400),
