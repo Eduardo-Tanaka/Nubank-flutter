@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nubank/custom_font_app_icons.dart';
 import 'package:nubank/shared/models/ajuda.dart';
 import 'package:nubank/shared/models/ajuda_params.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
@@ -15,7 +16,8 @@ class EmprestimoPage extends StatelessWidget {
       onRefresh: () async {},
       child: Scaffold(
         appBar: AppBarWidget(
-          icon: Icons.keyboard_backspace_outlined,
+          icon: CustomFontApp.back,
+          iconSize: 24,
           showTrailingIcon: true,
           onPressedTrailing: () {
             Navigator.pushNamed(
@@ -80,7 +82,7 @@ class EmprestimoPage extends StatelessWidget {
                         onPressed: () {
                           Navigator.pushNamed(
                             context,
-                            "/emprestimo_info",
+                            "/emprestimo_objetivo",
                           );
                         },
                         padding: EdgeInsets.zero,

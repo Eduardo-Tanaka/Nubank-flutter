@@ -50,8 +50,10 @@ import 'package:nubank/modules/seguro/seguro_vida_simular_page2.dart';
 import 'package:nubank/modules/transferir/qrcode/qrcode_read_page.dart';
 import 'package:nubank/modules/transferir/transferir_destino_page.dart';
 import 'package:nubank/modules/transferir/transferir_page.dart';
+import 'package:nubank/shared/models/emprestimo.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 
+import 'modules/emprestimo/emprestimo_cubit.dart';
 import 'modules/emprestimo/emprestimo_info_page.dart';
 import 'modules/investimentos/investimentos_info_page.dart';
 import 'modules/investimentos/investimentos_page.dart';
@@ -156,6 +158,9 @@ class AppWidget extends StatelessWidget {
       providers: [
         BlocProvider<DoacaoCubit>(
           create: (BuildContext context) => DoacaoCubit(),
+        ),
+        BlocProvider<EmprestimoCubit>(
+          create: (BuildContext context) => EmprestimoCubit(Emprestimo()),
         ),
       ],
       child: WillPopScope(

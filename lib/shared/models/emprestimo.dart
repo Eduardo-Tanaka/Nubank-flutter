@@ -6,6 +6,7 @@ class Emprestimo {
   final String? data;
   final int? parcelas;
   final String? objetivo;
+  final bool edit;
 
   Emprestimo({
     this.tipo,
@@ -13,6 +14,7 @@ class Emprestimo {
     this.data,
     this.parcelas,
     this.objetivo,
+    this.edit = false,
   });
 
   Emprestimo copyWith({
@@ -21,6 +23,7 @@ class Emprestimo {
     String? data,
     int? parcelas,
     String? objetivo,
+    bool? edit,
   }) {
     return Emprestimo(
       tipo: tipo ?? this.tipo,
@@ -28,6 +31,7 @@ class Emprestimo {
       data: data ?? this.data,
       parcelas: parcelas ?? this.parcelas,
       objetivo: objetivo ?? this.objetivo,
+      edit: edit ?? this.edit,
     );
   }
 
@@ -38,6 +42,7 @@ class Emprestimo {
       'data': data,
       'parcelas': parcelas,
       'objetivo': objetivo,
+      'edit': edit,
     };
   }
 
@@ -48,6 +53,7 @@ class Emprestimo {
       data: map['data'],
       parcelas: map['parcelas'],
       objetivo: map['objetivo'],
+      edit: map['edit'],
     );
   }
 
@@ -58,7 +64,7 @@ class Emprestimo {
 
   @override
   String toString() {
-    return 'Emprestimo(tipo: $tipo, valor: $valor, data: $data, parcelas: $parcelas, objetivo: $objetivo)';
+    return 'Emprestimo(tipo: $tipo, valor: $valor, data: $data, parcelas: $parcelas, objetivo: $objetivo, edit: $edit)';
   }
 
   @override
@@ -70,7 +76,8 @@ class Emprestimo {
         other.valor == valor &&
         other.data == data &&
         other.parcelas == parcelas &&
-        other.objetivo == objetivo;
+        other.objetivo == objetivo &&
+        other.edit == edit;
   }
 
   @override
@@ -79,6 +86,7 @@ class Emprestimo {
         valor.hashCode ^
         data.hashCode ^
         parcelas.hashCode ^
-        objetivo.hashCode;
+        objetivo.hashCode ^
+        edit.hashCode;
   }
 }

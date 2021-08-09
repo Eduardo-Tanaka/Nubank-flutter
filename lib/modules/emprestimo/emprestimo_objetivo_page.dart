@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:nubank/modules/emprestimo/emprestimo_cubit.dart';
 import 'package:nubank/shared/models/emprestimo.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
@@ -7,14 +9,7 @@ import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/button_nu/button_nu_widget.dart';
 import 'package:nubank/shared/widgets/circle_icon_button/circle_icon_button_widget.dart';
 
-class EmprestimoObjetivoPage extends StatefulWidget {
-  const EmprestimoObjetivoPage({Key? key}) : super(key: key);
-
-  @override
-  _EmprestimoObjetivoPageState createState() => _EmprestimoObjetivoPageState();
-}
-
-class _EmprestimoObjetivoPageState extends State<EmprestimoObjetivoPage> {
+class EmprestimoObjetivoPage extends StatelessWidget {
   final titles = [
     'Contas da casa',
     'Reformas ou consertos',
@@ -26,7 +21,7 @@ class _EmprestimoObjetivoPageState extends State<EmprestimoObjetivoPage> {
     'Compras',
     'Outros',
   ];
-  int active = -1;
+
   final icons = [
     Icons.sticky_note_2_outlined,
     Icons.build_outlined,
@@ -41,6 +36,8 @@ class _EmprestimoObjetivoPageState extends State<EmprestimoObjetivoPage> {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = BlocProvider.of<EmprestimoCubit>(context);
+    bloc.init();
     return Scaffold(
       appBar: AppBarWidget(),
       body: SingleChildScrollView(
@@ -62,30 +59,36 @@ class _EmprestimoObjetivoPageState extends State<EmprestimoObjetivoPage> {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
-                return ListTile(
-                  leading: CircleIconButtonWidget(
-                    icon: icons[index],
-                    color: index == active ? Colors.white : Colors.black,
-                    onPressed: () {
-                      active = index;
-                      setState(() {});
-                    },
-                    background:
-                        index == active ? AppColors.primary : Colors.grey[200],
-                    padding: 12,
-                  ),
-                  title: Text(
-                    titles[index],
-                    style: TextStyles.textBold,
-                  ),
-                  onTap: () {
-                    active = index;
-                    setState(() {});
+                return BlocBuilder<EmprestimoCubit, Emprestimo>(
+                  bloc: bloc,
+                  builder: (ctx, state) {
+                    return ListTile(
+                      leading: CircleIconButtonWidget(
+                        icon: icons[index],
+                        color: titles[index] == state.objetivo
+                            ? Colors.white
+                            : Colors.black,
+                        onPressed: () {
+                          ctx.read<EmprestimoCubit>().objetivo(titles[index]);
+                        },
+                        background: titles[index] == state.objetivo
+                            ? AppColors.primary
+                            : Colors.grey[200],
+                        padding: 12,
+                      ),
+                      title: Text(
+                        titles[index],
+                        style: TextStyles.textBold,
+                      ),
+                      onTap: () {
+                        ctx.read<EmprestimoCubit>().objetivo(titles[index]);
+                      },
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 20,
+                      ),
+                    );
                   },
-                  contentPadding: EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 20,
-                  ),
                 );
               },
               separatorBuilder: (context, index) {
@@ -111,28 +114,28 @@ class _EmprestimoObjetivoPageState extends State<EmprestimoObjetivoPage> {
             ),
             Padding(
               padding: const EdgeInsets.all(20),
-              child: ButtonNuWidget(
-                text: "Continuar",
-                color: active == -1 ? Colors.grey[200] : AppColors.primary,
-                textColor: active == -1 ? Colors.black26 : Colors.white,
-                onPressed: () {
-                  if (active != -1) {
-                    final DateTime now = DateTime.now();
-                    final DateFormat formatter =
-                        DateFormat("dd 'de' MMMM", 'pt_BR');
-                    formatter.format(now.add(Duration(days: 30)));
-                    Navigator.pushNamed(
-                      context,
-                      "/emprestimo_simular",
-                      arguments: Emprestimo(
-                        data: null,
-                        objetivo: titles[active],
-                        parcelas: 12,
-                        tipo: null,
-                        valor: 100,
-                      ),
-                    );
-                  }
+              child: BlocBuilder<EmprestimoCubit, Emprestimo>(
+                builder: (context, state) {
+                  return ButtonNuWidget(
+                    text: "Continuar",
+                    color: state.objetivo == null
+                        ? Colors.grey[200]
+                        : AppColors.primary,
+                    textColor:
+                        state.objetivo == null ? Colors.black26 : Colors.white,
+                    onPressed: () {
+                      if (state.objetivo != null) {
+                        final DateTime now = DateTime.now();
+                        final DateFormat formatter =
+                            DateFormat("dd 'de' MMMM", 'pt_BR');
+                        formatter.format(now.add(Duration(days: 30)));
+                        Navigator.pushNamed(
+                          context,
+                          "/emprestimo_simular",
+                        );
+                      }
+                    },
+                  );
                 },
               ),
             ),

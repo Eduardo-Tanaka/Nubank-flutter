@@ -13,6 +13,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   final VoidCallback? onPress;
   final Color? backgroundColor;
   final double? linearProgressWidth;
+  final double iconSize;
 
   @override
   final Size preferredSize = Size.fromHeight(kToolbarHeight);
@@ -28,6 +29,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
     this.onPress,
     this.backgroundColor,
     this.linearProgressWidth = 100,
+    this.iconSize = 36,
   }) : super(key: key);
 
   @override
@@ -41,7 +43,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
         icon: Icon(
           icon ?? Icons.close,
           color: backgroundColor != null ? Colors.white : Colors.grey,
-          size: icon == null ? 32 : 36,
+          size: icon == null ? 32 : iconSize,
         ),
         onPressed: onPress ?? () => Navigator.of(context).pop(),
       ),

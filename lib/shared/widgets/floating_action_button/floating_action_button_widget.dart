@@ -33,9 +33,16 @@ class FloatingActionButtonWidget extends StatelessWidget {
                   ? true
                   : false
               : false);
+    } else if (value is bool) {
+      isDisabled = !value;
     }
     return FloatingActionButton(
-      onPressed: onPressed,
+      onPressed: () {
+        if (isDisabled) {
+          return;
+        }
+        onPressed();
+      },
       child: Icon(
         icon ?? Icons.arrow_forward,
         color: icon != null
