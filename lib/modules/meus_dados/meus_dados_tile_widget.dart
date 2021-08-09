@@ -7,12 +7,14 @@ class MeusDadostileWidget extends StatelessWidget {
   final String title;
   final String subtitle;
   final String trailing;
+  final VoidCallback onTap;
 
   const MeusDadostileWidget({
     Key? key,
     required this.title,
     required this.subtitle,
     required this.trailing,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -22,7 +24,11 @@ class MeusDadostileWidget extends StatelessWidget {
       child: BlocBuilder<MeusDadosCubit, double>(
         builder: (ctx, state) {
           return GestureDetector(
-            onTap: () {},
+            onTap: () {
+              onTap();
+              ctx.read<MeusDadosCubit>().fadeIn();
+              return;
+            },
             onTapDown: (TapDownDetails details) {
               ctx.read<MeusDadosCubit>().fadeOut();
             },

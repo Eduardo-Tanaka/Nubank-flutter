@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/custom_font_app_icons.dart';
+import 'package:nubank/modules/meus_dados/meus_dados.dart';
 import 'package:nubank/modules/meus_dados/meus_dados_tile_widget.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 
@@ -42,6 +43,19 @@ final subtitles = [
   "",
 ];
 
+final type = [
+  "nome",
+  "email",
+  "telefone",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+];
+
 class MeusDadosPage extends StatelessWidget {
   const MeusDadosPage({Key? key}) : super(key: key);
 
@@ -68,6 +82,16 @@ class MeusDadosPage extends StatelessWidget {
                   title: titles[position],
                   subtitle: subtitles[position],
                   trailing: trailings[position],
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      "/meus_dados_editar",
+                      arguments: MeusDados(
+                        type: type[position],
+                        editValue: trailings[position],
+                      ),
+                    );
+                  },
                 );
               },
               separatorBuilder: (context, position) {
