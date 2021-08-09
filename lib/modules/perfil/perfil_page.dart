@@ -40,7 +40,7 @@ final routes = [
   "/ajuda",
   "/meus_dados",
   "/configurar_app",
-  "/seguranca",
+  "/configurar_seguranca",
   "/pix_chaves",
   "/conta_pj",
   "/notificacoes",
