@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nubank/modules/meus_dados/meus_dados_cubit.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 
-class MeusDadostileWidget extends StatefulWidget {
+class MeusDadostileWidget extends StatelessWidget {
   final String title;
   final String subtitle;
   final String trailing;
@@ -14,73 +16,68 @@ class MeusDadostileWidget extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _MeusDadostileWidgetState createState() => _MeusDadostileWidgetState();
-}
-
-class _MeusDadostileWidgetState extends State<MeusDadostileWidget> {
-  double opacity = 1;
-
-  @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      onTapDown: (TapDownDetails details) {
-        setState(() {
-          opacity = 0.4;
-        });
-      },
-      onTapCancel: () {
-        setState(() {
-          opacity = 1.0;
-        });
-      },
-      child: Opacity(
-        opacity: opacity,
-        child: Container(
-          color: Colors.transparent,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-            child: Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+    return BlocProvider(
+      create: (_) => MeusDadosCubit(),
+      child: BlocBuilder<MeusDadosCubit, double>(
+        builder: (ctx, state) {
+          return GestureDetector(
+            onTap: () {},
+            onTapDown: (TapDownDetails details) {
+              ctx.read<MeusDadosCubit>().fadeOut();
+            },
+            onTapCancel: () {
+              ctx.read<MeusDadosCubit>().fadeIn();
+            },
+            child: Opacity(
+              opacity: state,
+              child: Container(
+                color: Colors.transparent,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.max,
                     children: [
-                      Text(
-                        widget.title,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            title,
+                          ),
+                          Visibility(
+                            visible: subtitle.isNotEmpty,
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 8),
+                              child: Text(
+                                subtitle,
+                                style: TextStyles.textGreySmallBold,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      Visibility(
-                        visible: widget.subtitle.isNotEmpty,
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 8),
-                          child: Text(
-                            widget.subtitle,
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            trailing,
                             style: TextStyles.textGreySmallBold,
                           ),
-                        ),
+                          Icon(
+                            Icons.chevron_right_outlined,
+                            color: Colors.grey,
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        widget.trailing,
-                        style: TextStyles.textGreySmallBold,
-                      ),
-                      Icon(
-                        Icons.chevron_right_outlined,
-                        color: Colors.grey,
-                      ),
-                    ],
-                  ),
-                ],
+                ),
               ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }

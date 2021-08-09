@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/custom_font_app_icons.dart';
 import 'package:nubank/modules/meus_dados/meus_dados_tile_widget.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 
 final titles = [
-  "Nome de \preferência",
+  "Nome de preferência",
   "E-mail",
   "Telefone",
   "Endereço",
@@ -48,7 +49,7 @@ class MeusDadosPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarWidget(
-        icon: Icons.keyboard_backspace_outlined,
+        icon: CustomFontApp.back,
         title: "Perfil",
       ),
       body: SingleChildScrollView(

@@ -41,7 +41,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
         icon: Icon(
           icon ?? Icons.close,
           color: backgroundColor != null ? Colors.white : Colors.grey,
-          size: icon == null ? 32 : 40,
+          size: icon == null ? 32 : 24,
         ),
         onPressed: onPress ?? () => Navigator.of(context).pop(),
       ),
