@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
     "/pagar",
     "/transferir",
     "/depositar",
-    "/emprestimo",
+    "/emprestimo_objetivo",
     "/recarga",
     "/cobrar",
     "/doacao",
@@ -224,7 +224,9 @@ class _HomePageState extends State<HomePage> {
                                   visible: position == titles.length - 1,
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 17, top: 50),
+                                      left: 17,
+                                      top: 50,
+                                    ),
                                     child: Container(
                                       padding: const EdgeInsets.all(2),
                                       decoration: new BoxDecoration(
@@ -263,7 +265,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 12),
+                      horizontal: 12,
+                      vertical: 12,
+                    ),
                     child: SizedBox(
                       height: 90,
                       child: ListView(
@@ -273,7 +277,12 @@ class _HomePageState extends State<HomePage> {
                           HomeCardTextWidget(
                             text: "Você tem R\$ 25.000,00 disponíveis para ",
                             textNu: "empréstimo.",
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                context,
+                                "/emprestimo_objetivo",
+                              );
+                            },
                           ),
                           HomeCardTextWidget(
                             text:
