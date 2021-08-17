@@ -181,6 +181,9 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           trailing: Icon(Icons.chevron_right),
+                          onTap: () {
+                            Navigator.pushNamed(context, "/conta");
+                          },
                         ),
                       ),
                     ),

@@ -3,6 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:nubank/shared/themes/app_colors.dart';
 
 class TextStyles {
+  static final textBlack12Bold = GoogleFonts.roboto(
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  );
   static final textBlackSmall = GoogleFonts.roboto(
     fontSize: 14,
     fontWeight: FontWeight.w600,

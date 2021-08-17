@@ -11,6 +11,7 @@ import 'package:nubank/modules/cartao_virtual/cartao_virtual_page.dart';
 import 'package:nubank/modules/cobrar/cobrar_page.dart';
 import 'package:nubank/modules/configuracao/configurar_app_page.dart';
 import 'package:nubank/modules/configuracao/configurar_seguranca_page.dart';
+import 'package:nubank/modules/conta/conta_page.dart';
 import 'package:nubank/modules/depositar/depositar_page.dart';
 import 'package:nubank/modules/doacao/cubit/doacao_cubit.dart';
 import 'package:nubank/modules/doacao/doacao_confirmar_page.dart';
@@ -97,6 +98,7 @@ class AppWidget extends StatelessWidget {
       "/cobrar": CobrarPage(),
       "/configurar_app": ConfigurarAppPage(),
       "/configurar_seguranca": ConfigurarSegurancaPage(),
+      "/conta": ContaPage(),
       "/depositar": DepositarPage(),
       "/doacao": DoacaoPage(),
       "/doacao_confirmar": DoacaoConfirmarPage(),
@@ -196,6 +198,7 @@ class AppWidget extends StatelessWidget {
                   switch (settings.name) {
                     case "/ajuda_detalhe":
                     case "/boleto":
+                    case "/conta":
                     case "/emprestimo_objetivo":
                     case "/emprestimo_simular":
                     case "/emprestimo_simular_info":

@@ -4,7 +4,7 @@ import 'package:nubank/shared/enums/chave_tipo_enum.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
 import 'package:nubank/shared/widgets/floating_action_button/floating_action_button_widget.dart';
-import 'package:nubank/shared/widgets/input_text_widget/input_text_widget.dart';
+import 'package:nubank/shared/widgets/input_text/input_text_widget.dart';
 import 'RegistrarChaveModel.dart';
 
 class PixRegistrarChaveInputPage extends StatefulWidget {

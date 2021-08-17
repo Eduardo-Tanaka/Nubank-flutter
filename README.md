@@ -6,14 +6,14 @@ Under construction....
 
 ## Getting Started
 
-Home
+<p>Home</p>
 <img src="/assets/gifs/home.gif?raw=true" alt="Home" height="600" />
 
-Pix
+<p>Pix</p>
 <img src="/assets/gifs/pix.gif?raw=true" alt="Pix" height="600" />
 
-Seguro de Vida
+<p>Seguro de Vida</p>
 <img src="/assets/gifs/seguro_vida.gif?raw=true" alt="seguro de vida" height="600" />
 
-Whatsapp
+<p>Whatsapp</p>
 <img src="/assets/gifs/whatsapp.gif?raw=true" alt="Whatsapp" height="600" />

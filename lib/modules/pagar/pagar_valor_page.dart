@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 import 'package:nubank/shared/widgets/app_bar/app_bar_widget.dart';
-import 'package:nubank/shared/widgets/input_text_widget/input_text_widget.dart';
+import 'package:nubank/shared/widgets/input_text/input_text_widget.dart';
 
 class PagarValorPage extends StatefulWidget {
   const PagarValorPage({Key? key}) : super(key: key);
