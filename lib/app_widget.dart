@@ -26,6 +26,7 @@ import 'package:nubank/modules/emprestimo/emprestimo_simular_valor_page.dart';
 import 'package:nubank/modules/home/home_page.dart';
 import 'package:nubank/modules/indicar_amigos/indicar_amigos_page.dart';
 import 'package:nubank/modules/limite/limite_page.dart';
+import 'package:nubank/modules/meus_cartoes/meus_cartoes_page.dart';
 import 'package:nubank/modules/meus_dados/meus_dados_editar_page.dart';
 import 'package:nubank/modules/meus_dados/meus_dados_page.dart';
 import 'package:nubank/modules/pagar/pagar_page.dart';
@@ -114,6 +115,7 @@ class AppWidget extends StatelessWidget {
       "/investimentos": InvestimentosPage(),
       "/investimentos_info": InvestimentosInfoPage(),
       "/limite": LimitePage(),
+      "/meus_cartoes": MeusCartoesPage(),
       "/meus_dados": MeusDadosPage(),
       "/meus_dados_editar": MeusDadosEditarPage(),
       "/pagar": PagarPage(),

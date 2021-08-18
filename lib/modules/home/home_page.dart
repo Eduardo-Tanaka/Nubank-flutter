@@ -263,7 +263,12 @@ class _HomePageState extends State<HomePage> {
                       text: "Meus cartões",
                       icon: CustomFontApp.phone,
                       isVisible: isVisible,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          "/meus_cartoes",
+                        );
+                      },
                     ),
                   ),
                   Padding(

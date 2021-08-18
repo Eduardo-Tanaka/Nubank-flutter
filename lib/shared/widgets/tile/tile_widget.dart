@@ -4,6 +4,7 @@ import 'package:nubank/shared/themes/app_text_styles.dart';
 
 class TileWidget extends StatelessWidget {
   final String title;
+  final TextStyle? titleStyle;
   final String? subtitle;
   final IconData? iconLeading;
   final VoidCallback? onTap;
@@ -18,6 +19,7 @@ class TileWidget extends StatelessWidget {
   final bool showTrailing;
   final Color? backgroundColor;
   final Color? leadingIconColor;
+  final bool isVirtual;
 
   const TileWidget({
     Key? key,
@@ -36,6 +38,8 @@ class TileWidget extends StatelessWidget {
     this.showTrailing = true,
     this.backgroundColor,
     this.leadingIconColor = Colors.black,
+    this.isVirtual = false,
+    this.titleStyle,
   }) : super(key: key);
 
   @override
@@ -72,7 +76,7 @@ class TileWidget extends StatelessWidget {
                     offset: Offset(-10, 0),
                     child: Text(
                       title,
-                      style: TextStyles.text,
+                      style: titleStyle == null ? TextStyles.text : titleStyle,
                     ),
                   ),
                   subtitle: subtitle != null
@@ -85,13 +89,28 @@ class TileWidget extends StatelessWidget {
                         )
                       : null,
                   trailing: Container(
-                    width: 20,
+                    width: isVirtual ? 70 : 24,
                     alignment: Alignment.centerRight,
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 20),
                       child: showTrailing
-                          ? Icon(
-                              iconTrailing ?? Icons.chevron_right,
+                          ? Row(
+                              children: [
+                                Visibility(
+                                  visible: isVirtual,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey[200],
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    padding: const EdgeInsets.all(2),
+                                    child: Text("Virtual"),
+                                  ),
+                                ),
+                                Icon(
+                                  iconTrailing ?? Icons.chevron_right,
+                                ),
+                              ],
                             )
                           : Container(),
                     ),
