@@ -57,6 +57,7 @@ import 'package:nubank/shared/themes/app_colors.dart';
 
 import 'modules/emprestimo/emprestimo_cubit.dart';
 import 'modules/emprestimo/emprestimo_info_page.dart';
+import 'modules/indicar_amigos/indicar_amigos_form_page.dart';
 import 'modules/investimentos/investimentos_info_page.dart';
 import 'modules/investimentos/investimentos_page.dart';
 import 'modules/pagar/pagar_boleto_page.dart';
@@ -112,6 +113,7 @@ class AppWidget extends StatelessWidget {
       "/emprestimo_simular_info": EmprestimoSimularInfoPage(),
       "/emprestimo_simular_valor": EmprestimoSimularValorPage(),
       "/indicar_amigos": IndicarAmigosPage(),
+      "/indicar_amigos_form": IndicarAmigosFormPage(),
       "/investimentos": InvestimentosPage(),
       "/investimentos_info": InvestimentosInfoPage(),
       "/limite": LimitePage(),

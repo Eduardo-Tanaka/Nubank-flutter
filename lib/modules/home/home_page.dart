@@ -56,6 +56,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return RefreshIndicator(
       onRefresh: () async {},
+      backgroundColor: AppColors.primary,
+      color: Colors.white,
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -409,22 +411,7 @@ class _HomePageState extends State<HomePage> {
                         scrollDirection: Axis.horizontal,
                         physics: BouncingScrollPhysics(),
                         children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width / 1.25,
-                            child: HomeCardDescubraWidget(
-                              title: "WhatsApp",
-                              subtitle:
-                                  "Pagamentos seguros, rápidos e sem tarifa. A experiência Nubank sem nem sair da conversa.",
-                              chipText: "Quero conhecer",
-                              isNew: true,
-                              onPressed: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  "/whatsapp_cadastrar",
-                                );
-                              },
-                            ),
-                          ),
+
                           Container(
                             width: MediaQuery.of(context).size.width / 1.25,
                             child: HomeCardDescubraWidget(
@@ -436,6 +423,22 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.pushNamed(
                                   context,
                                   "/indicar_amigos",
+                                );
+                              },
+                            ),
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width / 1.25,
+                            child: HomeCardDescubraWidget(
+                              title: "WhatsApp",
+                              subtitle:
+                              "Pagamentos seguros, rápidos e sem tarifa. A experiência Nubank sem nem sair da conversa.",
+                              chipText: "Quero conhecer",
+                              isNew: false,
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  "/whatsapp_cadastrar",
                                 );
                               },
                             ),

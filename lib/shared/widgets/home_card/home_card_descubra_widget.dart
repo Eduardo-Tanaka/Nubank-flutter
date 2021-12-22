@@ -60,6 +60,7 @@ class HomeCardDescubraWidget extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
                     subtitle,
+                    style: TextStyles.textSmall14,
                   ),
                 ),
               ],

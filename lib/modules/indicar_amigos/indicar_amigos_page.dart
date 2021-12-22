@@ -32,14 +32,22 @@ class IndicarAmigosPage extends StatelessWidget {
               ),
               child: Text(
                 "Para cada indicação aceita, um amigo salvo da burocracia",
-                style: TextStyles.text,
+                style: TextStyles.textSmall,
               ),
             ),
             TextButton(
-              onPressed: () {},
-              child: Text("Indicar amigos"),
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  "/indicar_amigos_form",
+                );
+              },
+              child: Text(
+                "INDICAR AMIGOS",
+                style: TextStyles.textNuSmallBold,
+              ),
               style: TextButton.styleFrom(
-                primary: Colors.purple,
+                primary: Colors.black45,
                 side: BorderSide(color: Colors.purple, width: 1),
               ),
             ),

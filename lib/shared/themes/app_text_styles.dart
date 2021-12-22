@@ -70,6 +70,9 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: Colors.white,
   );
+  static final textSmall14 = GoogleFonts.roboto(
+    fontSize: 14,
+  );
   static final textSmall = GoogleFonts.roboto(
     fontSize: 16,
   );
