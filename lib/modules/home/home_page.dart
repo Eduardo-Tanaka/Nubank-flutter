@@ -393,6 +393,24 @@ class _HomePageState extends State<HomePage> {
                     height: 1,
                     thickness: 1,
                   ),
+                  HomeCardWidget(
+                    isVisible: true,
+                    isVisibleInfo: true,
+                    icon: Icons.shopping_bag_outlined,
+                    title: "Shopping",
+                    subTitle:
+                        "Vantagens exclusivas de nossas marcas preferidas",
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        "/shopping",
+                      );
+                    },
+                  ),
+                  Divider(
+                    height: 1,
+                    thickness: 1,
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 20,
@@ -411,7 +429,6 @@ class _HomePageState extends State<HomePage> {
                         scrollDirection: Axis.horizontal,
                         physics: BouncingScrollPhysics(),
                         children: [
-
                           Container(
                             width: MediaQuery.of(context).size.width / 1.25,
                             child: HomeCardDescubraWidget(
@@ -432,7 +449,7 @@ class _HomePageState extends State<HomePage> {
                             child: HomeCardDescubraWidget(
                               title: "WhatsApp",
                               subtitle:
-                              "Pagamentos seguros, rápidos e sem tarifa. A experiência Nubank sem nem sair da conversa.",
+                                  "Pagamentos seguros, rápidos e sem tarifa. A experiência Nubank sem nem sair da conversa.",
                               chipText: "Quero conhecer",
                               isNew: false,
                               onPressed: () {

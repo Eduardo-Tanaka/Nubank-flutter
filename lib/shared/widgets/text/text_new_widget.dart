@@ -3,7 +3,12 @@ import 'package:nubank/shared/themes/app_colors.dart';
 import 'package:nubank/shared/themes/app_text_styles.dart';
 
 class TextNewWidget extends StatelessWidget {
-  const TextNewWidget({Key? key}) : super(key: key);
+  final String? text;
+
+  const TextNewWidget({
+    Key? key,
+    this.text,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,7 @@ class TextNewWidget extends StatelessWidget {
           borderRadius: new BorderRadius.all(Radius.elliptical(4, 4)),
         ),
         child: Text(
-          "Novo",
+          text ?? "Novo",
           style: TextStyles.titleBottomMenu,
         ),
       ),
