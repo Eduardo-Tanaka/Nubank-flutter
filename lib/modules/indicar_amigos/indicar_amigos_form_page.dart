@@ -75,6 +75,12 @@ class IndicarAmigosFormPage extends StatelessWidget {
                         ),
                         badgeColor: AppColors.primary,
                       ),
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          "/indicar_amigos_email",
+                        );
+                      },
                     ),
                     // NÃO TENHO MESSENGER
                     ListTile(

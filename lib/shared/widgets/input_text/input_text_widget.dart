@@ -17,6 +17,7 @@ class InputTextWidget extends StatelessWidget {
   final VoidCallback? onTap;
   final bool showDivider;
   final bool hasError;
+  final TextStyle? textStyle;
 
   const InputTextWidget({
     Key? key,
@@ -33,6 +34,7 @@ class InputTextWidget extends StatelessWidget {
     this.onTap,
     this.showDivider = true,
     this.hasError = false,
+    this.textStyle,
   }) : super(key: key);
 
   @override
@@ -46,12 +48,10 @@ class InputTextWidget extends StatelessWidget {
           Theme(
             data: Theme.of(context).copyWith(
               textSelectionTheme: TextSelectionThemeData(
-                cursorColor: Colors.black,
-                selectionColor: Colors.black,
-                selectionHandleColor: Colors.black,
+                selectionColor: Colors.black12,
               ),
-              primaryColor: Colors.orange,
-              primaryColorDark: Colors.orange,
+              //primaryColor: Colors.orange,
+              //primaryColorDark: Colors.orange,
             ),
             child: TextFormField(
               enabled: enabled,
@@ -64,7 +64,7 @@ class InputTextWidget extends StatelessWidget {
               onTap: onTap,
               initialValue: initialValue,
               validator: validator,
-              style: TextStyles.textBigBold,
+              style: textStyle ?? TextStyles.textBigBold,
               textInputAction: TextInputAction.next,
               decoration: InputDecoration(
                 suffixIcon: Visibility(
@@ -98,6 +98,12 @@ class InputTextWidget extends StatelessWidget {
                     color: showDivider ? Colors.grey : Colors.transparent,
                     width: 0.0,
                   ),
+                ),
+                errorBorder: UnderlineInputBorder(
+                  borderSide: BorderSide.none,
+                ),
+                focusedErrorBorder: UnderlineInputBorder(
+                  borderSide: BorderSide.none,
                 ),
                 errorStyle: TextStyles.textSmallBoldDanger,
                 focusColor: Colors.yellow,
